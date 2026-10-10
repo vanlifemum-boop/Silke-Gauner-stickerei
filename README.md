@@ -6,8 +6,8 @@ Website-Entwurf für Handelsvertretung & Stickerei Sylke Gauder in Rot, Anthrazi
 
 ## Enthalten
 
-- Startseite und gemeinsamer Shop mit 99 Einträgen: 90 Clubartikel, sieben Produktideen sowie Maßhemd und Maßbluse
-- Eigene Club-Reiter mit 39 Eura-Mobil- und 51 Forster-Artikeln aus den bestehenden Shops
+- Startseite und gemeinsamer Shop mit 131 Einträgen: 122 Club- und Markenartikel, sieben Produktideen sowie Maßhemd und Maßbluse
+- Eigene Club-Reiter mit 39 Eura-Mobil-, 51 Forster- und 32 Waumobil-Artikeln aus den bestehenden Shops
 - Originale Produktfotos, Größen, Farben und Logo-Ausführungen; Club-Suche und Kategorien
 - Benimar und Karmann Club mit Original-Logos und Links zu den bisherigen Shops; Produktübernahme folgt
 - Produktsuche, Kategorien und Preissortierung
@@ -23,7 +23,7 @@ Website-Entwurf für Handelsvertretung & Stickerei Sylke Gauder in Rot, Anthrazi
 
 ## Entwurfsstatus
 
-Die 90 Clubartikel und ihre Fotos, Auswahloptionen und Preise stammen aus den bestehenden Eura-Mobil- und Forster-Shops (Stand 10.10.2026). Die sieben frei gestaltbaren Produktideen mit ihren KI-erstellten Bildern verwenden Beispielpreise. Die neue Website bereitet unverbindliche Anfragen vor; Kaufen-Links öffnen den Originalartikel mit den gewählten Varianten im bestehenden Shop. Keine eigene Zahlungsabwicklung und kein automatischer E-Mail-Versand. Vor dem echten Shopbetrieb müssen das tatsächliche Sortiment, Konditionen und vollständige Rechtstexte ergänzt werden.
+Die 122 Club- und Markenartikel und ihre Fotos, Auswahloptionen und Preise stammen aus den bestehenden Eura-Mobil-, Forster- und Waumobil-Shops (Stand 10.10.2026). Die sieben frei gestaltbaren Produktideen mit ihren KI-erstellten Bildern verwenden Beispielpreise. Die neue Website bereitet unverbindliche Anfragen vor; Kaufen-Links öffnen den Originalartikel mit den gewählten Varianten im bestehenden Shop. Keine eigene Zahlungsabwicklung und kein automatischer E-Mail-Versand. Vor dem echten Shopbetrieb müssen das tatsächliche Sortiment, Konditionen und vollständige Rechtstexte ergänzt werden.
 
 Die Kontaktdaten stammen von der bereitgestellten Visitenkarte. Der Markenname lautet **Sylke Gauder**; der vorgegebene Repository-Name bleibt unverändert.
 
@@ -43,12 +43,13 @@ Alle Asset-Pfade sind relativ, sodass die Website auch unter dem Repository-Unte
 
 Mit Node.js: `npm run check`
 
-Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 29 Funktionstests bestehen; 207 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
+Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 31 Funktionstests bestehen; 271 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
 
 ## Inhalte bearbeiten
 
 - `shop-core.js`: Produktideen, Beispielpreise und gemeinsame Warenkorb-Logik
-- `club-products.js`: 90 importierte Clubartikel und verifizierte Variantenpreise
+- `club-products.js`: 90 importierte Eura-Mobil-/Forster-Artikel und verifizierte Variantenpreise
+- `waumobil-products.js`: 32 Artikel aus dem Waumobil Fanshop mit Original-Ausführungen und Preisen
 - `club-core.js`: Club-Auswahl, Variantenvalidierung, Preisberechnung und Quellenlinks
 - `club-ui.js`: Club-Reiter, Maßhemden-Bereich, Katalog- und Produktseiten
 - `embroidery-core.js` / `embroidery-ui.js`: artikelgerechte Stickpositionen, Logo-Auswahl und Aufpreisanfrage
@@ -70,7 +71,7 @@ Direktlink: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/produkt/c
 
 Beispielpreise: T-Shirt 24,90 €, kleines Logo +7,90 €, großes Logo +14,90 €. Der Wechsel von klein auf groß erhöht den Stückpreis um 7,00 €. Optionaler zusätzlicher Wunschtext kostet im Entwurf +7,90 €. Mengen, Logo-Aufpreis und Gesamtsumme werden gemeinsam berechnet; jede Konfiguration bleibt in Warenkorb und Anfrage erhalten.
 
-Markenoptionen: Forster, Benimar, Karmann Club, Eura Mobil und eigenes Firmen-/Vereinslogo. Knaus wurde auf Wunsch entfernt. Alle vier Clubs nutzen ihre vorhandenen Club-Logos in der schematischen Vorschau. Eigene Logos erscheinen bis zur Abstimmung als beschrifteter Platzhalter.
+Markenoptionen: Forster, Benimar, Karmann Club, Eura Mobil, Waumobil und eigenes Firmen-/Vereinslogo. Knaus wurde auf Wunsch entfernt. Alle fünf Marken nutzen ihre vorhandenen Club-Logos in der schematischen Vorschau. Eigene Logos erscheinen bis zur Abstimmung als beschrifteter Platzhalter.
 
 Bei Oberteilen sind Brust, Ärmel oder unten links wählbar. Hosen bieten Oberschenkel, Gesäßtasche und Hosenbein; Westen, Schürzen, Caps, Taschen und Heimtextilien haben passende eigene Positionen. Konkrete Stickmaße und die Umsetzung stimmen wir persönlich ab. Die Beispiel-Aufpreise gelten ausschließlich für die sieben Produktideen.
 
@@ -78,6 +79,7 @@ Bei Oberteilen sind Brust, Ärmel oder unten links wählbar. Hosen bieten Obersc
 
 - Eura Mobil: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/eura-mobil
 - Forster: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/forster
+- Waumobil: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/waumobil
 - Benimar: Vorschauseite mit Original-Logo, Produkte folgen.
 - Karmann Club: Vorschauseite mit Original-Logo und Link zum bestehenden Gauder-Shop; Produkte folgen.
 
@@ -95,3 +97,8 @@ Maßhemden und Maßblusen stammen aus https://www.individuelle-masshemden.de/. E
 Bei realen Clubartikeln wird eine frei gewählte zusätzliche oder abweichende Bestickung gesondert angeboten. Der bekannte Grundpreis bleibt erhalten; Produktseite, Warenkorb und E-Mail weisen auf den noch fehlenden Stickaufpreis hin. Gutscheine sind vom Stickkonfigurator ausgenommen. Anfrageartikel erscheinen niemals als kostenlos.
 
 Das Karmann-Mobil-Club-Logo stammt aus dem offiziellen Clubauftritt und ist identisch im bestehenden Gauder-Clubshop vorhanden. Herkunft: `docs/karmann-source.json`. Der WhatsApp-Link öffnet https://wa.me/491636997060 ohne automatisch eine Nachricht zu versenden.
+
+
+## Waumobil Edition
+
+Waumobil ist als eigener Reiter neben Eura Mobil, Forster, Benimar und Karmann verfügbar und in allen Logo-Konfiguratoren auswählbar. Der offizielle Auftritt https://waumobil.eu/gebrauchtes-wohnmobil-anbieten/ verlinkt den Waumobil Fanshop https://waumobil.handelsvertretung-gauder.de/. Das Original-Logo, die 32 gelisteten Produkte, Originalfotos, Farben, Größen und vorhandene Logoausführungen werden übernommen. „Nur Brustlogo“ und „Brust und Rücken groß“ behalten ihre überprüften Variantenpreise. Quellen sind in `docs/waumobil-source.json` und `docs/waumobil-products-source.json` dokumentiert.

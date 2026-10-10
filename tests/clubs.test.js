@@ -8,14 +8,15 @@ const get=id=>CLUB_PRODUCTS.find(p=>p.id===id);
 const polo=get('club-forster-755');
 const poloChoice=(logo='227')=>({...createClubSelection(polo),options:{'7':'448','9':'192','13':logo}});
 
-test('Both source catalogues are complete, individually routed and backed by local images',()=>{
+test('All source catalogues are complete, individually routed and backed by local images',()=>{
  assert.equal(clubProducts('eura-mobil').length,39);
  assert.equal(clubProducts('forster').length,51);
+ assert.equal(clubProducts('waumobil').length,32);
  assert.equal(clubProducts('benimar').length,0);
  assert.equal(clubProducts('karmann').length,0);
- assert.equal(new Set(PRODUCTS.map(p=>p.id)).size,99);
+ assert.equal(new Set(PRODUCTS.map(p=>p.id)).size,131);
  for(const p of CLUB_PRODUCTS){
-  const expected=p.club==='eura-mobil'?'euramobilclub-shop.de':'forster-fahrer-shop.de';
+  const expected={'eura-mobil':'euramobilclub-shop.de',forster:'forster-fahrer-shop.de',waumobil:'waumobil.handelsvertretung-gauder.de'}[p.club];
   assert.equal(new URL(p.sourceUrl).hostname,expected);
   if(p.image)assert.ok(existsSync(new URL('../'+p.image,import.meta.url)),p.image);
   else assert.equal(p.imageMissing,true);
@@ -108,5 +109,5 @@ test('Club pages render all real options safely and missing photos have a delibe
 });
 test('Every shipped module is included in the Pages deployment',()=>{
  const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
- for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js'])assert.ok(workflow.includes(file),file);
+ for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','waumobil-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js'])assert.ok(workflow.includes(file),file);
 });

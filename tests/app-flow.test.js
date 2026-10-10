@@ -46,6 +46,6 @@ test('Tailored product event flow handles short sleeves, custom fabric and an un
 });
 
 test('The full shop and the dedicated tailoring route render through the router',()=>{
- const shop=application('#/shop');assert.equal((shop.get('shop-grid').innerHTML.match(/<article/g)||[]).length,99);
+ const shop=application('#/shop');assert.equal((shop.get('shop-grid').innerHTML.match(/<article/g)||[]).length,131);
  const tailor=application('#/masshemden');assert.match(tailor.get('main').innerHTML,/Maßhemd gestalten/);assert.match(tailor.get('main').innerHTML,/Maßbluse gestalten/);
 });

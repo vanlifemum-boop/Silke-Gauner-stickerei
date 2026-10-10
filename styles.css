@@ -96,3 +96,11 @@ body:has(dialog[open]) .whatsapp-float{visibility:hidden}
 .desktop-nav{gap:18px}.header-inner{gap:20px}
 @media(max-width:1180px){.desktop-nav{display:none}.menu-toggle{display:flex}.header-actions{margin-left:auto}.tailored-hero{gap:34px}.home-tailoring>div{padding:30px}.home-tailoring .section-heading{font-size:31px}}
 @media(max-width:680px){.mobile-nav{max-height:75dvh;overflow-y:auto}.logo-config-head h2{font-size:25px}.logo-config .position-option b{font-size:11px}.logo-config .logo-size-option{padding:14px}.logo-config .logo-size-option strong{font-size:11px}.club-option-field input,.fabric-choice input,.logo-config textarea,.club-option-field select{font-size:16px}.logo-config .club-product-options{grid-template-columns:1fr}.home-tailoring{grid-template-columns:1fr;margin-top:6px;margin-bottom:28px}.home-tailoring>div{padding:26px}.home-tailoring .section-heading{font-size:30px}.home-tailoring>a{height:245px}.tailored-hero{grid-template-columns:1fr;gap:30px;padding-bottom:35px}.tailored-hero-photo{height:300px}.tailored-hero .page-lead{font-size:14px}.tailored-hero .btn-row{gap:10px}.tailored-hero .btn{font-size:12px;padding:12px 14px;flex:1}.tailored-grid .product-image{aspect-ratio:1/1.2}.tailoring-process{grid-template-columns:1fr;gap:22px;margin-bottom:45px;padding:25px}.tailoring-process>.text-link{grid-column:auto;font-size:12px}.tailoring-process h2{font-size:30px}.whatsapp-float{bottom:max(15px,env(safe-area-inset-bottom));right:14px;padding:11px;min-width:56px;min-height:56px}.whatsapp-float span{display:none}.toast{bottom:84px}.shop-toolbar>.filter-tabs{flex:1 1 100%}.shop-toolbar>.search-field{max-width:none;flex:1 1 100%}.site-footer{padding-bottom:75px}}
+
+
+/* A fifth brand alongside the existing club editions. */
+.club-cards{grid-template-columns:repeat(5,minmax(0,1fr))}
+.logo-config .brand-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+.logo-config .brand-option:last-child{grid-column:auto}
+@media(max-width:1180px){.club-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:960px){.club-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.club-card:last-child{grid-column:1/-1}.logo-config .brand-options{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -1,14 +1,16 @@
 import { createEmbroidery, embroideryError, embroideryLabels, textileKind } from './embroidery-core.js';
 import { TAILORED_PRODUCTS } from './tailored-products.js';
 export { TAILORED_PRODUCTS };
-import { CLUB_PRODUCTS } from './club-products.js';
-export { CLUB_PRODUCTS };
+import { CLUB_PRODUCTS as ORIGINAL_CLUB_PRODUCTS } from './club-products.js';
+import { WAUMOBIL_PRODUCTS } from './waumobil-products.js';
+export const CLUB_PRODUCTS=[...ORIGINAL_CLUB_PRODUCTS,...WAUMOBIL_PRODUCTS];
 
 export const CLUBS=[
  {id:'eura-mobil',name:'Eura Mobil',fullName:'Eura Mobil Club',shopName:'Eura Mobil Club Shop',status:'ready',logo:'assets/clubs/eura-mobil-logo.webp',wordmark:'assets/clubs/eura-mobil-wordmark.webp',sourceUrl:'https://euramobilclub-shop.de/',headline:'Dein Club. Dein Auftritt.',description:'Clubkleidung, persönliche Begleiter und Textilien für dein Zuhause auf Rädern. Entdecke das Sortiment aus unserem Eura Mobil Club Shop.'},
  {id:'forster',name:'Forster',fullName:'Forster Fahrer & Fans',shopName:'Forster Fahrer & Fans Shop',status:'ready',logo:'assets/clubs/forster-logo.webp',sourceUrl:'https://forster-fahrer-shop.de/',headline:'Für Fahrer. Für Fans. Für dich.',description:'Vom bestickten Polo bis zum praktischen Begleiter für unterwegs: Hier findest du die Produkte aus unserem Forster Fahrer & Fans Shop.'},
  {id:'benimar',name:'Benimar',fullName:'Benimar Fans',shopName:'Benimar-Fans-Shop',status:'coming',logo:'assets/clubs/benimar-logo.svg',sourceUrl:'https://benimar-fans-shop.de/',headline:'Deine nächste Kollektion kommt.',description:'Die Benimar-Kollektion ergänzen wir als Nächstes. Für deine Club-Bestickung und besondere Wünsche kannst du dich schon jetzt bei uns melden.'},
  {id:'karmann',name:'Karmann Club',fullName:'Karmann Club',shopName:'Karmann-Mobil-Club Shop',status:'coming',logo:'assets/clubs/karmann-logo.png',sourceUrl:'https://karmann-mobil-club.handelsvertretung-gauder.de/',headline:'Bald gemeinsam unterwegs.',description:'Der eigene Bereich für den Karmann Club ist vorbereitet. Die Produkte ergänzen wir nach und nach. Du kannst schon jetzt unseren bestehenden Karmann-Mobil-Club-Shop besuchen.'}
+ ,{id:'waumobil',name:'Waumobil',fullName:'Waumobil Edition',shopName:'Waumobil Fanshop',status:'ready',logo:'assets/clubs/waumobil-logo.svg',sourceUrl:'https://waumobil.handelsvertretung-gauder.de/',brandSourceUrl:'https://waumobil.eu/gebrauchtes-wohnmobil-anbieten/',headline:'Gemeinsam unterwegs. Mit Hund.',description:'Entdecke Bekleidung, praktische Begleiter und Textilien für unterwegs aus dem bestehenden Waumobil Fanshop. Wähle deine Farbe, Größe und Logo-Ausführung – persönlich bestickt für deinen Auftritt.'}
 ];
 export const TAILORING={id:'masshemden',tailored:true,name:'Maßhemden',fullName:'Maßhemden & Maßblusen',shopName:'Individuelle Maßhemden von Gauder',sourceUrl:'https://www.individuelle-masshemden.de/'};
 export const clubById=id=>CLUBS.find(c=>c.id===id);

@@ -55,7 +55,7 @@ test('All camper brands, positions and logo sizes survive storage with prices re
   assert.equal(unitPrice(restored[0]),2490+size.price);
   assert.equal(cartTotal(restored),(2490+size.price)*3);count++;
  }
- assert.equal(count,30);
+ assert.equal(count,CAMPER_BRANDS.length*LOGO_POSITIONS.length*LOGO_SIZES.length);
 });
 test('Large-logo surcharge scales by quantity and is removed for classic edition',()=>{
  assert.equal(unitPrice(camper),3280);
@@ -95,6 +95,6 @@ test('Invalid stored camper variants are rejected, and older carts remain classi
 test('Camper enquiry contains the full chosen variant and unit/multiple prices',()=>{
  const text=enquiryText([{...camper,logoSize:'large',text:'Anna'}]);
  for(const expected of ['Camper Edition','Benimar','Rot','XL','Am Ärmel','Großes Logo','14,90','47,70','143,10','Anna'])assert.ok(text.includes(expected),expected);
- assert.equal(filterProducts({category:'Camper Edition'}).length,96);
+ assert.equal(filterProducts({category:'Camper Edition'}).length,127);
  assert.ok(filterProducts({category:'Camper Edition',query:'Eura Mobil'}).length>3);
 });

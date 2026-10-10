@@ -1,0 +1,549 @@
+{
+  "brand": "Waumobil",
+  "shopUrl": "https://waumobil.handelsvertretung-gauder.de/",
+  "officialUrl": "https://waumobil.eu/gebrauchtes-wohnmobil-anbieten/",
+  "retrievedAt": "2026-10-10",
+  "productCount": 32,
+  "coverage": [
+    {
+      "category": "sonderartikel",
+      "pages": 0,
+      "url": "https://waumobil.handelsvertretung-gauder.de/sonderartikel/?p=1&n=100",
+      "count": 0
+    },
+    {
+      "category": "kleidung",
+      "pages": 1,
+      "url": "https://waumobil.handelsvertretung-gauder.de/kleidung/?p=1&n=100",
+      "count": 22
+    },
+    {
+      "category": "heimtextilien",
+      "pages": 1,
+      "url": "https://waumobil.handelsvertretung-gauder.de/heimtextilien/?p=1&n=100",
+      "count": 2
+    },
+    {
+      "category": "tiere",
+      "pages": 1,
+      "url": "https://waumobil.handelsvertretung-gauder.de/tiere/?p=1&n=100",
+      "count": 4
+    },
+    {
+      "category": "accessoires",
+      "pages": 1,
+      "url": "https://waumobil.handelsvertretung-gauder.de/accessoires/?p=1&n=100",
+      "count": 5
+    },
+    {
+      "category": "gutscheine",
+      "pages": 1,
+      "url": "https://waumobil.handelsvertretung-gauder.de/gutscheine/?p=1&n=100",
+      "count": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "club-waumobil-404",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/caps-muetzen/404/military-sandwich-cap-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/caps-muetzen/404/military-sandwich-cap-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-405",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/caps-muetzen/405/sandwich-cap-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/caps-muetzen/405/sandwich-cap-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-406",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/406/herren-waumobil-t-shirt",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/406/herren-waumobil-t-shirt",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/406/herren-waumobil-t-shirt?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/406/herren-waumobil-t-shirt?group%5B7%5D=216&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/406/herren-waumobil-t-shirt?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-407",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/407/ladies-waumobil-t-shirt",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/407/ladies-waumobil-t-shirt",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/407/ladies-waumobil-t-shirt?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/407/ladies-waumobil-t-shirt?group%5B7%5D=216&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/407/ladies-waumobil-t-shirt?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-408",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/408/men-s-waumobil-polo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/408/men-s-waumobil-polo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/408/men-s-waumobil-polo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/408/men-s-waumobil-polo?group%5B7%5D=216&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/408/men-s-waumobil-polo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-409",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/409/ladies-waumobil-polo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/409/ladies-waumobil-polo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/409/ladies-waumobil-polo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/409/ladies-waumobil-polo?group%5B7%5D=216&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/409/ladies-waumobil-polo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-410",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/410/unisex-sweatpullover-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/410/unisex-sweatpullover-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/410/unisex-sweatpullover-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/410/unisex-sweatpullover-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/410/unisex-sweatpullover-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-411",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/411/herren-t-shirt-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/411/herren-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=184&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/411/herren-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/411/herren-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/411/herren-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-746",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/746/herren-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+      "variants": []
+    },
+    {
+      "id": "club-waumobil-745",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/745/damen-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+      "variants": []
+    },
+    {
+      "id": "club-waumobil-714",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche",
+      "variants": []
+    },
+    {
+      "id": "club-waumobil-750",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/750/herren-trip-strick-fleecejacke",
+      "variants": []
+    },
+    {
+      "id": "club-waumobil-749",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/hosen/herren/749/next-4-wege-way-stretch-unisex-bermudahose",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/hosen/herren/749/next-4-wege-way-stretch-unisex-bermudahose"
+      ]
+    },
+    {
+      "id": "club-waumobil-748",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/hosen/herren/748/next-4-way-stretch-unisex-hose",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/hosen/herren/748/next-4-way-stretch-unisex-hose"
+      ]
+    },
+    {
+      "id": "club-waumobil-417",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/417/unisex-softshell-jacke-color-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/417/unisex-softshell-jacke-color-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/417/unisex-softshell-jacke-color-mit-waumobil-logo?group%5B7%5D=216&group%5B9%5D=184&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/417/unisex-softshell-jacke-color-mit-waumobil-logo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/417/unisex-softshell-jacke-color-mit-waumobil-logo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=220"
+      ]
+    },
+    {
+      "id": "club-waumobil-418",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/damen/418/damen-strickfleece-jacke-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/damen/418/damen-strickfleece-jacke-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/damen/418/damen-strickfleece-jacke-mit-waumobil-logo?group%5B7%5D=221&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/damen/418/damen-strickfleece-jacke-mit-waumobil-logo?group%5B7%5D=221&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/damen/418/damen-strickfleece-jacke-mit-waumobil-logo?group%5B7%5D=221&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-419",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/419/herren-strickfleece-jacke-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/419/herren-strickfleece-jacke-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/419/herren-strickfleece-jacke-mit-waumobil-logo?group%5B7%5D=221&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-420",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/420/unisex-softshell-weste-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/420/unisex-softshell-weste-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/420/unisex-softshell-weste-mit-waumobil-logo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/420/unisex-softshell-weste-mit-waumobil-logo?group%5B7%5D=216&group%5B9%5D=191&group%5B12%5D=220",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/420/unisex-softshell-weste-mit-waumobil-logo?group%5B7%5D=216&group%5B9%5D=192&group%5B12%5D=220"
+      ]
+    },
+    {
+      "id": "club-waumobil-421",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/421/unisex-softshell-jacke-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/421/unisex-softshell-jacke-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/421/unisex-softshell-jacke-mit-waumobil-logo?group%5B7%5D=14&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/421/unisex-softshell-jacke-mit-waumobil-logo?group%5B7%5D=14&group%5B9%5D=194&group%5B12%5D=220",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/421/unisex-softshell-jacke-mit-waumobil-logo?group%5B7%5D=14&group%5B9%5D=192&group%5B12%5D=220"
+      ]
+    },
+    {
+      "id": "club-waumobil-412",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/412/damen-t-shirt-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/412/damen-t-shirt-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/412/damen-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=184&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/412/damen-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/412/damen-t-shirt-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-413",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/413/damen-poloshirt-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/413/damen-poloshirt-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/413/damen-poloshirt-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/413/damen-poloshirt-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/damen/413/damen-poloshirt-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-414",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/414/herren-poloshirt-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/414/herren-poloshirt-mit-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/414/herren-poloshirt-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=217",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/414/herren-poloshirt-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=184&group%5B12%5D=218",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/shirts-sweats/herren/414/herren-poloshirt-mit-waumobil-logo?group%5B7%5D=36&group%5B9%5D=192&group%5B12%5D=218"
+      ]
+    },
+    {
+      "id": "club-waumobil-402",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/402/bademantel-mit-kapuze-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/402/bademantel-mit-kapuze-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-403",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/403/handtuecher-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/403/handtuecher-waumobil-logo",
+        "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/403/handtuecher-waumobil-logo?group%5B7%5D=36&group%5B9%5D=215",
+        "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/403/handtuecher-waumobil-logo?group%5B7%5D=36&group%5B9%5D=180",
+        "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/403/handtuecher-waumobil-logo?group%5B7%5D=36&group%5B9%5D=181",
+        "https://waumobil.handelsvertretung-gauder.de/heimtextilien/badezimmer/403/handtuecher-waumobil-logo?group%5B7%5D=36&group%5B9%5D=214"
+      ]
+    },
+    {
+      "id": "club-waumobil-394",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/tiere/394/waumobil-hundematte",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/tiere/394/waumobil-hundematte"
+      ]
+    },
+    {
+      "id": "club-waumobil-395",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/tiere/395/bonded-fleece-decke-zwei-farbig-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/tiere/395/bonded-fleece-decke-zwei-farbig-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-396",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/tiere/396/fleece-decke-uni-mit-waumobil-logo-trockner-geeignet",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/tiere/396/fleece-decke-uni-mit-waumobil-logo-trockner-geeignet"
+      ]
+    },
+    {
+      "id": "club-waumobil-397",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/tiere/397/hundetuch-mit-waumobil-logo-und-zwei-taschen",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/tiere/397/hundetuch-mit-waumobil-logo-und-zwei-taschen"
+      ]
+    },
+    {
+      "id": "club-waumobil-398",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/accessoires/398/facie-baumwoll-gesichtsmaske-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/accessoires/398/facie-baumwoll-gesichtsmaske-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-400",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/accessoires/400/sporttasche-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/accessoires/400/sporttasche-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-401",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/accessoires/401/umhaengetasche-mit-waumobil-logo",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/accessoires/401/umhaengetasche-mit-waumobil-logo"
+      ]
+    },
+    {
+      "id": "club-waumobil-388",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine",
+      "variants": [
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine",
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine?group%5B10%5D=202",
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine?group%5B10%5D=203",
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine?group%5B10%5D=204",
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine?group%5B10%5D=200",
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine?group%5B10%5D=201"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "club-waumobil-404",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/6e/76/7e/MB6555-schwarz_600x600.jpg",
+      "sha256": "e3bf89d1b59812be9aef11d45983a67bd7dbce354436b8b6cc43151ae5c16439",
+      "webpSha256": "c86a861e955fe98009f254f79658ab2376ef9be06049e241adbcbeb57e4123ab",
+      "targetPath": "assets/clubs/waumobil-404.webp"
+    },
+    {
+      "id": "club-waumobil-405",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/47/60/76/MB6234-rot_600x600.jpg",
+      "sha256": "8c622b37ab6015b57c4ba94f06c4c53574072558af84fc3c721f120b09c51ce5",
+      "webpSha256": "360383006bdfc951e238d88305f9b87d700ece2cb5b284fb496026edca741608",
+      "targetPath": "assets/clubs/waumobil-405.webp"
+    },
+    {
+      "id": "club-waumobil-406",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/8f/b9/1e/JN860-grau-mit-Ruecken_600x600.jpg",
+      "sha256": "fe90e6b78f14c0eb4ad873bd3ba6684d489d626b261bc69de5afd6618fd32d4b",
+      "webpSha256": "d65dd90f26534536b71a71c175479a63a4c2bb7dbe7b340669ad5a45cc5b747f",
+      "targetPath": "assets/clubs/waumobil-406.webp"
+    },
+    {
+      "id": "club-waumobil-407",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/cd/b7/c8/JN859-grau-mit-Ruecken_600x600.jpg",
+      "sha256": "f00f9ec67bc1c5b1521b856f614c39b1b51b14a9fd2e0bae2d3cf5b297864828",
+      "webpSha256": "48bc09fb6225f032fa7e2de6329c936dbd73a5c30b045a037d4a185e8f29206e",
+      "targetPath": "assets/clubs/waumobil-407.webp"
+    },
+    {
+      "id": "club-waumobil-408",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/e0/4e/8b/JN858-grau-mit-Ruecken_600x600.jpg",
+      "sha256": "8afd0dc0f9914bb55425485a3acb80fc9ba5d5d492bf0d039b0ac0bf3ef56deb",
+      "webpSha256": "a53ff2319ef9d3a349fb0afc3ac65fdf533883f82f397130b1d12a243bbf80a9",
+      "targetPath": "assets/clubs/waumobil-408.webp"
+    },
+    {
+      "id": "club-waumobil-409",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/7d/71/c2/JN857-grau-mit-Ruecken_600x600.jpg",
+      "sha256": "881dd8bd67716a26032099a7e2776db57575fed399ad5028b7049bd4ee4b893d",
+      "webpSha256": "f0c4b49b204799ddb6ee0d6bfb9ea22f3cd46cb4b9c2b26d1edbc9d422f47ff4",
+      "targetPath": "assets/clubs/waumobil-409.webp"
+    },
+    {
+      "id": "club-waumobil-410",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/65/0d/c7/JN895-rot-mit-Ruecken_600x600.jpg",
+      "sha256": "bc4cad6845570873f9026626f605339cf51b63cffdc135ff4bb043b6dfa46fa1",
+      "webpSha256": "0beb6c94004d2f8ea4337804b13470a0c09f05df30aa82aecab717601a163508",
+      "targetPath": "assets/clubs/waumobil-410.webp"
+    },
+    {
+      "id": "club-waumobil-411",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/31/95/36/JN-Herren-Groessen4O8AAtR0v1XSE4SkgZbFcOFgc6_600x600.jpg",
+      "sha256": "0360dfca828bfebb50e52f22aa80a7f7ba03672e46caa0a31a075ace47f58cd5",
+      "webpSha256": "7771560a7394d835efaae848cd5d6feff1c39c7d9f1c1ff7a4f117aaeaed9bed",
+      "targetPath": "assets/clubs/waumobil-411.webp"
+    },
+    {
+      "id": "club-waumobil-746",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/5f/06/2b/jn1098-mens-outdoor-jacket-gruen-herren-_Spring-Green-Iron-Grey_master_600x600.jpg",
+      "sha256": "f16863ea1a763e2179273d76bd1a92a1208b81271380563b16e8dce4ffe1e714",
+      "webpSha256": "9dadc99cbe4466cf508a24a85a68ade14ac2925704f472aff0b7e24da2143207",
+      "targetPath": "assets/clubs/waumobil-746.webp"
+    },
+    {
+      "id": "club-waumobil-745",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/21/57/54/jn1097-ladies-outdoor-jacket-gruen-damen-_Iron-Grey-Green__master_600x600.jpg",
+      "sha256": "ae532f8df1260bdacd7bfc861fb24e22877b4996fc452b669c8a67c2060a9c0d",
+      "webpSha256": "1aa3d12936ef9bebdfbcee0560ee76cf6cd10175eab7096f4096c73103e16d62",
+      "targetPath": "assets/clubs/waumobil-745.webp"
+    },
+    {
+      "id": "club-waumobil-714",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/ae/64/cf/Dallas-_MG_1846-983_07000_k-nigsblau_600x600.jpg",
+      "sha256": "1f60727182fe0ae27dcb31e1df7cdb945e48e0137c2dde1cff126d5b8312f397",
+      "webpSha256": "f88e92cbec0f7fd71bf4875e179ef12f563f9ad78da2762c940190399d3b5cd6",
+      "targetPath": "assets/clubs/waumobil-714.webp"
+    },
+    {
+      "id": "club-waumobil-750",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/dc/bc/d7/Trip-Herren-Gelb_600x600.jpg",
+      "sha256": "18861b4a969651c739d9727086ff74703792b6e251b57cc4f3d040951c774504",
+      "webpSha256": "6a71d9837674f0d8ec7179cd8e803401894e9224970e45a2a72e96dccff7189f",
+      "targetPath": "assets/clubs/waumobil-750.webp"
+    },
+    {
+      "id": "club-waumobil-749",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/d7/a1/48/Next-4-Wege-Schwarz-Bermuda_600x600.jpg",
+      "sha256": "d757530e06e68394d0a794bc12734b4a1f6f45d74b70943680955353aeafa0e9",
+      "webpSha256": "ce05bb58e947047aaf4401ca7c9af894fee3735be96066d541feb39142cc2f10",
+      "targetPath": "assets/clubs/waumobil-749.webp"
+    },
+    {
+      "id": "club-waumobil-748",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/6f/33/5f/Next-4-Wege-Schwarz-SchwarzuM4ih16KB1K8S_600x600.jpg",
+      "sha256": "72b7a409d630bce7c4326dcba857174b6e6cd2f4f2824bb9b5a635a4ed976100",
+      "webpSha256": "52bc09968ca09c84deb8c6f798346a80fb1656ba7c0ba9ba19fc1b44f973eec2",
+      "targetPath": "assets/clubs/waumobil-748.webp"
+    },
+    {
+      "id": "club-waumobil-417",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/79/aa/56/JN851-grau_600x600.jpg",
+      "sha256": "60e4581799bb9919f9cbbc45c2b726837b98763ee0f15314cd9dc7cd949d14c0",
+      "webpSha256": "dd1c71d734adb284748519f026f9923e120fbcf54fcac72349e6d95645755c52",
+      "targetPath": "assets/clubs/waumobil-417.webp"
+    },
+    {
+      "id": "club-waumobil-418",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/04/cb/cd/JN861-rot-mit-Ruecken_600x600.jpg",
+      "sha256": "81362b9dca0b39353e929bba0ec980d2447e91759ca8b7a89dd59d708bf649d9",
+      "webpSha256": "b51486a4065d918e892e2c00a28f26fb6d5abeceefe63bfc4c0aeffca18c4cdf",
+      "targetPath": "assets/clubs/waumobil-418.webp"
+    },
+    {
+      "id": "club-waumobil-419",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/cd/2c/64/JN862-rot-mit-Ruecken_600x600.jpg",
+      "sha256": "2370e4b53b8d4bec4a954105c88d7649dd8a4ba55fc09db1593a531d80d49d5d",
+      "webpSha256": "9e8c0130f4e51894692a39d1d6f9927572fcff5a68c5266f444f3053060bcf2d",
+      "targetPath": "assets/clubs/waumobil-419.webp"
+    },
+    {
+      "id": "club-waumobil-420",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/e7/bc/1b/JN852-rot-mit-Ruecken_600x600.jpg",
+      "sha256": "97e720f2944dcb4c1d14df25fecc34020508c2b315ec722bf9a8955eb8531242",
+      "webpSha256": "90bf95bbff6f45e848e83f9d57bef0aa10d066d2b2a1e07a657fd4b923913756",
+      "targetPath": "assets/clubs/waumobil-420.webp"
+    },
+    {
+      "id": "club-waumobil-421",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/90/46/91/JN884-navy-mit-Ruecken_600x600.jpg",
+      "sha256": "6e91ca0c998173a384696077084ea9ef4ccafe5323a7b7296ddc091dddec5255",
+      "webpSha256": "a2b2c83b5d155b6261a612ae058261ab2782448f8a5872dfaf7758b8cdb31190",
+      "targetPath": "assets/clubs/waumobil-421.webp"
+    },
+    {
+      "id": "club-waumobil-412",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/d5/85/77/JN889-rot_600x600.jpg",
+      "sha256": "f9cbc4393c0c3c323d48e0924a86174a1c2c6771bf729fcf8d3249fe8b5f9722",
+      "webpSha256": "04de9739179bb89a255f8dd12c72a89f6f7af4533e9e4db46043dd0ecd40d0c6",
+      "targetPath": "assets/clubs/waumobil-412.webp"
+    },
+    {
+      "id": "club-waumobil-413",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/d0/71/d8/JN891-rot-mit-Ruecken_600x600.jpg",
+      "sha256": "094e72f62c22964cba38cb0e674267866b97f5645aae96862f9cc06dd0a0c531",
+      "webpSha256": "144ff9777105333c5050c356d6ade3f21ffba972a31fbb89a3432e8eba5e0688",
+      "targetPath": "assets/clubs/waumobil-413.webp"
+    },
+    {
+      "id": "club-waumobil-414",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/22/77/0e/JN892-rot-mit-Ruecken_600x600.jpg",
+      "sha256": "f349e9e88887fe432883593d96edd2067d618f9322c24dc7333748913901a5b3",
+      "webpSha256": "ad226791babe45600adfa861b9043bf815e6d7f686e79e37d83d3090a45d121a",
+      "targetPath": "assets/clubs/waumobil-414.webp"
+    },
+    {
+      "id": "club-waumobil-402",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/ba/28/9f/AR026-weiss_600x600.jpg",
+      "sha256": "00c67be7088201a87e332c6d0c3a262fd15867ce67897149626dce4ab9b5d25d",
+      "webpSha256": "2dc0c2eb3fb38035edce0c88ae324ef83d5ef1cbd68503593f43f81cffdbef63",
+      "targetPath": "assets/clubs/waumobil-402.webp"
+    },
+    {
+      "id": "club-waumobil-403",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/f6/2f/9b/Handtuch-rot_600x600.jpg",
+      "sha256": "94cb2480f2abde3faeb0a62c5aa96fc1f89f2651f0cfc4a7a04a769e7761efa5",
+      "webpSha256": "456ea69e2987b941a5108dddaad65f373f700f03abae788bbdff48cea17a7eda",
+      "targetPath": "assets/clubs/waumobil-403.webp"
+    },
+    {
+      "id": "club-waumobil-394",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/6f/c7/bd/NT2015-WM-Hundematte-Knochen_600x600.jpg",
+      "sha256": "91c453b2c2b85241847cae7449823fdebf34fe361688f76bb5ebb2b6eb6b9b7a",
+      "webpSha256": "9a3f01e919b84cd683a55f4d77358ce3d6fe1f8d1c48d73a06d0b33e03f3ca58",
+      "targetPath": "assets/clubs/waumobil-394.webp"
+    },
+    {
+      "id": "club-waumobil-395",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/ef/6b/72/0077-Fleecedecke-schwarz-rot_600x600.jpg",
+      "sha256": "bfbc40e6ed5732297881f559a97d6ea41cd616347bb27fd08fb6067d8faba510",
+      "webpSha256": "f06c16bd3f983a7bce38f1e7f6d8abb36d56120b8d4fe4c1e27dfd30e2cb8f4a",
+      "targetPath": "assets/clubs/waumobil-395.webp"
+    },
+    {
+      "id": "club-waumobil-396",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/52/1d/52/898658_600x600.jpg",
+      "sha256": "41138582648ead8b2f4ef04316f72f1274e2dbd8f0f60c65c2df987fc9f4ce2c",
+      "webpSha256": "5d7cbb654332a4db7550f05e20e9b0fdf0da6883e11b4bcc246912982cdf7083",
+      "targetPath": "assets/clubs/waumobil-396.webp"
+    },
+    {
+      "id": "club-waumobil-397",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/e3/c2/5a/1913944-mit-Logo_600x600.jpg",
+      "sha256": "317878f28a765d09cc967c5efd208d12754abdcdf3fd51e430f43884724d672e",
+      "webpSha256": "4eacb1187692f8597d43d3b8a5acdeadc329a92fe7f50f028d9b09195ef78eaf",
+      "targetPath": "assets/clubs/waumobil-397.webp"
+    },
+    {
+      "id": "club-waumobil-398",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/a1/62/1e/WM-B2_600x600.jpg",
+      "sha256": "016346cd33a4a0d0e222a3d4cf646113a05ea41140ef2910b71d4180f0041f7c",
+      "webpSha256": "2a61f227bb7d0526acffafbb4ac182ded0188f61f2cc0526db452ca664a2b887",
+      "targetPath": "assets/clubs/waumobil-398.webp"
+    },
+    {
+      "id": "club-waumobil-400",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/34/47/9f/1800-schwarz_600x600.jpg",
+      "sha256": "cad98ae1c6b84aaa55ba9eeb54d33a67ad596c76e80d7a14ec2e6940a9ce2338",
+      "webpSha256": "e41ca2f4ed91fa7f5d70042f6358b8f227f1b1db0719aa50735cc6e7b3517ce7",
+      "targetPath": "assets/clubs/waumobil-400.webp"
+    },
+    {
+      "id": "club-waumobil-401",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/ff/0f/73/BG75-Navy5dezFoztVUvZj_600x600.jpg",
+      "sha256": "5af0bb333b873f2f73c61f963aa2aad09d1bb27e5d1a74bb4ac13a0b004b41fb",
+      "webpSha256": "c746ef09afc48c1b2f76ee747059f03fe49d802550796bbdf20761637cc70f5f",
+      "targetPath": "assets/clubs/waumobil-401.webp"
+    },
+    {
+      "id": "club-waumobil-388",
+      "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/image/31/be/81/Gutschein-Stoelzinga_600x600.jpg",
+      "sha256": "ced0ce50196f152a153c8da2a4058d26dc57d2980f285734274f2be1f2218925",
+      "webpSha256": "c31ee8bdbcc5e1c0bb70d656063f30977974859467c9bf18f4b3bfde5fa7f4dc",
+      "targetPath": "assets/clubs/waumobil-388.webp"
+    }
+  ],
+  "notes": [
+    "32 eindeutige Artikel aus allen sechs öffentlichen Hauptkategorien; Kleidung 22, Heimtextilien 2, Tiere 4, Accessoires 5, Gutscheine 1, Sonderartikel 0; Überschneidungen nach Artikel-ID zusammengeführt.",
+    "Alle öffentlich sichtbaren Optionswerte übernommen. Nur tatsächlich abgerufene Varianten enthalten einen verbindlich zugeordneten Quellenpreis; übrige Kombinationen bleiben Ab-Preise.",
+    "Preise einschließlich ungewöhnlicher Centbeträge unverändert aus der Quelle übernommen. Keine Pauschale für große Logos erfunden.",
+    "Die sachfremde EMC-Überschrift beim Waumobil-Herrenshirt 406 wurde aus den normalisierten Details entfernt; Rohquelle bleibt im Rechercheordner.",
+    "Größen/Farben, die nur in Produktbeschreibungen stehen, sind als beschriebene Optionen erhalten; keine erfundenen bestellbaren Varianten.",
+    "Gutschein ohne Bestickungsoption. Produktfotografien stammen unverändert aus dem Quellshop; lediglich WebP-Kompression und Größenbegrenzung."
+  ],
+  "normalizationNotes": [
+    "Artikel 398: Beschreibung auf Material- und Produktangaben gekürzt; überholte Kontaktangaben und medizinische FAQ nicht übernommen."
+  ]
+}

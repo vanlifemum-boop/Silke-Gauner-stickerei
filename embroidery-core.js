@@ -1,10 +1,11 @@
-export const LOGO_BRANDS=[{id:'forster',name:'Forster'},{id:'benimar',name:'Benimar'},{id:'karmann',name:'Karmann Club'},{id:'eura-mobil',name:'Eura Mobil'},{id:'own',name:'Eigenes Firmen- oder Vereinslogo'}];
+export const LOGO_BRANDS=[{id:'forster',name:'Forster'},{id:'benimar',name:'Benimar'},{id:'karmann',name:'Karmann Club'},{id:'eura-mobil',name:'Eura Mobil'},{id:'waumobil',name:'Waumobil'},{id:'own',name:'Eigenes Firmen- oder Vereinslogo'}];
 export const DESIGN_SIZES=[{id:'small',label:'Kleines Logo',detail:'Dezent & persönlich'},{id:'large',label:'Großes Logo',detail:'Größere Stickfläche · höherer Aufwand'}];
 export const DESIGN_THREADS=['Wie im Logo','Rot','Weiß','Anthrazit','Navy','Silber'];
 const positions={
  upper:[['chest','Vorne auf der Brust'],['sleeve','Am Ärmel'],['lower-left','Unten links']],
  vest:[['chest','Vorne auf der Brust'],['back','Auf dem Rücken'],['lower-left','Unten links']],
  apron:[['chest','Vorne auf dem Latz'],['pocket','Auf der Tasche'],['lower-left','Unten links']],
+ mask:[['left','Links außen'],['right','Rechts außen'],['custom-position','Position nach Absprache']],
  trousers:[['thigh','Vorne am Oberschenkel'],['back-pocket','Auf der Gesäßtasche'],['lower-leg','Unten am Hosenbein']],
  cap:[['front','Vorne mittig'],['side','Seitlich'],['back','Hinten']],
  flat:[['corner','Unten links / Ecke'],['center','Mittig'],['border','Am Rand / auf der Bordüre']],
@@ -17,14 +18,15 @@ export function textileKind(p){
  if(/hosenträger/.test(name))return 'braces';
  if(/weste|\bvest\b/.test(name))return 'vest';
  if(/schürze/.test(name))return 'apron';
+ if(/gesichtsmaske|mund.*nas|maske/.test(name))return 'mask';
  if(/hose|pants|bermuda|shorts/.test(name))return 'trousers';
  if(/sock/.test(name))return 'socks';
  if(/cap|beanie|mütze/.test(name))return 'cap';
  if(/tasche|korb|hülle/.test(name))return 'bag';
- if(/handtuch|handtücher|tisch|matte|schal|halstuch|schonbezug/.test(name))return 'flat';
+ if(/handtuch|handtücher|tisch|matte|schal|halstuch|schonbezug|decke|hundetuch/.test(name))return 'flat';
  return 'upper';
 }
-export const canEmbroider=p=>!!p&&!/gutschein/i.test(p.name);
+export const canEmbroider=p=>!!p&&p.embroideryAvailable!==false&&!/gutschein/i.test(p.name);
 export const logoPositions=p=>positions[textileKind(p)].map(([id,label])=>({id,label,short:label,detail:label}));
 export function createEmbroidery(p,previous={}){
  previous=previous||{};

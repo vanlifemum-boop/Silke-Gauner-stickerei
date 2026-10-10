@@ -1,0 +1,11 @@
+{
+  "retrievedAt": "2026-10-10",
+  "brandSourceUrl": "https://waumobil.eu/gebrauchtes-wohnmobil-anbieten/",
+  "shopUrl": "https://waumobil.handelsvertretung-gauder.de/",
+  "evidence": "The official Waumobil page links this merchandise shop under Fan-Shop mit Waumobil Merchandising.",
+  "logo": {
+    "file": "assets/clubs/waumobil-logo.svg",
+    "sourceUrl": "https://waumobil.handelsvertretung-gauder.de/media/vector/f0/c9/d8/Logo_Waumobi.svg",
+    "sha256": "81c1c97b478746c2941ff922a5cf42fd7836929a8386e4e89ce3588281d0d1c1"
+  }
+}
