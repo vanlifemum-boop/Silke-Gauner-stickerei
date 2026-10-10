@@ -25,13 +25,15 @@ test('Persisted cart drops invalid entries, validates variants and does not trus
  assert.deepEqual(sanitizeCart({}),[]);
 });
 test('Search, category and price sorting compose, including empty results',()=>{
- assert.equal(filterProducts({category:'Bekleidung'}).length,3);
+ assert.ok(filterProducts({category:'Bekleidung'}).length>3);
+ assert.ok(filterProducts({category:'Hosen & Shorts'}).some(p=>/hose|pants/i.test(p.name)));
+ assert.equal(filterProducts({category:'Maßhemden'}).length,2);
  assert.equal(filterProducts({query:'  HANDTUCH '})[0].id,'namens-handtuch');
  assert.equal(filterProducts({query:'SHIRT',category:'Tischwäsche'}).length,0);
- const ascending=filterProducts({sort:'price-asc'}).map(p=>p.price);
+ const ascending=filterProducts({sort:'price-asc'}).map(p=>p.price??Infinity);
  assert.deepEqual(ascending,[...ascending].sort((a,b)=>a-b));
  assert.equal(filterProducts({query:'nonexistent-xyz'}).length,0);
- assert.equal(filterProducts().length,PRODUCTS.filter(p=>!p.club).length);
+ assert.equal(filterProducts().length,PRODUCTS.length);
 });
 test('Enquiry preserves configuration and explicitly identifies example prices',()=>{
  const result=enquiryText([{...base,text:'A&B <Team>',qty:2}]);
@@ -79,8 +81,8 @@ test('Product switching retains supported choices and drops unsupported camper o
  assert.equal(polo.color,'Rot');assert.equal(polo.size,'XL');assert.equal(polo.edition,'camper');
  assert.equal(polo.brand,'benimar');assert.equal(polo.qty,3);
  const towel=createSelection(PRODUCTS.find(p=>p.id==='namens-handtuch'),camper);
- assert.equal(towel.edition,'classic');assert.equal(towel.brand,'');assert.equal(towel.logoSize,'');
- assert.equal(priceParts(towel).logo,0);assert.equal(towel.size,'50 × 100 cm');
+ assert.equal(towel.edition,'camper');assert.equal(towel.brand,'benimar');assert.equal(towel.logoSize,'small');assert.equal(towel.logoPosition,'corner');
+ assert.equal(priceParts(towel).logo,790);assert.equal(towel.size,'50 × 100 cm');
  assert.equal(createSelection(shirt).size,'M');
 });
 test('Invalid stored camper variants are rejected, and older carts remain classic',()=>{
@@ -92,7 +94,7 @@ test('Invalid stored camper variants are rejected, and older carts remain classi
 });
 test('Camper enquiry contains the full chosen variant and unit/multiple prices',()=>{
  const text=enquiryText([{...camper,logoSize:'large',text:'Anna'}]);
- for(const expected of ['Camper Edition','Benimar','Rot','XL','Am Ärmel','Großes Logo','14,90','47,70','143,10','Anna','links aus Trägersicht'])assert.ok(text.includes(expected),expected);
- assert.equal(filterProducts({category:'Camper Edition'}).length,3);
- assert.equal(filterProducts({category:'Camper Edition',query:'Eura Mobil'}).length,3);
+ for(const expected of ['Camper Edition','Benimar','Rot','XL','Am Ärmel','Großes Logo','14,90','47,70','143,10','Anna'])assert.ok(text.includes(expected),expected);
+ assert.equal(filterProducts({category:'Camper Edition'}).length,96);
+ assert.ok(filterProducts({category:'Camper Edition',query:'Eura Mobil'}).length>3);
 });

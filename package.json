@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check app.js && node --check garment-preview.js && node --check club-core.js && node --check club-ui.js && node --test tests/*.test.js"
+    "check": "node --check app.js && node --check shop-core.js && node --check garment-preview.js && node --check club-core.js && node --check club-ui.js && node --check embroidery-core.js && node --check embroidery-ui.js && node --check tailored-products.js && node --check contact.js && node --test tests/*.test.js"
   }
 }

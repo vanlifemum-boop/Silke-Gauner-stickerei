@@ -29,11 +29,15 @@ jobs:
           node --check garment-preview.js
           node --check club-core.js
           node --check club-ui.js
+          node --check embroidery-core.js
+          node --check embroidery-ui.js
+          node --check tailored-products.js
+          node --check contact.js
           node --test tests/*.test.js
       - name: Website zusammenstellen
         run: |
           mkdir -p _site
-          cp index.html styles.css app.js shop-core.js garment-preview.js club-core.js club-ui.js club-products.js .nojekyll _site/
+          cp index.html styles.css app.js shop-core.js garment-preview.js club-core.js club-ui.js club-products.js embroidery-core.js embroidery-ui.js tailored-products.js contact.js .nojekyll _site/
           cp -R assets _site/assets
       - name: Pages vorbereiten
         uses: actions/configure-pages@v5

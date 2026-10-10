@@ -12,8 +12,8 @@ test('Both source catalogues are complete, individually routed and backed by loc
  assert.equal(clubProducts('eura-mobil').length,39);
  assert.equal(clubProducts('forster').length,51);
  assert.equal(clubProducts('benimar').length,0);
- assert.equal(clubProducts('knaus').length,0);
- assert.equal(new Set(PRODUCTS.map(p=>p.id)).size,97);
+ assert.equal(clubProducts('karmann').length,0);
+ assert.equal(new Set(PRODUCTS.map(p=>p.id)).size,99);
  for(const p of CLUB_PRODUCTS){
   const expected=p.club==='eura-mobil'?'euramobilclub-shop.de':'forster-fahrer-shop.de';
   assert.equal(new URL(p.sourceUrl).hostname,expected);
@@ -24,7 +24,8 @@ test('Both source catalogues are complete, individually routed and backed by loc
  }
  assert.equal(CLUB_PRODUCTS.filter(p=>!p.image).length,2);
  for(const club of CLUBS)if(club.logo)assert.ok(existsSync(new URL('../'+club.logo,import.meta.url)));
- assert.equal(CLUBS.find(c=>c.id==='knaus').logo,null);
+ assert.ok(CLUBS.find(c=>c.id==='karmann').logo.endsWith('karmann-logo.png'));
+ assert.equal(CLUBS.find(c=>c.id==='knaus'),undefined);
 });
 test('Club, category, search and price sorting combine without mixing catalogues',()=>{
  const items=filterClubProducts('forster',{category:'T-Shirts & Polos',query:'herren',sort:'price-asc'});
@@ -84,10 +85,10 @@ test('Mixed cart preserves example prices and flags imported from-prices',()=>{
  const example=createSelection(PRODUCTS.find(p=>p.id==='camper-tshirt'),{edition:'camper'});
  const club={...poloChoice(),options:{'7':'449','9':'192','13':'227'},qty:2};
  const cart=[example,club];
- assert.deepEqual(cartPriceInfo(cart),{amount:3280+2*2995,from:true,unknown:0,hasClub:true});
+ assert.deepEqual(cartPriceInfo(cart),{amount:3280+2*2995,from:true,unknown:0,hasClub:true,pendingEmbroidery:0});
  assert.match(enquiryText(cart),/Orientierungssumme bekannter Preise: ab 92,70/);
  assert.match(enquiryText(cart),/Beispielpreis pro Stück/);
- assert.match(enquiryText(cart),/Preis pro Stück laut Club-Shop/);
+ assert.match(enquiryText(cart),/Grundpreis pro Stück laut Club-Shop/);
 });
 test('Club pages render all real options safely and missing photos have a deliberate placeholder',()=>{
  for(const p of CLUB_PRODUCTS){
@@ -102,10 +103,10 @@ test('Club pages render all real options safely and missing photos have a delibe
  assert.ok(safe.includes('&lt;img src=x'));
  assert.ok(clubHighlights().includes('OFFIZIELLE CLUB-BESTICKUNG'));
  assert.ok(clubCatalog(CLUBS.find(c=>c.id==='benimar')).includes('KOLLEKTION IN VORBEREITUNG'));
- assert.ok(clubCatalog(CLUBS.find(c=>c.id==='knaus')).includes('passende Club-Logo'));
+ assert.ok(clubCatalog(CLUBS.find(c=>c.id==='karmann')).includes('karmann-mobil-club.handelsvertretung-gauder.de'));
  const yearly=get('club-eura-mobil-761');assert.ok(!yearly.name.includes('Vorbestellen'));assert.match(yearly.notice,/endete am 27.09.2026/);
 });
 test('Every shipped module is included in the Pages deployment',()=>{
  const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
- for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js'])assert.ok(workflow.includes(file),file);
+ for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js'])assert.ok(workflow.includes(file),file);
 });

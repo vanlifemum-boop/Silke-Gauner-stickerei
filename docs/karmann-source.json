@@ -1,0 +1,18 @@
+{
+  "name": "Karmann-Mobil-Club",
+  "displayName": "Karmann Club",
+  "clubUrl": "https://www.karmann-mobil-club.de/",
+  "shopUrl": "https://karmann-mobil-club.handelsvertretung-gauder.de/",
+  "retrievedAt": "2026-10-10",
+  "logo": {
+    "localPath": "assets/clubs/karmann-logo.png",
+    "sourceUrl": "https://www.karmann-mobil-club.de/kmc-logo-02_220_0.png",
+    "matchingShopAssetUrl": "https://karmann-mobil-club.handelsvertretung-gauder.de/media/image/e0/5f/91/kmc-logo-02_220_0.png",
+    "sha256": "882d1183c046aa4a5c61b9131cf523bc239489a27c0afec4a7ee51cca4a22619",
+    "bytes": 32630
+  },
+  "scope": "Logo and identity researched only; Karmann product extraction was not part of this task.",
+  "evidence": [
+    "The same logo asset is displayed on the official Karmann-Mobil-Club website and the linked club shop. Both files have the SHA-256 checksum recorded above."
+  ]
+}

@@ -6,13 +6,15 @@ Website-Entwurf für Handelsvertretung & Stickerei Sylke Gauder in Rot, Anthrazi
 
 ## Enthalten
 
-- Startseite, Shop und sieben frei gestaltbare Produktideen
+- Startseite und gemeinsamer Shop mit 99 Einträgen: 90 Clubartikel, sieben Produktideen sowie Maßhemd und Maßbluse
 - Eigene Club-Reiter mit 39 Eura-Mobil- und 51 Forster-Artikeln aus den bestehenden Shops
 - Originale Produktfotos, Größen, Farben und Logo-Ausführungen; Club-Suche und Kategorien
-- Benimar und Knaus als angekündigte Kollektionen; vorhandenes Benimar-Logo integriert
+- Benimar und Karmann Club mit Original-Logos und Links zu den bisherigen Shops; Produktübernahme folgt
 - Produktsuche, Kategorien und Preissortierung
 - Produktauswahl mit T-Shirt, sieben Farben und Größen XS–3XL
-- Camper Edition für T-Shirt, Polo und Hoodie: Marke, drei Positionen und zwei Logogrößen
+- Logo-Bestickung für alle Textilien: Club- oder eigenes Logo, drei zum Artikel passende Positionen, kleine/große Ausführung
+- Eigene Kategorien für Hosen, Jacken und Pullover; Maßhemden und Maßblusen mit Stoffwunsch, Ärmel, Kragen, Manschetten und Maßaufnahme
+- Direkter WhatsApp-Link zur Mobilnummer 0163 / 6997 060; Festnetznummer entfernt
 - Live-Vorschau für Textilfarbe, Markenname, Platzierung und Logogröße
 - Varianten, Wunschtext, Garnfarbe und schematische Stickvorschau
 - Warenkorb mit lokaler Speicherung und E-Mail-Anfrage
@@ -41,14 +43,17 @@ Alle Asset-Pfade sind relativ, sodass die Website auch unter dem Repository-Unte
 
 Mit Node.js: `npm run check`
 
-Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 21 Funktionstests bestehen; 113 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Club-Erweiterung war in der Arbeitsumgebung nicht verfügbar.
+Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 29 Funktionstests bestehen; 207 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
 
 ## Inhalte bearbeiten
 
 - `shop-core.js`: Produktideen, Beispielpreise und gemeinsame Warenkorb-Logik
 - `club-products.js`: 90 importierte Clubartikel und verifizierte Variantenpreise
 - `club-core.js`: Club-Auswahl, Variantenvalidierung, Preisberechnung und Quellenlinks
-- `club-ui.js`: Club-Reiter, Katalog- und Produktseiten
+- `club-ui.js`: Club-Reiter, Maßhemden-Bereich, Katalog- und Produktseiten
+- `embroidery-core.js` / `embroidery-ui.js`: artikelgerechte Stickpositionen, Logo-Auswahl und Aufpreisanfrage
+- `tailored-products.js`: Maßhemden und Maßblusen aus dem bestehenden Angebot
+- `contact.js`: WhatsApp-Ziel und Kontakt-Icon
 - `docs/club-sources.json`: Herkunft der Logos und Produktbilder
 - `app.js`: Seiteninhalte und Interaktionen
 - `garment-preview.js`: schematische, interaktive Textilvorschau
@@ -65,19 +70,28 @@ Direktlink: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/produkt/c
 
 Beispielpreise: T-Shirt 24,90 €, kleines Logo +7,90 €, großes Logo +14,90 €. Der Wechsel von klein auf groß erhöht den Stückpreis um 7,00 €. Optionaler zusätzlicher Wunschtext kostet im Entwurf +7,90 €. Mengen, Logo-Aufpreis und Gesamtsumme werden gemeinsam berechnet; jede Konfiguration bleibt in Warenkorb und Anfrage erhalten.
 
-Markenoptionen: Forster, Benimar, Knaus, Karmann-Mobil und Eura Mobil. Die diktierte Angabe „Fürstler“ wurde als Forster interpretiert; wegen „Knausman“ sind Knaus und Karmann-Mobil getrennt vorhanden. Eura Mobil, Forster und Benimar nutzen ihre vorhandenen Club-Logos auch in der schematischen Vorschau. Knaus und Karmann-Mobil zeigen vorläufig einen Markennamen als Platzhalter.
+Markenoptionen: Forster, Benimar, Karmann Club, Eura Mobil und eigenes Firmen-/Vereinslogo. Knaus wurde auf Wunsch entfernt. Alle vier Clubs nutzen ihre vorhandenen Club-Logos in der schematischen Vorschau. Eigene Logos erscheinen bis zur Abstimmung als beschrifteter Platzhalter.
 
-Positionen: vorne auf der linken Brust, linker Ärmel oder vorne unten links am Saum. „Links“ gilt aus Trägersicht. Konkrete Stickmaße und Logo-Ausführung sind noch abzustimmen. Alle Preiswerte stehen zentral in `shop-core.js`.
+Bei Oberteilen sind Brust, Ärmel oder unten links wählbar. Hosen bieten Oberschenkel, Gesäßtasche und Hosenbein; Westen, Schürzen, Caps, Taschen und Heimtextilien haben passende eigene Positionen. Konkrete Stickmaße und die Umsetzung stimmen wir persönlich ab. Die Beispiel-Aufpreise gelten ausschließlich für die sieben Produktideen.
 
 ## Club-Sortimente
 
 - Eura Mobil: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/eura-mobil
 - Forster: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/forster
 - Benimar: Vorschauseite mit Original-Logo, Produkte folgen.
-- Knaus: Vorschauseite, Produkte und das konkrete Club-Logo folgen.
+- Karmann Club: Vorschauseite mit Original-Logo und Link zum bestehenden Gauder-Shop; Produkte folgen.
 
 Quellen: https://euramobilclub-shop.de/ und https://forster-fahrer-shop.de/, abgerufen am 10.10.2026. Eura Mobil Club verlinkt Gauder auf https://www.euramobilclub.de/ als Webshop. Der Benimar-Schriftzug stammt aus https://benimar-fans-shop.de/. Logos und Produktfotos wurden lokal gespeichert; Fotos werden für die Web-Auslieferung als WebP verkleinert. Zwei Artikel haben im Quellshop kein Produktfoto und verwenden deshalb eine neutrale Bild-Platzhalterfläche.
 
 Exakt überprüfte Varianten zeigen ihren Stückpreis. Für weitere Kombinationen steht ein gekennzeichneter Ab-Preis; Verfügbarkeit und endgültiger Preis werden persönlich bestätigt. Der pauschale Beispiel-Aufpreis der frei gestaltbaren Camper Edition wird auf Clubartikel nicht angewendet. Bei den Miami-Tischsets wird die optionale Wunschbestickung mit dem Original-Aufpreis von 10,00 € pro Stück berechnet. Der Wunschtext ist auf 15 Zeichen begrenzt. Bekannte nicht verfügbare Kombinationen können nicht zur Anfrage hinzugefügt werden. Die abgelaufene Vorbestellfrist des EMC-Jahresshirts 2026 wird ausdrücklich angegeben.
 
 Auswahl, Stückzahl, Logo-Ausführung und gesondert anzubietende Wünsche bleiben im Anfragekorb und im E-Mail-Entwurf erhalten. Preiswerte aus dem Browser-Speicher werden nicht übernommen. Die Produktdaten sind eine datierte Momentaufnahme und werden nicht automatisch mit den Originalshops synchronisiert.
+
+
+## Maßanfertigung und zusätzliche Bestickung
+
+Maßhemden und Maßblusen stammen aus https://www.individuelle-masshemden.de/. Es werden belegte Wünsche für Stoff/Farbe, Lang- oder Kurzarm, Kragen, Manschetten und persönliche Maßaufnahme angeboten. Bei Kurzarm entfällt die Manschette. Preise werden angefragt; historische Werbepreise und erfundene Standardgrößen werden nicht übernommen. Fotos und Varianten-Herkunft sind in `docs/tailored-sources.json` dokumentiert.
+
+Bei realen Clubartikeln wird eine frei gewählte zusätzliche oder abweichende Bestickung gesondert angeboten. Der bekannte Grundpreis bleibt erhalten; Produktseite, Warenkorb und E-Mail weisen auf den noch fehlenden Stickaufpreis hin. Gutscheine sind vom Stickkonfigurator ausgenommen. Anfrageartikel erscheinen niemals als kostenlos.
+
+Das Karmann-Mobil-Club-Logo stammt aus dem offiziellen Clubauftritt und ist identisch im bestehenden Gauder-Clubshop vorhanden. Herkunft: `docs/karmann-source.json`. Der WhatsApp-Link öffnet https://wa.me/491636997060 ohne automatisch eine Nachricht zu versenden.

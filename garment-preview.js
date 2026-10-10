@@ -21,7 +21,7 @@ export function garmentPreview(product,item,{compact=false}={}) {
  const clubLogo=camper?clubById(item.brand)?.logo:null;
  const logoHeight=clubLogo?logoWidth*.58:large?27:18;
  const title=`${product.name} in ${item.color}${camper?`, ${labels.brand}, ${labels.position}, ${labels.logoSize}`:''}`;
- const word=labels.brand.toLocaleUpperCase('de-DE');
+ const word=item.brand==='own'?'DEIN LOGO':labels.brand.toLocaleUpperCase('de-DE');
  const fontSize=Math.min(large?19:12,logoWidth/(Math.max(word.length,1)*.66));
  return `<svg class="garment-art${compact?' compact':''}" viewBox="0 0 500 560" role="img" aria-label="${e(title)}" xmlns="http://www.w3.org/2000/svg">
  <defs><linearGradient id="${id}-light" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#fff" stop-opacity=".16"/><stop offset=".45" stop-color="#fff" stop-opacity=".02"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient><filter id="${id}-shadow" x="-30%" y="-20%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#171c27" flood-opacity=".16"/></filter></defs>

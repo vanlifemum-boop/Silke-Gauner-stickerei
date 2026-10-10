@@ -1,0 +1,145 @@
+{
+  "retrievedAt": "2026-10-10",
+  "sourceUrl": "https://www.individuelle-masshemden.de/",
+  "products": [
+    {
+      "id": "masshemd",
+      "imageSourceUrl": "https://www.individuelle-masshemden.de/wp-content/uploads/Hemd-1a.jpg",
+      "options": [
+        {
+          "id": "sleeve",
+          "name": "Ärmellänge",
+          "values": [
+            "Langarm",
+            "Kurzarm"
+          ],
+          "sourceUrl": "https://www.individuelle-masshemden.de/"
+        },
+        {
+          "id": "fabric",
+          "name": "Stoffwunsch",
+          "type": "free-text",
+          "hint": "Farbe, Muster oder Stoffwunsch; endgültige Auswahl aus dem Stoffmusterbuch.",
+          "sourceUrl": "https://www.individuelle-masshemden.de/"
+        },
+        {
+          "id": "collar",
+          "name": "Kragenwunsch",
+          "values": [
+            "Kent Classic",
+            "Kent Modern",
+            "Bristol",
+            "Stehkragen",
+            "Haifisch Small",
+            "Haifisch Medium",
+            "Haifisch Large",
+            "Tabkragen",
+            "Button Down"
+          ],
+          "allowConsultation": true,
+          "sourceUrl": "https://www.individuelle-masshemden.de/wp-content/uploads/photo_2021-03-02_15-28-31.jpg",
+          "note": "Gut lesbare Teilmenge der abgebildeten Kragen; Wünsche, keine verbindlich bestätigte Kombination."
+        },
+        {
+          "id": "cuff",
+          "name": "Manschettenwunsch",
+          "values": [
+            "Schräg",
+            "Rund",
+            "Vario",
+            "Schräg Zweiknopf"
+          ],
+          "allowConsultation": true,
+          "sourceUrl": "https://www.individuelle-masshemden.de/wp-content/uploads/photo_2021-03-02_15-28-35.jpg",
+          "note": "Gut lesbare Teilmenge der abgebildeten Manschetten; für Langarm-Anfragen."
+        },
+        {
+          "id": "measurement",
+          "name": "Maßaufnahme",
+          "values": [
+            "Termin in Spangenberg",
+            "Maßaufnahme vor Ort anfragen"
+          ],
+          "sourceUrl": "https://www.individuelle-masshemden.de/"
+        }
+      ],
+      "measurement": {
+        "mode": "Persönliche Maßaufnahme",
+        "onSite": "Aufmaß beim Kunden vor Ort wird angeboten; Termin und Anfahrt anfragen.",
+        "numericMeasurements": null,
+        "note": "Keine numerischen Körpermaß-Felder oder Messanleitung veröffentlicht. Keine Standardgrößen ergänzen.",
+        "appointmentUrl": "https://www.individuelle-masshemden.de/termin-buchen/"
+      }
+    },
+    {
+      "id": "massbluse",
+      "imageSourceUrl": "https://www.individuelle-masshemden.de/wp-content/uploads/photo_2021-03-02_15-27-08.jpg",
+      "options": [
+        {
+          "id": "sleeve",
+          "name": "Ärmellänge",
+          "values": [
+            "Langarm",
+            "Kurzarm"
+          ],
+          "sourceUrl": "https://www.individuelle-masshemden.de/"
+        },
+        {
+          "id": "fabric",
+          "name": "Stoffwunsch",
+          "type": "free-text",
+          "hint": "Farbe, Muster oder Stoffwunsch; endgültige Auswahl aus dem Stoffmusterbuch.",
+          "sourceUrl": "https://www.individuelle-masshemden.de/"
+        },
+        {
+          "id": "collar",
+          "name": "Kragenwunsch",
+          "values": [
+            "Kent Classic",
+            "Kent Modern",
+            "Bristol",
+            "Stehkragen",
+            "Haifisch Small",
+            "Haifisch Medium",
+            "Haifisch Large",
+            "Tabkragen",
+            "Button Down"
+          ],
+          "allowConsultation": true,
+          "sourceUrl": "https://www.individuelle-masshemden.de/wp-content/uploads/photo_2021-03-02_15-28-31.jpg",
+          "note": "Gut lesbare Teilmenge der abgebildeten Kragen; Wünsche, keine verbindlich bestätigte Kombination."
+        },
+        {
+          "id": "cuff",
+          "name": "Manschettenwunsch",
+          "values": [
+            "Schräg",
+            "Rund",
+            "Vario",
+            "Schräg Zweiknopf"
+          ],
+          "allowConsultation": true,
+          "sourceUrl": "https://www.individuelle-masshemden.de/wp-content/uploads/photo_2021-03-02_15-28-35.jpg",
+          "note": "Gut lesbare Teilmenge der abgebildeten Manschetten; für Langarm-Anfragen."
+        },
+        {
+          "id": "measurement",
+          "name": "Maßaufnahme",
+          "values": [
+            "Termin in Spangenberg",
+            "Maßaufnahme vor Ort anfragen"
+          ],
+          "sourceUrl": "https://www.individuelle-masshemden.de/"
+        }
+      ],
+      "measurement": {
+        "mode": "Persönliche Maßaufnahme",
+        "onSite": "Aufmaß beim Kunden vor Ort wird angeboten; Termin und Anfahrt anfragen.",
+        "numericMeasurements": null,
+        "note": "Keine numerischen Körpermaß-Felder oder Messanleitung veröffentlicht. Keine Standardgrößen ergänzen.",
+        "appointmentUrl": "https://www.individuelle-masshemden.de/termin-buchen/"
+      }
+    }
+  ],
+  "pricePolicy": "Preis auf Anfrage: historische Werbepreise ohne bestätigten Preisstand und ohne vollständige Servicekosten."
+}
