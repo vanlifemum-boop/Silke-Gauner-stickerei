@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check app.js && node --test tests/shop.test.js"
+    "check": "node --check app.js && node --check garment-preview.js && node --test tests/shop.test.js"
   }
 }

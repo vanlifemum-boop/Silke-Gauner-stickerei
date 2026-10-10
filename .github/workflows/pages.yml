@@ -26,11 +26,12 @@ jobs:
       - name: Website prüfen
         run: |
           node --check app.js
+          node --check garment-preview.js
           node --test tests/shop.test.js
       - name: Website zusammenstellen
         run: |
           mkdir -p _site
-          cp index.html styles.css app.js shop-core.js .nojekyll _site/
+          cp index.html styles.css app.js shop-core.js garment-preview.js .nojekyll _site/
           cp -R assets _site/assets
       - name: Pages vorbereiten
         uses: actions/configure-pages@v5

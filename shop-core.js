@@ -1,5 +1,6 @@
-export const CATEGORIES = ['Alle Produkte', 'Bekleidung', 'Badtextilien', 'Accessoires', 'Tischwäsche'];
+export const CATEGORIES = ['Alle Produkte', 'Camper Edition', 'Bekleidung', 'Badtextilien', 'Accessoires', 'Tischwäsche'];
 export const PRODUCTS = [
+ {id:'camper-tshirt',name:'Dein T-Shirt',category:'Bekleidung',tag:'DEIN CAMPER. DEIN SHIRT.',price:2490,image:'tshirt',color:'Anthrazit',colors:['Anthrazit','Schwarz','Weiß','Navy','Rot','Royalblau','Tannengrün'],sizes:['XS','S','M','L','XL','XXL','3XL'],camper:true,garment:'tshirt',description:'Dein Lieblingsshirt für unterwegs. Wähle Farbe und Größe – und gestalte die Camper Edition mit deiner Marke, deiner Wunschposition und einem kleinen oder großen Logo.',details:['T-Shirt mit Rundhalsausschnitt als Produktidee','Camper Edition mit wählbarer Marke, Position und Logogröße','Alle Varianten und Preise sind Beispiele für den Shop-Entwurf'],position:'Linke Brust'},
  {id:'team-polo',name:'Das Team-Polo',category:'Bekleidung',tag:'FÜR DEIN TEAM',price:2990,image:'polo',color:'Anthrazit',colors:['Anthrazit','Weiß','Rot'],sizes:['XS','S','M','L','XL','XXL','3XL'],description:'Ein gemeinsamer Auftritt beginnt mit den kleinen Details. Dieses Polo ist unsere Entwurfsidee für deinen Verein, dein Unternehmen oder dein nächstes Teamevent.',details:['Klassischer Polokragen mit Knopfleiste','Bestickung auf der linken Brust vorgesehen','Einzelstück oder Team-Ausstattung anfragen'],position:'Linke Brust'},
  {id:'lieblings-hoodie',name:'Dein Lieblings-Hoodie',category:'Bekleidung',tag:'DEIN NAME. DEIN STIL.',price:4990,image:'hoodie',color:'Navy',colors:['Navy','Anthrazit','Rot'],sizes:['XS','S','M','L','XL','XXL'],description:'Für Lieblingsmenschen und Lieblingsmomente. Ein unkomplizierter Hoodie, der mit einem Namen oder kurzen Wunschtext ganz persönlich wird.',details:['Entwurf mit Kapuze und Kängurutasche','Kurzer Wunschtext als persönliche Stickerei','Als Geschenk oder für dich selbst'],position:'Linke Brust'},
  {id:'namens-handtuch',name:'Handtuch mit Herz',category:'Badtextilien',tag:'KLEINE GESTE. GROSSE FREUDE.',price:2490,image:'towel',color:'Weiß',colors:['Weiß','Rot','Anthrazit'],sizes:['50 × 100 cm','70 × 140 cm'],description:'Ein Name macht aus einem Handtuch ein Lieblingsstück. Eine persönliche Geschenkidee für Geburtstage, einen Einzug oder einfach so.',details:['Entwurf für ein einzelnes besticktes Handtuch','Dein Wunschname auf dem Bordürenbereich','Die Abbildung zeigt eine mögliche Farbkombination'],position:'Bordüre'},
@@ -7,23 +8,57 @@ export const PRODUCTS = [
  {id:'kuechen-schuerze',name:'Schürze für Lieblingsköche',category:'Accessoires',tag:'MIT LIEBE GEMACHT',price:3290,image:'apron',color:'Tannengrün',colors:['Tannengrün','Anthrazit','Rot'],sizes:['Einheitsgröße'],description:'Für Menschen, die mit Liebe kochen. Mit Namen oder einer kleinen Botschaft wird diese Schürze zu einer persönlichen Geschenkidee.',details:['Latzschürze als Produktentwurf','Wunschtext mittig auf dem Brustbereich','Für die heimische Küche oder das Gastronomie-Team'],position:'Brustbereich'},
  {id:'tischwaesche',name:'Tischwäsche mit Initialen',category:'Tischwäsche',tag:'DEIN TISCH. DEIN DETAIL.',price:3990,image:'table',color:'Weiß',colors:['Weiß','Hellgrau'],sizes:['140 × 140 cm','140 × 180 cm','Wunschmaß anfragen'],description:'Ein schön gedeckter Tisch trägt deine Handschrift. Feine Initialen geben der Tischwäsche eine persönliche Note. Andere Maße stimmen wir mit dir ab.',details:['Beispiel für Tischwäsche mit Monogramm','Initialen auf einer Ecke vorgesehen','Individuelle Maße und Materialien auf Anfrage'],position:'Ecke'}
 ];
-export const COLORS = {'Anthrazit':'#36383b','Schwarz':'#17181b','Weiß':'#ffffff','Rot':'#dc3343','Navy':'#263446','Tannengrün':'#244b42','Hellgrau':'#cfd2d8'};
+for(const p of PRODUCTS){if(p.id==='team-polo'){p.camper=true;p.garment='polo';}if(p.id==='lieblings-hoodie'){p.camper=true;p.garment='hoodie';}}
+export const COLORS = {'Anthrazit':'#36383b','Schwarz':'#17181b','Weiß':'#ffffff','Rot':'#dc3343','Navy':'#263446','Royalblau':'#28569f','Tannengrün':'#244b42','Hellgrau':'#cfd2d8'};
 export const THREADS = {'Rot':'#e83443','Weiß':'#ffffff','Anthrazit':'#292b30','Navy':'#203b6a','Silber':'#9aa3af'};
 export const PERSONALIZATION_PRICE=790;
+export const CAMPER_BRANDS = [
+ {id:'forster',name:'Forster'}, {id:'benimar',name:'Benimar'}, {id:'knaus',name:'Knaus'}, {id:'karmann',name:'Karmann-Mobil'}, {id:'eura-mobil',name:'Eura Mobil'}
+];
+export const LOGO_POSITIONS = [
+ {id:'chest',label:'Vorne auf der Brust',short:'Brust vorne',detail:'Auf der linken Brust'},
+ {id:'sleeve',label:'Am Ärmel',short:'Ärmel',detail:'Auf dem linken Ärmel'},
+ {id:'lower-left',label:'Unten links',short:'Unten links',detail:'Vorne am linken Saum'}
+];
+// Entwurfspreise in Cent. Ein großes Logo kostet 7,00 Euro mehr als ein kleines.
+export const LOGO_SIZES = [
+ {id:'small',label:'Kleines Logo',detail:'Dezent & persönlich',price:790},
+ {id:'large',label:'Großes Logo',detail:'Sichtbar & ausdrucksstark',price:1490}
+];
+export function isCamper(item){return item?.edition==='camper'&&!!PRODUCTS.find(p=>p.id===item.productId)?.camper;}
+export function camperLabels(item){return {
+ brand:CAMPER_BRANDS.find(x=>x.id===item.brand)?.name||'',
+ position:LOGO_POSITIONS.find(x=>x.id===item.logoPosition)?.label||'',
+ logoSize:LOGO_SIZES.find(x=>x.id===item.logoSize)?.label||''
+};}
+export function createSelection(p,previous={}){
+ const camper=p.camper&&previous.edition==='camper';
+ return {productId:p.id,color:p.colors.includes(previous.color)?previous.color:p.color,size:p.sizes.includes(previous.size)?previous.size:p.sizes.includes('M')?'M':p.sizes[0],
+ text:String(previous.text||'').slice(0,20),thread:Object.hasOwn(THREADS,previous.thread)?previous.thread:'Rot',font:['Schreibschrift','Druckschrift'].includes(previous.font)?previous.font:'Schreibschrift',
+ qty:Math.max(1,Math.min(99,Number.parseInt(previous.qty,10)||1)),edition:camper?'camper':'classic',
+ brand:camper?(CAMPER_BRANDS.some(x=>x.id===previous.brand)?previous.brand:'forster'):'',
+ logoPosition:camper?(LOGO_POSITIONS.some(x=>x.id===previous.logoPosition)?previous.logoPosition:'chest'):'',
+ logoSize:camper?(LOGO_SIZES.some(x=>x.id===previous.logoSize)?previous.logoSize:'small'):''};
+}
 export const money = cents => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(cents/100);
 export const escapeHtml = value => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function filterProducts({category='Alle Produkte',query='',sort='featured'}={}) {
  const q=query.toLocaleLowerCase('de-DE').trim();
- let items=PRODUCTS.filter(p=>(category==='Alle Produkte'||p.category===category)&&(!q||`${p.name} ${p.category} ${p.description}`.toLocaleLowerCase('de-DE').includes(q)));
+ let items=PRODUCTS.filter(p=>(category==='Alle Produkte'||(category==='Camper Edition'?p.camper:p.category===category))&&(!q||`${p.name} ${p.category} ${p.description} ${p.camper?'Camper Edition '+CAMPER_BRANDS.map(x=>x.name).join(' '):''}`.toLocaleLowerCase('de-DE').includes(q)));
  if(sort==='price-asc') items.sort((a,b)=>a.price-b.price);
  if(sort==='price-desc') items.sort((a,b)=>b.price-a.price);
  if(sort==='name') items.sort((a,b)=>a.name.localeCompare(b.name,'de'));
  return items;
 }
-export function unitPrice(item) { const p=PRODUCTS.find(p=>p.id===item.productId); return p ? p.price+(item.text?.trim()?PERSONALIZATION_PRICE:0) : 0; }
+export function priceParts(item){const p=PRODUCTS.find(p=>p.id===item.productId);return {
+ base:p?.price||0,
+ logo:isCamper(item)?(LOGO_SIZES.find(x=>x.id===item.logoSize)?.price||0):0,
+ text:item.text?.trim()?PERSONALIZATION_PRICE:0
+};}
+export function unitPrice(item) {const p=PRODUCTS.find(p=>p.id===item.productId);if(!p)return 0;const parts=priceParts(item);return parts.base+parts.logo+parts.text;}
 export function cartTotal(cart) { return cart.reduce((sum,item)=>sum+unitPrice(item)*item.qty,0); }
 export function cartQuantity(cart) { return cart.reduce((sum,item)=>sum+item.qty,0); }
-export function itemKey(item) { return JSON.stringify([item.productId,item.color,item.size,item.text||'',item.thread||'Rot',item.font||'Schreibschrift']); }
+export function itemKey(item) { return JSON.stringify([item.productId,item.color,item.size,item.text||'',item.thread||'Rot',item.font||'Schreibschrift',isCamper(item)?['camper',item.brand,item.logoPosition,item.logoSize]:['classic']]); }
 export function addItem(cart,item) {
  const qty=Math.max(1,Math.min(99,Number.parseInt(item.qty,10)||1));
  const key=itemKey(item), existing=cart.find(x=>itemKey(x)===key);
@@ -35,9 +70,11 @@ export function sanitizeCart(raw) {
  return raw.slice(0,50).flatMap(item=>{
   const p=PRODUCTS.find(p=>p.id===item?.productId);
   if(!p||!p.colors.includes(item.color)||!p.sizes.includes(item.size))return [];
-  return [{productId:p.id,color:item.color,size:item.size,text:String(item.text||'').slice(0,20),thread:Object.hasOwn(THREADS,item.thread)?item.thread:'Rot',font:['Schreibschrift','Druckschrift'].includes(item.font)?item.font:'Schreibschrift',qty:Math.max(1,Math.min(99,Number.parseInt(item.qty,10)||1))}];
+  if(item.edition==='camper'&&(!p.camper||!CAMPER_BRANDS.some(x=>x.id===item.brand)||!LOGO_POSITIONS.some(x=>x.id===item.logoPosition)||!LOGO_SIZES.some(x=>x.id===item.logoSize)))return [];
+  if(item.edition&&!['classic','camper'].includes(item.edition))return [];
+  return [createSelection(p,item)];
  });
 }
 export function enquiryText(cart) {
- return 'Hallo Sylke,\n\nich interessiere mich für folgende Auswahl aus dem Website-Entwurf und bitte um ein unverbindliches Angebot:\n\n'+cart.map(i=>{const p=PRODUCTS.find(p=>p.id===i.productId);return `${i.qty} × ${p.name}\nFarbe: ${i.color} · Größe: ${i.size}${i.text?`\nSticktext: ${i.text} · Garn: ${i.thread} · Schrift: ${i.font}`:''}\nBeispielpreis: ${money(unitPrice(i)*i.qty)}`;}).join('\n\n')+`\n\nSumme der Beispielpreise: ${money(cartTotal(cart))}\nBitte tatsächliche Verfügbarkeit, Preise, Bestickung und Versand bestätigen.\n\nMein Name:\nMeine Rückrufnummer:\nMein Wunschtermin:\n`;
+ return 'Hallo Sylke,\n\nich interessiere mich für folgende Auswahl aus dem Website-Entwurf und bitte um ein unverbindliches Angebot:\n\n'+cart.map(i=>{const p=PRODUCTS.find(p=>p.id===i.productId),c=camperLabels(i),parts=priceParts(i);return `${i.qty} × ${p.name}\nFarbe: ${i.color} · Größe: ${i.size}${isCamper(i)?`\nEdition: Camper Edition\nMarkenlogo: ${c.brand}\nPosition: ${c.position} (links aus Trägersicht)\nLogogröße: ${c.logoSize}\nLogo-Aufpreis pro Stück: ${money(parts.logo)}`:''}${i.text?`\nSticktext: ${i.text} · Garn: ${i.thread} · Schrift: ${i.font}`:''}\nBeispielpreis pro Stück: ${money(unitPrice(i))}\nBeispielpreis für ${i.qty} Stück: ${money(unitPrice(i)*i.qty)}`;}).join('\n\n')+`\n\nSumme der Beispielpreise: ${money(cartTotal(cart))}\nBitte tatsächliche Verfügbarkeit, Preise, Bestickung, Logo-Ausführung und Versand bestätigen.\n\nMein Name:\nMeine Rückrufnummer:\nMein Wunschtermin:\n`;
 }
