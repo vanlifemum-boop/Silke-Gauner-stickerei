@@ -1,0 +1,8 @@
+{
+  "name": "stickerei-gauder-entwurf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check app.js && node --test tests/shop.test.js"
+  }
+}

@@ -1,0 +1,43 @@
+name: Website auf GitHub Pages veröffentlichen
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+      - name: Website prüfen
+        run: |
+          node --check app.js
+          node --test tests/shop.test.js
+      - name: Website zusammenstellen
+        run: |
+          mkdir -p _site
+          cp index.html styles.css app.js shop-core.js .nojekyll _site/
+          cp -R assets _site/assets
+      - name: Pages vorbereiten
+        uses: actions/configure-pages@v5
+      - name: Website hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Website veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v5
