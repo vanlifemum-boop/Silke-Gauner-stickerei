@@ -1,3 +1,4 @@
+import { CLUB_PRODUCTS, createClubSelection, validClubSelection, clubSelectionLabels, clubPrice, clubById } from './club-core.js';
 export const CATEGORIES = ['Alle Produkte', 'Camper Edition', 'Bekleidung', 'Badtextilien', 'Accessoires', 'Tischwäsche'];
 export const PRODUCTS = [
  {id:'camper-tshirt',name:'Dein T-Shirt',category:'Bekleidung',tag:'DEIN CAMPER. DEIN SHIRT.',price:2490,image:'tshirt',color:'Anthrazit',colors:['Anthrazit','Schwarz','Weiß','Navy','Rot','Royalblau','Tannengrün'],sizes:['XS','S','M','L','XL','XXL','3XL'],camper:true,garment:'tshirt',description:'Dein Lieblingsshirt für unterwegs. Wähle Farbe und Größe – und gestalte die Camper Edition mit deiner Marke, deiner Wunschposition und einem kleinen oder großen Logo.',details:['T-Shirt mit Rundhalsausschnitt als Produktidee','Camper Edition mit wählbarer Marke, Position und Logogröße','Alle Varianten und Preise sind Beispiele für den Shop-Entwurf'],position:'Linke Brust'},
@@ -9,6 +10,7 @@ export const PRODUCTS = [
  {id:'tischwaesche',name:'Tischwäsche mit Initialen',category:'Tischwäsche',tag:'DEIN TISCH. DEIN DETAIL.',price:3990,image:'table',color:'Weiß',colors:['Weiß','Hellgrau'],sizes:['140 × 140 cm','140 × 180 cm','Wunschmaß anfragen'],description:'Ein schön gedeckter Tisch trägt deine Handschrift. Feine Initialen geben der Tischwäsche eine persönliche Note. Andere Maße stimmen wir mit dir ab.',details:['Beispiel für Tischwäsche mit Monogramm','Initialen auf einer Ecke vorgesehen','Individuelle Maße und Materialien auf Anfrage'],position:'Ecke'}
 ];
 for(const p of PRODUCTS){if(p.id==='team-polo'){p.camper=true;p.garment='polo';}if(p.id==='lieblings-hoodie'){p.camper=true;p.garment='hoodie';}}
+PRODUCTS.push(...CLUB_PRODUCTS);
 export const COLORS = {'Anthrazit':'#36383b','Schwarz':'#17181b','Weiß':'#ffffff','Rot':'#dc3343','Navy':'#263446','Royalblau':'#28569f','Tannengrün':'#244b42','Hellgrau':'#cfd2d8'};
 export const THREADS = {'Rot':'#e83443','Weiß':'#ffffff','Anthrazit':'#292b30','Navy':'#203b6a','Silber':'#9aa3af'};
 export const PERSONALIZATION_PRICE=790;
@@ -32,6 +34,7 @@ export function camperLabels(item){return {
  logoSize:LOGO_SIZES.find(x=>x.id===item.logoSize)?.label||''
 };}
 export function createSelection(p,previous={}){
+ if(p.club)return createClubSelection(p,previous);
  const camper=p.camper&&previous.edition==='camper';
  return {productId:p.id,color:p.colors.includes(previous.color)?previous.color:p.color,size:p.sizes.includes(previous.size)?previous.size:p.sizes.includes('M')?'M':p.sizes[0],
  text:String(previous.text||'').slice(0,20),thread:Object.hasOwn(THREADS,previous.thread)?previous.thread:'Rot',font:['Schreibschrift','Druckschrift'].includes(previous.font)?previous.font:'Schreibschrift',
@@ -44,37 +47,46 @@ export const money = cents => new Intl.NumberFormat('de-DE',{style:'currency',cu
 export const escapeHtml = value => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function filterProducts({category='Alle Produkte',query='',sort='featured'}={}) {
  const q=query.toLocaleLowerCase('de-DE').trim();
- let items=PRODUCTS.filter(p=>(category==='Alle Produkte'||(category==='Camper Edition'?p.camper:p.category===category))&&(!q||`${p.name} ${p.category} ${p.description} ${p.camper?'Camper Edition '+CAMPER_BRANDS.map(x=>x.name).join(' '):''}`.toLocaleLowerCase('de-DE').includes(q)));
+ let items=PRODUCTS.filter(p=>!p.club&&(category==='Alle Produkte'||(category==='Camper Edition'?p.camper:p.category===category))&&(!q||`${p.name} ${p.category} ${p.description} ${p.camper?'Camper Edition '+CAMPER_BRANDS.map(x=>x.name).join(' '):''}`.toLocaleLowerCase('de-DE').includes(q)));
  if(sort==='price-asc') items.sort((a,b)=>a.price-b.price);
  if(sort==='price-desc') items.sort((a,b)=>b.price-a.price);
  if(sort==='name') items.sort((a,b)=>a.name.localeCompare(b.name,'de'));
  return items;
 }
-export function priceParts(item){const p=PRODUCTS.find(p=>p.id===item.productId);return {
+export function priceParts(item){const p=PRODUCTS.find(p=>p.id===item.productId);if(p?.club)return {base:clubPrice(p,item).amount??0,logo:0,text:0};return {
  base:p?.price||0,
  logo:isCamper(item)?(LOGO_SIZES.find(x=>x.id===item.logoSize)?.price||0):0,
  text:item.text?.trim()?PERSONALIZATION_PRICE:0
 };}
-export function unitPrice(item) {const p=PRODUCTS.find(p=>p.id===item.productId);if(!p)return 0;const parts=priceParts(item);return parts.base+parts.logo+parts.text;}
-export function cartTotal(cart) { return cart.reduce((sum,item)=>sum+unitPrice(item)*item.qty,0); }
+export function unitPrice(item) {const p=PRODUCTS.find(p=>p.id===item.productId);if(!p)return 0;if(p.club)return clubPrice(p,item).amount;const parts=priceParts(item);return parts.base+parts.logo+parts.text;}
+export function cartTotal(cart) { return cart.reduce((sum,item)=>sum+(unitPrice(item)??0)*item.qty,0); }
 export function cartQuantity(cart) { return cart.reduce((sum,item)=>sum+item.qty,0); }
-export function itemKey(item) { return JSON.stringify([item.productId,item.color,item.size,item.text||'',item.thread||'Rot',item.font||'Schreibschrift',isCamper(item)?['camper',item.brand,item.logoPosition,item.logoSize]:['classic']]); }
+export function itemKey(item) { const p=PRODUCTS.find(p=>p.id===item.productId);if(p?.club)return JSON.stringify([item.productId,p.options.map(g=>[g.id,item.options?.[g.id]]),item.note||'',item.customization?.enabled?[item.customization.text,item.customization.thread,item.customization.font]:null]);return JSON.stringify([item.productId,item.color,item.size,item.text||'',item.thread||'Rot',item.font||'Schreibschrift',isCamper(item)?['camper',item.brand,item.logoPosition,item.logoSize]:['classic']]); }
 export function addItem(cart,item) {
  const qty=Math.max(1,Math.min(99,Number.parseInt(item.qty,10)||1));
  const key=itemKey(item), existing=cart.find(x=>itemKey(x)===key);
  if(existing) return cart.map(x=>itemKey(x)===key?{...x,qty:Math.min(99,x.qty+qty)}:x);
- return [...cart,{...item,qty}];
+ return [...cart,{...item,...(item.edition==='club'?{options:{...item.options},customization:item.customization?{...item.customization}:null}:{}),qty}];
 }
 export function sanitizeCart(raw) {
  if(!Array.isArray(raw)) return [];
  return raw.slice(0,50).flatMap(item=>{
   const p=PRODUCTS.find(p=>p.id===item?.productId);
-  if(!p||!p.colors.includes(item.color)||!p.sizes.includes(item.size))return [];
+  if(!p)return [];
+  if(p.club)return validClubSelection(p,item)?[createClubSelection(p,item)]:[];
+  if(!p.colors.includes(item.color)||!p.sizes.includes(item.size))return [];
   if(item.edition==='camper'&&(!p.camper||!CAMPER_BRANDS.some(x=>x.id===item.brand)||!LOGO_POSITIONS.some(x=>x.id===item.logoPosition)||!LOGO_SIZES.some(x=>x.id===item.logoSize)))return [];
   if(item.edition&&!['classic','camper'].includes(item.edition))return [];
   return [createSelection(p,item)];
  });
 }
+export function itemPriceInfo(item){const p=PRODUCTS.find(p=>p.id===item.productId);return p?.club?clubPrice(p,item):{amount:unitPrice(item),from:false};}
+export function cartPriceInfo(cart){return {amount:cartTotal(cart),from:cart.some(i=>itemPriceInfo(i).from),unknown:cart.filter(i=>itemPriceInfo(i).amount===null).length,hasClub:cart.some(i=>PRODUCTS.find(p=>p.id===i.productId)?.club)};}
 export function enquiryText(cart) {
- return 'Hallo Sylke,\n\nich interessiere mich für folgende Auswahl aus dem Website-Entwurf und bitte um ein unverbindliches Angebot:\n\n'+cart.map(i=>{const p=PRODUCTS.find(p=>p.id===i.productId),c=camperLabels(i),parts=priceParts(i);return `${i.qty} × ${p.name}\nFarbe: ${i.color} · Größe: ${i.size}${isCamper(i)?`\nEdition: Camper Edition\nMarkenlogo: ${c.brand}\nPosition: ${c.position} (links aus Trägersicht)\nLogogröße: ${c.logoSize}\nLogo-Aufpreis pro Stück: ${money(parts.logo)}`:''}${i.text?`\nSticktext: ${i.text} · Garn: ${i.thread} · Schrift: ${i.font}`:''}\nBeispielpreis pro Stück: ${money(unitPrice(i))}\nBeispielpreis für ${i.qty} Stück: ${money(unitPrice(i)*i.qty)}`;}).join('\n\n')+`\n\nSumme der Beispielpreise: ${money(cartTotal(cart))}\nBitte tatsächliche Verfügbarkeit, Preise, Bestickung, Logo-Ausführung und Versand bestätigen.\n\nMein Name:\nMeine Rückrufnummer:\nMein Wunschtermin:\n`;
+ const total=cartPriceInfo(cart);
+ return 'Hallo Sylke,\n\nich interessiere mich für folgende Auswahl aus dem Website-Entwurf und bitte um ein unverbindliches Angebot:\n\n'+cart.map(i=>{
+  const p=PRODUCTS.find(p=>p.id===i.productId),c=camperLabels(i),parts=priceParts(i);
+  if(p.club){const price=clubPrice(p,i),prefix=price.from?'ab ':'';return `${i.qty} × ${p.name}\nClub: ${clubById(p.club).fullName}\nArtikelnummer: ${price.sku}\n${clubSelectionLabels(p,i).map(v=>v.name+': '+v.value).join('\n')}${i.note?`\nZusätzliche Wünsche (noch nicht eingepreist): ${i.note}`:''}\nPreis pro Stück laut Club-Shop (Stand 10.10.2026): ${price.amount===null?'auf Anfrage':prefix+money(price.amount)}\nOrientierungspreis für ${i.qty} Stück: ${price.amount===null?'auf Anfrage':prefix+money(price.amount*i.qty)}\nOriginalartikel: ${p.sourceUrl}`;}
+  return `${i.qty} × ${p.name}\nFarbe: ${i.color} · Größe: ${i.size}${isCamper(i)?`\nEdition: Camper Edition\nMarkenlogo: ${c.brand}\nPosition: ${c.position} (links aus Trägersicht)\nLogogröße: ${c.logoSize}\nLogo-Aufpreis pro Stück: ${money(parts.logo)}`:''}${i.text?`\nSticktext: ${i.text} · Garn: ${i.thread} · Schrift: ${i.font}`:''}\nBeispielpreis pro Stück: ${money(unitPrice(i))}\nBeispielpreis für ${i.qty} Stück: ${money(unitPrice(i)*i.qty)}`;
+ }).join('\n\n')+`\n\n${total.hasClub?'Orientierungssumme bekannter Preise':'Summe der Beispielpreise'}: ${total.from?'ab ':''}${money(total.amount)}${total.unknown?`\n${total.unknown} Position(en) mit Preis auf Anfrage sind noch nicht enthalten.`:''}\nBitte tatsächliche Verfügbarkeit, Preise, Bestickung, Logo-Ausführung und Versand bestätigen. Zusätzliche Wünsche bitte gesondert anbieten.\n\nMein Name:\nMeine Rückrufnummer:\nMein Wunschtermin:\n`;
 }

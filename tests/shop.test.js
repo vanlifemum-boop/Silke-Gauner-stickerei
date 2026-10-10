@@ -31,7 +31,7 @@ test('Search, category and price sorting compose, including empty results',()=>{
  const ascending=filterProducts({sort:'price-asc'}).map(p=>p.price);
  assert.deepEqual(ascending,[...ascending].sort((a,b)=>a-b));
  assert.equal(filterProducts({query:'nonexistent-xyz'}).length,0);
- assert.equal(filterProducts().length,PRODUCTS.length);
+ assert.equal(filterProducts().length,PRODUCTS.filter(p=>!p.club).length);
 });
 test('Enquiry preserves configuration and explicitly identifies example prices',()=>{
  const result=enquiryText([{...base,text:'A&B <Team>',qty:2}]);

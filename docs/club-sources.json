@@ -1,0 +1,397 @@
+{
+  "retrievedAt": "2026-10-10",
+  "clubs": [
+    {
+      "id": "eura-mobil",
+      "source": "https://euramobilclub-shop.de/",
+      "count": 39
+    },
+    {
+      "id": "forster",
+      "source": "https://forster-fahrer-shop.de/",
+      "count": 51
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/clubs/eura-mobil-68.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/db/ab/a5/id_0521_700_front_p_600x600.jpg",
+      "sourceSha256": "c83930afb66728c91306b68345894bb66dc9edf76c45493f93f702a3e2c53356"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-454.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/ac/d9/2f/JN1206-schwarz-1_600x600.jpg",
+      "sourceSha256": "f64d7ea466b28c80b3d4e4f43d30bde7b1963a37ef219eddb55709fedfe428de"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-455.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/72/1d/59/JN1205-schwarz-1_600x600.jpg",
+      "sourceSha256": "4241a03110d01fad35e3af0e7dcdcb6f2db2ae6ad39ee8ade82de684497ac1dc"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-543.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/25/5b/a7/40508-Flowers-green-Tischset-Detail_600x600.jpg",
+      "sourceSha256": "6e8e5b384a58c064999bff14a09813bea2e28f54e4cc4b1d0cdf0054ee130a49"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-639.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/5c/86/32/JN884_Schwarz_EMC-Logo_600x600.jpg",
+      "sourceSha256": "45b68fac3f35ce8b94c98e43b1b9d322db3b449257f45d5c0a6f0ba9d44b9ac4"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-640.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/15/b7/2d/JN894_Blau_EMC-LogoG2ASQzJbFU56l_600x600.jpg",
+      "sourceSha256": "93f3472a7f03ab2ba19cb7b075b933a0d361ea0544df38c604c10a68b8370e49"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-641.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/94/8d/8a/JN893_Blau_EMC-LogoPze8hZDG07aYm_600x600.jpg",
+      "sourceSha256": "3accb785c0e9421d73f45fc57d26a238abb38375a5631ffa74a87ba3f77a9a9f"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-642.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/11/ca/60/JN851-Carbon-Rot-B_600x600.jpg",
+      "sourceSha256": "5e41bd2564a076d0ccabec61103fba6e5075e3cefd972d7951ef7257843363e3"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-643.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/37/96/96/JN852-Carbon-Rot-komplett_600x600.jpg",
+      "sourceSha256": "96b307676d522df03ceaaf5d96ae5dc05220287ccd42794b8c4aaf20355dd90f"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-644.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/1c/4d/b1/JN894_Schwarz_EMC-LogoSjwzk0CYYPGJv_600x600.jpg",
+      "sourceSha256": "73ec8e0dae670ce6835e6c84a8b54b99edecf38a501e26ac16bdcfb2ee792ef2"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-652.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/c7/05/81/JN860-Herren-T-Shirt-royal-weiss-EMC-Logo_600x600.jpg",
+      "sourceSha256": "6a3d9cb3662f37ee7ff28c334585a7ca7e523b56b5030bb0e7488e4a2cecd54e"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-654.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/e4/93/f5/JN895-Schwarz_600x600.jpg",
+      "sourceSha256": "fc5bb6e21a748c6d349b171d6bb5a31bc868e0d6b2a5831c4a3d612f6cffaab9"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-655.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/bb/93/3c/JN890-Blau_600x600.jpg",
+      "sourceSha256": "6d6c9d80b8a8612ca338125c257f899c3912e8f47df872917e8ae202bc039a2e"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-656.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/04/85/60/JN889-Blau_600x600.jpg",
+      "sourceSha256": "b545a8d5c4b3e3849f103958cd7236aa0fa11a0d9993e582031a3081395f0c95"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-657.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/81/96/c2/JN892-Schwarzl7h79WK2gvfDJtG3AtBSCNKXSG_600x600.jpg",
+      "sourceSha256": "35a55d27585929dcc2d20971fb734102b1f9be6683b4a0db5aab6c37f1415c33"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-659.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/e8/73/c3/MB215_600x600.jpg",
+      "sourceSha256": "586f177fe6bb88bee8d84bfb0db754a65851dfc8686441f492a1a7a0c33408a2"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-660.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/eb/67/08/MB214_600x600.jpg",
+      "sourceSha256": "cccf8ca8a9b467b4aa6fcb7ca3aa6e0b0d86200ee14947fe9208594693f5535f"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-661.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/c1/aa/15/MB6234-Schwarz-mit-Logo_600x600.jpg",
+      "sourceSha256": "c1e0a244cf6918e98933e993fbb945258669714da49995f58f972d5957899dcf"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-662.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/a9/cb/10/Military-Sandwich-Cap-mit-EMC-Logo_600x600.jpg",
+      "sourceSha256": "ac12a41ae2e97c736c41e0fa9160717ab33da26d85116d50c974522f31970b59"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-664.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/92/12/1e/Mb422-Royal_600x600.jpg",
+      "sourceSha256": "56d5b39d31ee56f96af745fb1e0100de97c1c587aa7e1fe267250df326d7ed93"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-665.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/37/b8/a7/ID-1800-schwarz-mit-EMC-Logo_600x600.jpg",
+      "sourceSha256": "014f886eb7c50ed6626a50444deae224549235161473717b5750101f940c1853"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-666.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/05/9d/0e/Badartikel-navy_600x600.jpg",
+      "sourceSha256": "bd6673f60ae9dfbf3145601877e219cb1cf93b05bafab83311f0af33ee78b787"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-668.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/19/0a/c3/NT2015-EMC-Hundematte-Knochen_600x600.jpg",
+      "sourceSha256": "c1909e5dacc74751596a350b16b034f7109860dba2a915494b8ec0b0746dee56"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-714.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/ae/64/cf/Dallas-_MG_1846-983_07000_k-nigsblau_600x600.jpg",
+      "sourceSha256": "1f60727182fe0ae27dcb31e1df7cdb945e48e0137c2dde1cff126d5b8312f397"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-738.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/c2/bc/ea/J-rn-mit-Hosentr-gern_600x600.jpg",
+      "sourceSha256": "61d640bd7e8f952b45ad8a678b9a7aa2d3ae65441606abc0c14151f78f0d034e"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-745.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/21/57/54/jn1097-ladies-outdoor-jacket-gruen-damen-_Iron-Grey-Green__master_600x600.jpg",
+      "sourceSha256": "ae532f8df1260bdacd7bfc861fb24e22877b4996fc452b669c8a67c2060a9c0d"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-746.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/5f/06/2b/jn1098-mens-outdoor-jacket-gruen-herren-_Spring-Green-Iron-Grey_master_600x600.jpg",
+      "sourceSha256": "f16863ea1a763e2179273d76bd1a92a1208b81271380563b16e8dce4ffe1e714"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-748.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/6f/33/5f/Next-4-Wege-Schwarz-SchwarzuM4ih16KB1K8S_600x600.jpg",
+      "sourceSha256": "72b7a409d630bce7c4326dcba857174b6e6cd2f4f2824bb9b5a635a4ed976100"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-749.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/d7/a1/48/Next-4-Wege-Schwarz-Bermuda_600x600.jpg",
+      "sourceSha256": "d757530e06e68394d0a794bc12734b4a1f6f45d74b70943680955353aeafa0e9"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-750.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/dc/bc/d7/Trip-Herren-Gelb_600x600.jpg",
+      "sourceSha256": "18861b4a969651c739d9727086ff74703792b6e251b57cc4f3d040951c774504"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-752.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/fb/3a/77/jn1843-ladies-padded-hybrid-jacket-rot-damen-56064_master_600x600.jpg",
+      "sourceSha256": "94023a1ca9effaefdacf29f462fa0391ca93ea25b38d1c9b95f2ddad8aa6d6cb"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-754.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/4c/36/4c/Miami-Tischset-Grey-White-Detail_600x600.jpg",
+      "sourceSha256": "b3d4c0fcd96d240bc66c21e3c9afd096aac65b25f7c7d7f2fcc46ab2cb63fbfd"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-755.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/7c/07/8d/jn1306-mens-polo-schwarz-herren-60941_master_600x600.jpg",
+      "sourceSha256": "0c99c3c2d401a751068b61ce5515b3e79d03157526097565164fe8b25571fef9"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-756.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/15/b1/b1/jn1305-ladies-polo-schwarz-damen-60945_master_600x600.jpg",
+      "sourceSha256": "6f1bceda2379b40a6aa812565a9867b74035c3d5de9e8dbc7095476087fa4aaf"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-761.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/03/f7/09/Oliv-EMC-Jahresshirt-2026_600x600.jpg",
+      "sourceSha256": "cb712337d7184a536d27983d539ad0b1b8011a63e4ac1c34ff26b16d5b939ccd"
+    },
+    {
+      "file": "assets/clubs/forster-519.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/f8/1a/2a/Sneacker_600x600.jpg",
+      "sourceSha256": "824fe63a564dd1c183fa76b3cb23ef386c899a1898b1858fdd53c1347786e3ca"
+    },
+    {
+      "file": "assets/clubs/forster-492.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/b3/70/a5/JN135K-schwarz-mit-Logo_600x600.jpg",
+      "sourceSha256": "f844974c1ab21fdb750ae15d68a7ba061478ee87f16185162ded6a2b6b327482"
+    },
+    {
+      "file": "assets/clubs/forster-493.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/c1/07/e0/JN1020-schwarz-mit-Logos_600x600.jpg",
+      "sourceSha256": "e1c3055fa5276f40088f2833246ea88476994a36cab8ba59007167f484f4f972"
+    },
+    {
+      "file": "assets/clubs/forster-494.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/f2/77/9f/JN1021-schwarz-mit-Logos_600x600.jpg",
+      "sourceSha256": "d8df4488cf54e1eb9c197ca58482c458f9829a227db1479b5018b6c92467c33b"
+    },
+    {
+      "file": "assets/clubs/forster-495.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/2f/d6/4d/JN597-Schwarz-Schriftzug_600x600.jpg",
+      "sourceSha256": "21bf4e09901377ed61ce1d96013a4267302a6ad81eef2c70c8dd212c4231bdcb"
+    },
+    {
+      "file": "assets/clubs/forster-496.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/58/42/f8/JN596-schwarz-Schriftzug_600x600.jpg",
+      "sourceSha256": "767d918aac6a71c8472436645de2d2a924c424e59dc6ffa130146bcf53a7595f"
+    },
+    {
+      "file": "assets/clubs/forster-497.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/1c/04/8c/JN783-Gr-n-Carbon-Logo_600x600.jpg",
+      "sourceSha256": "a97f4ab428a3240f790087e119d977c415ecd329f0b7b0ebeb78a2cb35e40a6a"
+    },
+    {
+      "file": "assets/clubs/forster-498.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/de/6b/31/JN784-Schwarz-Carbon-Schriftzug_600x600.jpg",
+      "sourceSha256": "5b8986663e74eb129ac7f507750bb479d9ee042d6b03aff11f4796b1ddfd9e1f"
+    },
+    {
+      "file": "assets/clubs/forster-499.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/17/ec/f4/JN594-Lime-Carbon-Schriftzug_600x600.jpg",
+      "sourceSha256": "2533428ff5105dbb79bd1ac23334fc7f536472274a33df2ad85d7f5deaa01fa5"
+    },
+    {
+      "file": "assets/clubs/forster-500.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/b2/49/d5/JN595-Black-Carbon-Schriftzug_600x600.jpg",
+      "sourceSha256": "a66970d2d8279b7b65ad0869e93a65845c8e6d90b1fd8c13ee9ff0bfab270e71"
+    },
+    {
+      "file": "assets/clubs/forster-501.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/69/a8/98/JN869-Ladies-Sweat-Jacke-R-cken_600x600.jpg",
+      "sourceSha256": "4d12a2e01bd94a8b93bf617808473ae18c7d7fc933055c3c3bd38731b819f821"
+    },
+    {
+      "file": "assets/clubs/forster-502.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/f0/06/fb/JN870-Sweatjacke-mit-Logo-1_600x600.jpg",
+      "sourceSha256": "3bac166b3f23726fb36a5c5b3a562a0790051ba5e339c7a2a87155731349743c"
+    },
+    {
+      "file": "assets/clubs/forster-503.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/46/3f/96/JN852-R-und-Logo_600x600.jpg",
+      "sourceSha256": "d4ce013503a7fd5b79ecf419f22aa10176900f5bb978ac864b2096ecd10f72d5"
+    },
+    {
+      "file": "assets/clubs/forster-504.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/21/19/0d/JN851-mit-Logo_600x600.jpg",
+      "sourceSha256": "50cc1142afbdddea067d57e0f22687e658479305f081e6beddc4247707f4178d"
+    },
+    {
+      "file": "assets/clubs/forster-506.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/ca/78/9f/JN796K-Schwarz-Schriftzug_600x600.jpg",
+      "sourceSha256": "8af8817ecfca94bf74a2b7747250990bc461d835779d66fc715cd4af8435dac8"
+    },
+    {
+      "file": "assets/clubs/forster-507.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/9f/19/c1/JN796-Schwarz-Schriftzug_600x600.jpg",
+      "sourceSha256": "be9056dbd8ff03b2f4b0b1b1b68e958f101552f8cf8ae790c4cd48edec8f9339"
+    },
+    {
+      "file": "assets/clubs/forster-508.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/88/08/62/JN795-Schwarz-Schriftzug_600x600.jpg",
+      "sourceSha256": "ec1326ad79c2d81ec9856c85699a666db6ca346e73ba8c12d68cdab993a8ab75"
+    },
+    {
+      "file": "assets/clubs/forster-509.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/e5/g0/ee/JN860-mit-Schriftzug_600x600.jpg",
+      "sourceSha256": "bfcbefae24bc9a530f98ea6c129b1f0ad6b2b8269d91408fbf8e94c141712b7c"
+    },
+    {
+      "file": "assets/clubs/forster-510.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/a5/0e/5f/JN859-T-Shirt-mit-Logo2_600x600.jpg",
+      "sourceSha256": "e8353b71b24bbdae0699c2938b7e58a72795bb0e93d59293437f0869eb481944"
+    },
+    {
+      "file": "assets/clubs/forster-512.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/8d/f5/b8/JN857-Poloshirt-Damen-mit-Schriftzug-Brust_600x600.jpg",
+      "sourceSha256": "8a86603029f1b888f4ebd47b19c2b924c245c1318be4cb2235b44d434a15dbfc"
+    },
+    {
+      "file": "assets/clubs/forster-513.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/91/78/8b/JN858-Poloshirt-Herren-Schriftzug-Brust-Front_600x600.jpg",
+      "sourceSha256": "d1fbbcda7bc27547b7ff320d47c7280829ed344d32932ec262f888cebd9f3182"
+    },
+    {
+      "file": "assets/clubs/forster-515.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/5a/ca/94/MB7131-schwarz-mit-Logo_600x600.jpg",
+      "sourceSha256": "a1d99e6bf164e613403fdc9b6bfd5a58f48dddbccdc59e2d6e30bf7b3c334c49"
+    },
+    {
+      "file": "assets/clubs/forster-516.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/e0/18/e4/Military-Sandwich-Cap-mit-Forster-Fahrer-und-Fans-Logo_600x600.jpg",
+      "sourceSha256": "88b229f22f0d0e72fc8f515c5c1a3651597b28ec1b2e2b350d394170fdcd8db8"
+    },
+    {
+      "file": "assets/clubs/forster-517.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/c6/22/4e/MB024-Cap-mit-kleines-Logo_600x600.jpg",
+      "sourceSha256": "50ccd0ce663f62f34933dcff7815d689c26ad61490c3fdb300cfa31c3db0ad30"
+    },
+    {
+      "file": "assets/clubs/forster-518.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/94/e9/32/MB6577-schwarz-Schriftzug_600x600.jpg",
+      "sourceSha256": "3cfab2cbdceb03be69e07b319d74d9b9bb7d3cb12ab753548b5f74784322f52b"
+    },
+    {
+      "file": "assets/clubs/forster-520.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/d9/9a/00/Sportsocke_600x600.jpg",
+      "sourceSha256": "2870e9fdf205fceca250fcda3112c7b0b42da4985407398245cb017dbc6b624f"
+    },
+    {
+      "file": "assets/clubs/forster-527.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/84/a9/d1/8026-mens-zip-hoody-schwarz-herren-44076_masterRBJ2bCgrQYj5l_600x600.jpg",
+      "sourceSha256": "ad289412c467ab7f95446f0cd039766a3d1052380583e3503b24f68455cef7fc"
+    },
+    {
+      "file": "assets/clubs/forster-529.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/e1/c7/bf/8025-ladies-zip-hoody-schwarz-damen-44059_master_600x600.jpg",
+      "sourceSha256": "7a9ce301d97df89881f9438199817d354efa984de62c388eeade5f3709cd0cdf"
+    },
+    {
+      "file": "assets/clubs/forster-521.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/48/da/5f/BG44-schwarz_600x600.jpg",
+      "sourceSha256": "e7e1e8f45e2dcd65eb9b8709ec14c9894887e5dc4360b5c6f32915c276eb2f33"
+    },
+    {
+      "file": "assets/clubs/forster-522.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/70/2f/6b/Bademantel-Schwarz-mit-Logo_600x600.jpg",
+      "sourceSha256": "25ceea43ca1bccbe0da9a73bd2553920237f1d27fac31c0560481b4ab4da775a"
+    },
+    {
+      "file": "assets/clubs/forster-674.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/44/16/61/03105_Garten-Freizeit-blau_600x600.jpg",
+      "sourceSha256": "c08fdc6c58f24261806727f0a76271cc064a7b95a771330be7cf7dacec2ce564"
+    },
+    {
+      "file": "assets/clubs/forster-138.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/b7/90/e9/ID-1800-schwarz-mit-Logo_600x600.jpg",
+      "sourceSha256": "2e2fb450ea9941cf98a8f5db329956db56ae3f3641e2d3a248d3acf2bb5687b3"
+    },
+    {
+      "file": "assets/clubs/forster-524.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/0a/d3/22/BG75-schwarz-bestickt_600x600.jpg",
+      "sourceSha256": "21d05e6dbb5b6ee5d7865527caa8a17492229e6843d76c7ca272e07b73ceefe9"
+    },
+    {
+      "file": "assets/clubs/forster-469.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/9c/3d/9b/HA9997-gr-n_600x600.jpg",
+      "sourceSha256": "6bd4768ba60a609985859589d9c3ebfa5c4f158bb6a4e2a357b14a70adf735a3"
+    },
+    {
+      "file": "assets/clubs/forster-470.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/cd/0b/f8/MB6524-Schal-weiss_600x600.jpg",
+      "sourceSha256": "6e77b405ecf268104fe595c801b38c36e093d6031424d7ea5347b0010f8b7c59"
+    },
+    {
+      "file": "assets/clubs/forster-525.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/d4/32/27/MB040-weissQarHCJjy0DMLM_600x600.jpg",
+      "sourceSha256": "4b6b475171c0d27bcfc2f9e25b457f75d5754ab7bbfadb33fe24bd78a26fed4b"
+    },
+    {
+      "file": "assets/clubs/forster-422.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/45/1a/e5/NT2015-FFF-Hundematte-Knochen_600x600.jpg",
+      "sourceSha256": "1da80478cc75ea817e36749bc8aedd9f7b7badb2d556a569cbaddc62ef24bf93"
+    },
+    {
+      "file": "assets/clubs/forster-388.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/31/be/81/Gutschein-Stoelzinga_600x600.jpg",
+      "sourceSha256": "ced0ce50196f152a153c8da2a4058d26dc57d2980f285734274f2be1f2218925"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-logo.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/e7/05/5d/EuraMobilClub-logo.jpg",
+      "sourceSha256": "e3c8dee05368592844e3987e4b11d1648acde6b4d54dc16b1ebd5638641a2dd2"
+    },
+    {
+      "file": "assets/clubs/eura-mobil-wordmark.webp",
+      "sourceUrl": "https://euramobilclub-shop.de/media/image/52/af/74/EuraMobilClub-schriftzug-logo.jpg",
+      "sourceSha256": "a70b470ab1d2bd29c983bd22d1322d0c23222e3a6fd081fbe4843f6920f4d7a9"
+    },
+    {
+      "file": "assets/clubs/forster-logo.webp",
+      "sourceUrl": "https://forster-fahrer-shop.de/media/image/53/ab/62/Fort-Fahrer-Fans-logo.jpg",
+      "sourceSha256": "0ce0bc4af11514e7ad1cfcc31d93507cc6916abed2ef57f9081fa94f82f09915"
+    }
+  ]
+}

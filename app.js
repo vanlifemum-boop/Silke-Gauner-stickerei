@@ -1,4 +1,6 @@
-import { PRODUCTS, CATEGORIES, COLORS, THREADS, PERSONALIZATION_PRICE, money, escapeHtml as e, filterProducts, unitPrice, cartTotal, cartQuantity, addItem, sanitizeCart, enquiryText, createSelection, CAMPER_BRANDS, LOGO_POSITIONS, LOGO_SIZES, priceParts, isCamper, camperLabels } from './shop-core.js';
+import { PRODUCTS, CATEGORIES, COLORS, THREADS, PERSONALIZATION_PRICE, money, escapeHtml as e, filterProducts, unitPrice, cartTotal, cartQuantity, addItem, sanitizeCart, enquiryText, createSelection, CAMPER_BRANDS, LOGO_POSITIONS, LOGO_SIZES, priceParts, isCamper, camperLabels, itemPriceInfo, cartPriceInfo } from './shop-core.js';
+import { clubById, filterClubProducts, clubPrice, clubLogoFor, clubSelectionError, clubSourceUrl } from './club-core.js';
+import { clubTabs, clubHighlights, clubCatalog, clubCard, clubProduct, clubPriceLabel, clubSummary, clubPriceSummary } from './club-ui.js';
 import { garmentPreview, positionGlyph } from './garment-preview.js';
 
 const main=document.getElementById('main');
@@ -7,6 +9,7 @@ const STORE='gauder-design-cart-v1';
 let cart=[];
 try { cart=sanitizeCart(JSON.parse(localStorage.getItem(STORE)||'[]')); } catch { cart=[]; }
 let shopState={category:'Alle Produkte',query:'',sort:'featured'};
+let clubState={club:'',category:'Alle Produkte',query:'',sort:'featured'};
 let selection=null;
 let activeProduct=null;
 let toastTimeout;
@@ -34,7 +37,7 @@ const path={
 };
 const icon=(name)=>`<svg viewBox="0 0 24 24" aria-hidden="true">${path[name]||path.needle}</svg>`;
 const arrow='<span aria-hidden="true">↗</span>';
-const image=(name,alt,extra='')=>`<img src="assets/${name}.${name==='tshirt'?'svg':'webp'}" alt="${e(alt)}" ${extra||'loading="lazy"'} decoding="async">`;
+const image=(name,alt,extra='')=>!name?'<div class="club-image-missing"><span aria-hidden="true">◇</span><b>Produktbild folgt</b></div>':`<img src="${name.startsWith('assets/')?e(name):`assets/${name}.${name==='tshirt'?'svg':'webp'}`}" alt="${e(alt)}" ${extra||'loading="lazy"'} decoding="async">`;
 const bread=(label,previous='')=>`<div class="wrap breadcrumb"><a href="#/">Startseite</a><span>/</span>${previous?`<a href="#/shop">Shop</a><span>/</span>`:''}<span>${e(label)}</span></div>`;
 const button=(label,href,kind='primary')=>`<a class="btn btn-${kind}" href="${href}">${label} ${arrow}</a>`;
 
@@ -42,11 +45,12 @@ function productCard(p){return `<article class="product-card"><a class="product-
 
 function steps(){return `<div class="steps-grid"><div class="step"><span class="step-no">01</span><h3>Dein Lieblingsstück.</h3><p>Wähle ein Textil aus oder erzähle uns, was du suchst. Gemeinsam finden wir die passende Grundlage.</p></div><div class="step"><span class="step-no">02</span><h3>Deine persönliche Note.</h3><p>Name, Initialen oder Firmenlogo: Wir besprechen Motiv, Garnfarbe, Größe und die richtige Platzierung.</p></div><div class="step"><span class="step-no">03</span><h3>Dein ganz eigenes Stück.</h3><p>Nach der Abstimmung wird aus deiner Idee eine Stickerei. Preis und Fertigstellung klären wir persönlich.</p></div></div>`;}
 
-function faqs(){return `<div class="faqs"><details><summary>Kann ich ein eigenes Logo besticken lassen?</summary><p>Ein eigenes Firmen- oder Vereinslogo kannst du mit uns besprechen. Für eine erste Einschätzung helfen eine gut erkennbare Vorlage, die gewünschte Größe und die Stückzahl. <a href="#/bestickung">Bereite hier deine Anfrage vor.</a></p></details><details><summary>Ist auch ein einzelnes Stück möglich?</summary><p>Frage gern dein Einzelstück an – zum Beispiel ein Handtuch mit Namen oder eine persönliche Geschenkidee. Ob sich dein Textil und Motiv eignen und welcher Aufwand entsteht, stimmen wir individuell ab.</p></details><details><summary>Kann ich eigene Textilien mitbringen?</summary><p>Bitte sprich uns vorher darauf an. Material, Verarbeitung und gewünschte Stickposition bestimmen, ob dein Textil geeignet ist. Wir klären die Möglichkeiten gemeinsam mit dir.</p></details><details><summary>Was kostet eine individuelle Bestickung?</summary><p>Der tatsächliche Preis hängt unter anderem von Motiv, Stickgröße, Textil und Stückzahl ab. Die Preise im Shop sind Beispiele für diesen Entwurf. Ein verbindliches Angebot erhältst du nach der Abstimmung.</p></details><details><summary>Wie lange dauert die Anfertigung?</summary><p>Deinen Wunschtermin kannst du direkt in der Anfrage angeben. Den möglichen Fertigstellungstermin besprechen wir zusammen mit Motiv, Textil und Stückzahl.</p></details></div>`;}
+function faqs(){return `<div class="faqs"><details><summary>Kann ich ein eigenes Logo besticken lassen?</summary><p>Ein eigenes Firmen- oder Vereinslogo kannst du mit uns besprechen. Für eine erste Einschätzung helfen eine gut erkennbare Vorlage, die gewünschte Größe und die Stückzahl. <a href="#/bestickung">Bereite hier deine Anfrage vor.</a></p></details><details><summary>Ist auch ein einzelnes Stück möglich?</summary><p>Frage gern dein Einzelstück an – zum Beispiel ein Handtuch mit Namen oder eine persönliche Geschenkidee. Ob sich dein Textil und Motiv eignen und welcher Aufwand entsteht, stimmen wir individuell ab.</p></details><details><summary>Kann ich eigene Textilien mitbringen?</summary><p>Bitte sprich uns vorher darauf an. Material, Verarbeitung und gewünschte Stickposition bestimmen, ob dein Textil geeignet ist. Wir klären die Möglichkeiten gemeinsam mit dir.</p></details><details><summary>Was kostet eine individuelle Bestickung?</summary><p>Der tatsächliche Preis hängt unter anderem von Motiv, Stickgröße, Textil und Stückzahl ab. Die Clubartikel zeigen Preisangaben aus unseren bestehenden Shops. Preise für frei gestaltete Produktideen sind Beispiele für diesen Entwurf. Ein verbindliches Angebot erhältst du nach der Abstimmung.</p></details><details><summary>Wie lange dauert die Anfertigung?</summary><p>Deinen Wunschtermin kannst du direkt in der Anfrage angeben. Den möglichen Fertigstellungstermin besprechen wir zusammen mit Motiv, Textil und Stückzahl.</p></details></div>`;}
 
 function home(){return `
  <section class="wrap hero"><div class="hero-copy"><span class="eyebrow">DEINE IDEE. UNSER HANDWERK.</span><h1>Nicht einfach<br>bestickt.<br><em>Deins.</em></h1><p>Dein Name. Dein Logo. Dein Lieblingsstück.<br>Wir machen Textilien persönlich – vom Geschenk bis zum gemeinsamen Teamauftritt.</p><div class="btn-row">${button('Shop entdecken','#/shop')}${button('Bestickung anfragen','#/bestickung','outline')}</div><div class="hero-note">${icon('needle')}<span><b>Mit Herz & Faden.</b><br>Persönliche Beratung von Sylke Gauder.</span></div></div><div class="hero-art">${image('hero','Detail einer roten Stickerei auf anthrazitfarbenem Stoff – Konzeptaufnahme','fetchpriority="high" loading="eager"')}<div class="hero-stamp"><span>Persönlich</span><b>bis ins</b><span>kleinste Detail</span></div><div class="hero-floating">${icon('heart')}<div><b>Aus einer Idee wird dein Stück.</b><small>Individuell. Persönlich. Gauder.</small></div></div><div class="hero-image-caption"><span>STICKEREI MIT CHARAKTER</span><p>Ein kleiner Faden. Ein großer Unterschied.</p></div></div></section>
  <div class="benefits"><div class="wrap"><div class="benefit">${icon('needle')}<div><b>Individuelle Bestickung</b><small>Dein Name, dein Motiv, dein Logo</small></div></div><div class="benefit">${icon('heart')}<div><b>Besondere Geschenkideen</b><small>Für Lieblingsmenschen gemacht</small></div></div><div class="benefit">${icon('people')}<div><b>Für Firmen & Vereine</b><small>Ein gemeinsamer Auftritt</small></div></div><div class="benefit">${icon('chat')}<div><b>Persönlich beraten</b><small>Direkt mit Sylke Gauder</small></div></div></div></div>
+ ${clubHighlights()}
  <section class="wrap category-section"><span class="eyebrow red">FÜR JEDEN ANLASS DAS PASSENDE</span><div class="category-links">${[['Bekleidung','Für Alltag & Team','shirt'],['Badtextilien','Zum Wohlfühlen & Verschenken','towel'],['Accessoires','Kleine Dinge. Ganz persönlich.','cap'],['Tischwäsche','Deine Handschrift am Tisch','table']].map(([n,sub,i])=>`<a class="category-tile" href="#/shop?category=${encodeURIComponent(n)}"><span class="category-icon">${icon(i)}</span><span><b>${n}</b><small>${sub}</small></span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>
  <section class="wrap product-section"><div class="section-top"><div><span class="eyebrow red">ENTDECKEN. GESTALTEN. FREUEN.</span><h2 class="section-heading">Lieblingsstücke mit Persönlichkeit.</h2></div><a class="text-link" href="#/shop">Alle Produkte ${arrow}</a></div><div class="product-grid">${PRODUCTS.slice(0,4).map(productCard).join('')}</div><p class="fine-note">Eine Auswahl an Produktideen für den neuen Shop. Artikel, Preise und Abbildungen sind Beispiele.</p></section>
  <section class="wrap home-camper">${camperBanner()}</section>
@@ -55,7 +59,7 @@ function home(){return `
  <section class="wrap"><div class="business-banner"><div class="business-banner-copy"><span class="eyebrow red">GEMEINSAM SICHTBAR WERDEN</span><h2>Ein Team.<br>Ein Look. Euer Logo.</h2><p>Arbeitskleidung, Vereinsausstattung oder ein gemeinsamer Auftritt beim nächsten Event: Wir bringen eure Zusammengehörigkeit aufs Textil.</p>${button('Für Firmen & Vereine','#/firmen','dark')}</div><div class="business-image">${image('polo','Anthrazitfarbenes Polo mit beispielhafter Team-Bestickung')}<span class="image-label">Euer Logo macht den Unterschied.</span></div></div></section>
  <section class="wrap section faq-section"><div class="faq-heading"><span class="eyebrow red">GUT ZU WISSEN</span><h2 class="section-heading">Noch ein<br>loser Faden?</h2><p>Hier findest du Antworten auf häufige Fragen. Und wenn etwas offenbleibt, sind wir persönlich für dich da.</p></div>${faqs()}</section>`;}
 
-function shop(){return `${bread('Shop')}<section class="wrap"><div class="shop-heading"><div><span class="eyebrow red">DEIN STÜCK. DEINE GESCHICHTE.</span><h1 class="page-title">Mach es persönlich.</h1><p class="page-lead">Entdecke Textilien und Geschenkideen, die mit deinem Namen, deinen Initialen oder deinem Logo zu etwas Besonderem werden.</p></div><span class="outline-stamp">AUSGESUCHT.<br>BESTICKT.<br>DEINS.</span></div>${camperBanner()}<div class="shop-toolbar"><div class="filter-tabs" aria-label="Produktkategorien">${CATEGORIES.map(c=>`<button class="filter-tab ${shopState.category===c?'active':''}" data-filter="${c}" aria-pressed="${shopState.category===c}">${c}</button>`).join('')}</div><div class="search-field"><input id="shop-search" type="search" value="${e(shopState.query)}" placeholder="Dein Lieblingsstück suchen …" aria-label="Produkte durchsuchen">${icon('search')}</div></div><div class="results-top"><span id="result-count" aria-live="polite"></span><label for="shop-sort">Sortieren nach <select id="shop-sort"><option value="featured">Unsere Auswahl</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="name">Name A–Z</option></select></label></div><div id="shop-grid" class="product-grid shop-products"></div><p class="fine-note">Beispielsortiment für den Entwurf. Die Abbildungen zeigen mögliche Gestaltungen. Verfügbarkeit, Material, Maße und tatsächliche Preise werden vor einem Shop-Start ergänzt.</p><div class="shop-bottom"><div><h3>Du hast etwas ganz Eigenes im Kopf?</h3><p>Erzähl uns von deiner Idee. Wir denken gern mit.</p></div>${button('Individuell anfragen','#/bestickung','dark')}</div></section>`;}
+function shop(){return `${bread('Shop')}<section class="wrap">${clubTabs('shop')}<div class="shop-heading"><div><span class="eyebrow red">DEIN STÜCK. DEINE GESCHICHTE.</span><h1 class="page-title">Mach es persönlich.</h1><p class="page-lead">Entdecke Textilien und Geschenkideen, die mit deinem Namen, deinen Initialen oder deinem Logo zu etwas Besonderem werden.</p></div><span class="outline-stamp">AUSGESUCHT.<br>BESTICKT.<br>DEINS.</span></div>${camperBanner()}<div class="shop-toolbar"><div class="filter-tabs" aria-label="Produktkategorien">${CATEGORIES.map(c=>`<button class="filter-tab ${shopState.category===c?'active':''}" data-filter="${c}" aria-pressed="${shopState.category===c}">${c}</button>`).join('')}</div><div class="search-field"><input id="shop-search" type="search" value="${e(shopState.query)}" placeholder="Dein Lieblingsstück suchen …" aria-label="Produkte durchsuchen">${icon('search')}</div></div><div class="results-top"><span id="result-count" aria-live="polite"></span><label for="shop-sort">Sortieren nach <select id="shop-sort"><option value="featured">Unsere Auswahl</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="name">Name A–Z</option></select></label></div><div id="shop-grid" class="product-grid shop-products"></div><p class="fine-note">Beispielsortiment für den Entwurf. Die Abbildungen zeigen mögliche Gestaltungen. Verfügbarkeit, Material, Maße und tatsächliche Preise werden vor einem Shop-Start ergänzt.</p><div class="shop-bottom"><div><h3>Du hast etwas ganz Eigenes im Kopf?</h3><p>Erzähl uns von deiner Idee. Wir denken gern mit.</p></div>${button('Individuell anfragen','#/bestickung','dark')}</div></section>`;}
 
 function renderShopResults(){
  const grid=document.getElementById('shop-grid');if(!grid)return;
@@ -63,6 +67,28 @@ function renderShopResults(){
  document.getElementById('result-count').textContent=`${list.length} ${list.length===1?'Produktidee':'Produktideen'}`;
  grid.innerHTML=list.length?list.map(productCard).join(''):`<div class="empty-state">${icon('search')}<h2>Noch kein passendes Stück?</h2><p>Versuche einen anderen Suchbegriff oder entdecke alle Produktideen.</p><button class="btn btn-dark" data-action="reset-search">Alle Produkte anzeigen ${arrow}</button></div>`;
  document.querySelectorAll('[data-filter]').forEach(b=>{const active=b.dataset.filter===shopState.category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});
+}
+
+function renderClubResults(){
+ const items=filterClubProducts(clubState.club,clubState);
+ document.getElementById('club-grid').innerHTML=items.length?items.map(clubCard).join(''):`<div class="empty-state"><h2>Kein passender Artikel gefunden.</h2><p>Probiere einen anderen Suchbegriff oder eine andere Kategorie.</p><button class="btn btn-outline" data-action="reset-club-search">Alle Clubartikel anzeigen</button></div>`;
+ document.getElementById('club-result-count').textContent=`${items.length} ${items.length===1?'Produkt':'Produkte'}`;
+ document.querySelectorAll('[data-club-filter]').forEach(b=>{const active=b.dataset.clubFilter===clubState.category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});
+}
+function updateClubConfiguration(){
+ const p=activeProduct,price=clubPrice(p,selection),error=clubSelectionError(p,selection);
+ document.getElementById('club-original-link').href=clubSourceUrl(p,selection);
+ document.getElementById('club-detail-price').textContent=clubPriceLabel(p,selection);
+ document.getElementById('club-price-explain').textContent=price.unavailable?'Bitte wähle eine andere Kombination.':`${price.from?'Ausführungsabhängiger Ab-Preis':'Preis der gewählten Ausführung'} · inkl. MwSt., zzgl. Versand`;
+ document.getElementById('club-sku').textContent=price.sku||p.articleNumber;
+ document.getElementById('club-selection-summary').textContent=clubSummary(p,selection);
+ document.getElementById('club-price-summary').innerHTML=clubPriceSummary(p,selection);
+ const logo=document.querySelector('#club-logo-preview img');if(logo)logo.src=clubLogoFor(p,selection);
+ const message=document.getElementById('club-selection-error');message.textContent=error;message.hidden=!error;
+ document.querySelector('[data-action="add-club-cart"]').disabled=!!error;
+ const customFields=document.getElementById('club-custom-fields');if(customFields)customFields.hidden=!selection.customization.enabled;
+ document.querySelector('[data-action="qty-down"]').disabled=selection.qty<=1;
+ document.querySelector('[data-action="qty-up"]').disabled=selection.qty>=99;
 }
 
 function priceBreakdown(item){
@@ -76,9 +102,10 @@ function configurationSummary(item){
 function camperBanner(){return `<a class="camper-banner" href="#/produkt/camper-tshirt?edition=camper"><div class="camper-banner-icon">${icon('shirt')}</div><div><span class="eyebrow">CAMPER EDITION</span><h2>Dein Camper. Dein Shirt.</h2><p>Deine Marke, deine Farbe, dein Platz fürs Logo.</p></div><span class="camper-banner-link">Jetzt gestalten ${arrow}</span></a>`;}
 function product(p,previous={}){
  activeProduct=p;selection=createSelection(p,previous);
+ if(p.club)return clubProduct(p,selection);
  const camper=isCamper(selection);
- return `${bread(p.name,true)}<section class="wrap product-picker-row"><label for="product-picker"><span class="config-step">01</span> Dein Produkt</label><select id="product-picker">${PRODUCTS.map(x=>`<option value="${x.id}" ${x.id===p.id?'selected':''}>${x.name}${x.camper?' · Camper Edition möglich':''}</option>`).join('')}</select><span>Auswählen. Gestalten. Deins.</span></section>
- <section class="wrap product-detail configurable-product"><div class="product-gallery"><div class="gallery-sticky">${p.garment?`<div class="garment-stage"><div class="preview-topline"><span class="live-dot"></span> DEINE VORSCHAU <span>VORDERSEITE</span></div><div id="garment-preview">${garmentPreview(p,selection)}</div><div class="preview-caption"><span id="preview-edition">${camper?'CAMPER EDITION':'DEIN LIEBLINGSSTÜCK'}</span><b id="preview-description">${camper?camperLabels(selection).brand:p.name}</b><span id="preview-color">${selection.color} · Größe ${selection.size}</span></div></div><p class="image-disclaimer">Schematische Vorschau. Markenschriftzüge sind Platzhalter für die finalen Logos. „Links“ bedeutet links aus Trägersicht. Logo-Datei, Stickmaße und Ausführung stimmen wir persönlich ab.</p>`:`<div class="detail-image">${image(p.image,`${p.name} – beispielhafte Produktgestaltung`,'fetchpriority="high" loading="eager"')}<span class="detail-label">DEIN TEXTIL. DEINE GESTALTUNG.</span></div><p class="image-disclaimer">Illustratives Beispielbild. Farb- und Größenauswahl verändert die Aufnahme nicht.</p>`}<div class="stitch-preview"><span class="preview-label"><b>DEIN WUNSCHTEXT</b>Schrift & Garnfarbe entdecken</span><span id="stitch-text" class="stitch-text">${e(selection.text)||'Dein Wunschtext'}</span></div><p class="image-disclaimer">Schriftbild und Platzierung des Wunschtextes stimmen wir persönlich ab.</p></div></div>
+ return `${bread(p.name,true)}<section class="wrap product-picker-row"><label for="product-picker"><span class="config-step">01</span> Dein Produkt</label><select id="product-picker">${PRODUCTS.filter(x=>!x.club).map(x=>`<option value="${x.id}" ${x.id===p.id?'selected':''}>${x.name}${x.camper?' · Camper Edition möglich':''}</option>`).join('')}</select><span>Auswählen. Gestalten. Deins.</span></section>
+ <section class="wrap product-detail configurable-product"><div class="product-gallery"><div class="gallery-sticky">${p.garment?`<div class="garment-stage"><div class="preview-topline"><span class="live-dot"></span> DEINE VORSCHAU <span>VORDERSEITE</span></div><div id="garment-preview">${garmentPreview(p,selection)}</div><div class="preview-caption"><span id="preview-edition">${camper?'CAMPER EDITION':'DEIN LIEBLINGSSTÜCK'}</span><b id="preview-description">${camper?camperLabels(selection).brand:p.name}</b><span id="preview-color">${selection.color} · Größe ${selection.size}</span></div></div><p class="image-disclaimer">Schematische Vorschau mit vorhandenen Club-Logos. Bei Knaus und Karmann-Mobil ist der Markenname ein Platzhalter. „Links“ bedeutet links aus Trägersicht. Logo-Datei, Stickmaße und Ausführung stimmen wir persönlich ab.</p>`:`<div class="detail-image">${image(p.image,`${p.name} – beispielhafte Produktgestaltung`,'fetchpriority="high" loading="eager"')}<span class="detail-label">DEIN TEXTIL. DEINE GESTALTUNG.</span></div><p class="image-disclaimer">Illustratives Beispielbild. Farb- und Größenauswahl verändert die Aufnahme nicht.</p>`}<div class="stitch-preview"><span class="preview-label"><b>DEIN WUNSCHTEXT</b>Schrift & Garnfarbe entdecken</span><span id="stitch-text" class="stitch-text">${e(selection.text)||'Dein Wunschtext'}</span></div><p class="image-disclaimer">Schriftbild und Platzierung des Wunschtextes stimmen wir persönlich ab.</p></div></div>
  <div class="product-info"><span class="eyebrow red">${p.tag}</span><h1>${p.name}</h1><div class="config-price-heading"><span id="detail-price" class="detail-price">${money(unitPrice(selection))}</span><span>/ Stück</span></div><p id="price-explain" class="price-explain">Beispielpreis ${camper?'inkl. gewähltem Markenlogo':'ohne Markenlogo'} · unverbindlicher Entwurf</p><p class="detail-description">${p.description}</p>
  <fieldset class="config-fieldset"><legend><span class="config-step">02</span> Farbe & Größe</legend><div class="option-group"><div id="color-label" class="option-title">Textilfarbe <span id="chosen-color">${selection.color}</span></div><div class="color-swatches" role="group" aria-labelledby="color-label">${p.colors.map(c=>`<button class="color-swatch" style="--swatch:${COLORS[c]}" data-color="${c}" aria-label="Textilfarbe ${c}" title="${c}" aria-pressed="${c===selection.color}"></button>`).join('')}</div></div><div class="option-group"><div id="size-label" class="option-title">${p.category==='Badtextilien'||p.category==='Tischwäsche'?'Maße':'Größe'}</div><div class="size-options" role="group" aria-labelledby="size-label">${p.sizes.map(s=>`<button class="size-option" data-size="${s}" aria-pressed="${s===selection.size}">${s}</button>`).join('')}</div></div></fieldset>
  ${p.camper?`<fieldset class="config-fieldset"><legend><span class="config-step">03</span> Deine Edition</legend><div class="edition-options"><button class="edition-option" data-edition="classic" aria-pressed="${!camper}"><b>Klassisch</b><span>Ohne Markenlogo</span></button><button class="edition-option" data-edition="camper" aria-pressed="${camper}"><b>Camper Edition ${arrow}</b><span>Mit deiner Wohnmobilmarke</span></button></div></fieldset>
@@ -93,6 +120,7 @@ function product(p,previous={}){
 
 function updateProductConfiguration(){
  if(!selection||!activeProduct)return;
+ if(activeProduct.club){updateClubConfiguration();return;}
  const camper=isCamper(selection),labels=camperLabels(selection);
  document.getElementById('detail-price').textContent=money(unitPrice(selection));
  document.getElementById('price-explain').textContent=`Beispielpreis ${camper?'inkl. gewähltem Markenlogo':'ohne Markenlogo'}${selection.text.trim()?' und inkl. Wunschtext':''} · unverbindlicher Entwurf`;
@@ -146,13 +174,17 @@ function route(initial=false){
  selectedFile=null;selection=null;activeProduct=null;
  const raw=location.hash.slice(1)||'/';const [pathname,query='']=raw.split('?');const params=new URLSearchParams(query);const parts=pathname.split('/').filter(Boolean);const view=parts[0]||'home';
  const camperRoute=view==='produkt'&&(params.get('edition')==='camper'||(parts[1]==='camper-tshirt'&&params.get('edition')!=='classic'));
- document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===view||(view==='produkt'&&a.dataset.nav===(camperRoute?'camper':'shop'))));
+ document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===view||(['club','clubs'].includes(view)&&a.dataset.nav==='clubs')||(view==='produkt'&&parts[1]?.startsWith('club-')&&a.dataset.nav==='clubs')||(view==='produkt'&&!parts[1]?.startsWith('club-')&&a.dataset.nav===(camperRoute?'camper':'shop'))));
  hideMenu();if(cartDialog.open)cartDialog.close();
  let html,title='Persönlich. Bis ins Detail.';
  if(view==='home'){html=home();}
  else if(view==='shop'){
   const category=params.get('category')||'Alle Produkte';shopState={category:CATEGORIES.includes(category)?category:'Alle Produkte',query:params.get('q')||'',sort:'featured'};
   html=shop();title='Shop entdecken';
+ }else if(view==='clubs'){html=clubHighlights({page:true});title='Unsere Club-Shops';
+ }else if(view==='club'){
+  const c=clubById(parts[1]);
+  if(c){clubState={club:c.id,category:'Alle Produkte',query:'',sort:'featured'};html=clubCatalog(c,clubState);title=c.fullName;}else{html=notFound();title='Seite nicht gefunden';}
  }else if(view==='produkt'){
   const p=PRODUCTS.find(x=>x.id===parts[1]);if(p){const previous=productDraft?.productId===p.id?productDraft:{edition:params.get('edition')||(p.id==='camper-tshirt'?'camper':'classic')};html=product(p,previous);title=p.name;}else html=notFound();
   productDraft=null;camperDraft=null;
@@ -177,8 +209,15 @@ function toast(message){const t=document.getElementById('toast');t.textContent=m
 function persistCart(){try{localStorage.setItem(STORE,JSON.stringify(cart));}catch{toast('Der Warenkorb bleibt für diesen Besuch erhalten.');}updateCartCount();}
 function updateCartCount(){const count=cartQuantity(cart);document.getElementById('cart-count').textContent=count;document.querySelector('[data-action="cart"]').setAttribute('aria-label',`Warenkorb mit ${count} Artikeln öffnen`);}
 function cartHead(label='Dein Warenkorb'){return `<div class="cart-head"><div><h2 id="cart-title">${label}</h2><small>Deine Auswahl · unverbindlicher Entwurf</small></div><button class="icon-btn" data-action="close-cart" aria-label="Warenkorb schließen">${icon('close')}</button></div>`;}
+function cartLine(item,index){
+ const p=PRODUCTS.find(x=>x.id===item.productId),price=itemPriceInfo(item);
+ const amount=qty=>price.amount===null?'Preis auf Anfrage':`${price.from?'ab ':''}${money(price.amount*qty)}`;
+ const details=p.club?`${e(clubById(p.club).fullName)}<br>${e(clubSummary(p,item))}${item.note?`<br>Wünsche, separat anzubieten: ${e(item.note)}`:''}`:`${e(item.color)} · ${e(item.size)}${isCamper(item)?`<br><b>Camper Edition · ${e(camperLabels(item).brand)}</b><br>${e(camperLabels(item).position)} · ${e(camperLabels(item).logoSize)}<br>Logo-Aufpreis: ${money(priceParts(item).logo)} / Stück`:''}${item.text?`<br>„${e(item.text)}“ · ${e(item.thread)}<br>${e(item.font)}`:'<br>Ohne Wunschtext'}`;
+ return `<article class="cart-item">${p.garment?`<div class="cart-garment">${garmentPreview(p,item,{compact:true})}</div>`:image(p.image,p.name)}<div><h3><a href="#/produkt/${p.id}">${e(p.name)}</a></h3><p>${details}</p><p class="cart-unit-price">${amount(1)} pro Stück</p><div class="cart-item-bottom"><div class="quantity-control"><button data-cart-qty="${index}" data-delta="-1" aria-label="Anzahl von ${e(p.name)} verringern" ${item.qty<=1?'disabled':''}>−</button><span>${item.qty}</span><button data-cart-qty="${index}" data-delta="1" aria-label="Anzahl von ${e(p.name)} erhöhen" ${item.qty>=99?'disabled':''}>+</button></div><span class="cart-item-price">${amount(item.qty)}</span></div></div><button class="remove-item" data-remove="${index}" aria-label="${e(p.name)} aus dem Warenkorb entfernen">${icon('close')}</button></article>`;
+}
 function renderCart(){
- document.getElementById('cart-content').innerHTML=cartHead()+`<div class="cart-body">${cart.length?`${cart.map((item,index)=>{const p=PRODUCTS.find(x=>x.id===item.productId);return `<article class="cart-item">${p.garment?`<div class="cart-garment">${garmentPreview(p,item,{compact:true})}</div>`:image(p.image,p.name)}<div><h3><a href="#/produkt/${p.id}">${p.name}</a></h3><p>${e(item.color)} · ${e(item.size)}${isCamper(item)?`<br><b>Camper Edition · ${e(camperLabels(item).brand)}</b><br>${e(camperLabels(item).position)} · ${e(camperLabels(item).logoSize)}<br>Logo-Aufpreis: ${money(priceParts(item).logo)} / Stück`:''}${item.text?`<br>„${e(item.text)}“ · ${e(item.thread)}<br>${e(item.font)}`:'<br>Ohne Wunschtext'}</p><p class="cart-unit-price">${money(unitPrice(item))} pro Stück</p><div class="cart-item-bottom"><div class="quantity-control"><button data-cart-qty="${index}" data-delta="-1" aria-label="Anzahl von ${e(p.name)} verringern" ${item.qty<=1?'disabled':''}>−</button><span>${item.qty}</span><button data-cart-qty="${index}" data-delta="1" aria-label="Anzahl von ${e(p.name)} erhöhen" ${item.qty>=99?'disabled':''}>+</button></div><span class="cart-item-price">${money(unitPrice(item)*item.qty)}</span></div></div><button class="remove-item" data-remove="${index}" aria-label="${e(p.name)} aus dem Warenkorb entfernen">${icon('close')}</button></article>`;}).join('')}<div class="cart-total"><span>Beispielsumme</span><span>${money(cartTotal(cart))}</span></div><p class="cart-price-note">Alle Preise sind Entwurfsbeispiele. Tatsächlicher Preis, Versand und Fertigstellung werden persönlich abgestimmt.</p><button class="btn btn-primary wide" data-action="cart-enquiry">Anfrage vorbereiten ${arrow}</button><div class="cart-extras"><a href="#/shop" data-action="continue-shopping">Weiter entdecken</a></div>`:`<div class="cart-empty">${icon('bag')}<h3>Platz für dein<br>nächstes Lieblingsstück.</h3><p>Entdecke den Shop und gestalte dein erstes persönliches Stück.</p><a class="btn btn-primary" href="#/shop" data-action="continue-shopping">Zum Shop ${arrow}</a></div>`}</div>`;
+ const total=cartPriceInfo(cart);
+ document.getElementById('cart-content').innerHTML=cartHead()+`<div class="cart-body">${cart.length?`${cart.map(cartLine).join('')}<div class="cart-total"><span>${total.hasClub?'Orientierungssumme':'Beispielsumme'}</span><span>${total.from?'ab ':''}${money(total.amount)}</span></div>${total.unknown?`<p class="cart-price-note">${total.unknown} Position(en) mit Preis auf Anfrage sind noch nicht enthalten.</p>`:''}<p class="cart-price-note">${total.hasClub?'Clubpreise nach Ausführung, Stand 10.10.2026, inkl. MwSt. Die freie Camper-Gestaltung und weitere Produktideen verwenden Beispielpreise.':'Die Preise der Produktideen sind Entwurfsbeispiele.'} Verfügbarkeit, endgültigen Preis, zusätzliche Wünsche und Versand stimmen wir persönlich ab.</p><button class="btn btn-primary wide" data-action="cart-enquiry">Anfrage vorbereiten ${arrow}</button><div class="cart-extras"><a href="${total.hasClub?'#/clubs':'#/shop'}" data-action="continue-shopping">Weiter entdecken</a></div>`:`<div class="cart-empty">${icon('bag')}<h3>Platz für dein<br>nächstes Lieblingsstück.</h3><p>Entdecke die Club-Shops und gestalte dein persönliches Stück.</p><a class="btn btn-primary" href="#/clubs" data-action="continue-shopping">Club-Shops entdecken ${arrow}</a></div>`}</div>`;
 }
 function openCart(){renderCart();if(!cartDialog.open)cartDialog.showModal();}
 function showCartEnquiry(){
@@ -188,6 +227,7 @@ function showCartEnquiry(){
 function mailLink(subject,body){return `mailto:info@handelsvertretung-gauder.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;}
 function updatePersonalization(){
  if(!selection||!activeProduct)return;
+ if(activeProduct.club){updateClubConfiguration();return;}
  const text=document.getElementById('stitch-input').value;
  selection.text=text.slice(0,20);selection.thread=document.getElementById('thread-select').value;selection.font=document.getElementById('font-select').value;
  const preview=document.getElementById('stitch-text');preview.textContent=selection.text.trim()||'Dein Wunschtext';preview.style.color=THREADS[selection.thread];preview.classList.toggle('block-font',selection.font==='Druckschrift');
@@ -202,6 +242,7 @@ document.addEventListener('click',event=>{
  const b=event.target.closest('button,a');if(!b)return;
  if(b.dataset.scroll){event.preventDefault();const target=document.getElementById(b.dataset.scroll);target?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});if(b.dataset.scroll==='main')target?.focus({preventScroll:true});return;}
  if(b.matches('a[href^="#/"]')){hideMenu();if(cartDialog.open)cartDialog.close();if(b.getAttribute('href')===location.hash){event.preventDefault();route();}}
+ if(b.dataset.clubFilter){clubState.category=b.dataset.clubFilter;renderClubResults();return;}
  if(b.dataset.filter){shopState.category=b.dataset.filter;renderShopResults();return;}
  if(b.dataset.color&&selection){selection.color=b.dataset.color;updateProductConfiguration();return;}
  if(b.dataset.size&&selection){selection.size=b.dataset.size;updateProductConfiguration();return;}
@@ -224,6 +265,8 @@ document.addEventListener('click',event=>{
  case 'continue-shopping':cartDialog.close();break;
  case 'reset-search':shopState={category:'Alle Produkte',query:'',sort:'featured'};document.getElementById('shop-search').value='';document.getElementById('shop-sort').value='featured';renderShopResults();break;
  case 'qty-up':case 'qty-down':if(selection){const input=document.getElementById('product-qty');selection.qty=Math.max(1,Math.min(99,(Number.parseInt(input.value,10)||1)+(b.dataset.action==='qty-up'?1:-1)));input.value=selection.qty;updateProductConfiguration();}break;
+ case 'add-club-cart':if(selection&&activeProduct?.club){const error=clubSelectionError(activeProduct,selection);if(error){toast(error);break;}selection.note=selection.note.trim();cart=addItem(cart,selection);persistCart();openCart();}break;
+ case 'reset-club-search':clubState={...clubState,category:'Alle Produkte',query:'',sort:'featured'};document.getElementById('club-search').value='';document.getElementById('club-sort').value='featured';renderClubResults();break;
  case 'add-cart':if(selection){selection.qty=Math.max(1,Math.min(99,Number.parseInt(document.getElementById('product-qty').value,10)||1));document.getElementById('product-qty').value=selection.qty;selection.text=selection.text.trim();cart=addItem(cart,{...selection});persistCart();openCart();}break;
  case 'cart-enquiry':if(cart.length)showCartEnquiry();break;
  case 'copy-cart':{const t=document.getElementById('cart-email');copyText(t.value,t);break;}
@@ -233,6 +276,9 @@ document.addEventListener('click',event=>{
 });
 main.addEventListener('input',event=>{
  const target=event.target;
+ if(target.id==='club-search'){clubState.query=target.value;renderClubResults();}
+ if(target.id==='club-request-note'&&selection)selection.note=target.value.slice(0,250);
+ if(target.id==='club-custom-text'&&selection?.customization){selection.customization.text=target.value.slice(0,activeProduct.customization.maxLength);updateClubConfiguration();}
  if(target.id==='shop-search'){shopState.query=target.value;renderShopResults();}
  if(target.id==='stitch-input')updatePersonalization();
  if(target.id==='product-qty'&&selection){selection.qty=Math.max(1,Math.min(99,Number.parseInt(target.value,10)||1));updateProductConfiguration();}
@@ -240,6 +286,11 @@ main.addEventListener('input',event=>{
 });
 main.addEventListener('change',event=>{
  const target=event.target;
+ if(target.id==='club-sort'){clubState.sort=target.value;renderClubResults();}
+ if(target.dataset.clubOption&&selection?.edition==='club'){selection.options[target.dataset.clubOption]=target.value;updateClubConfiguration();}
+ if(target.id==='club-custom-enabled'&&selection?.customization){selection.customization.enabled=target.checked;updateClubConfiguration();}
+ if(target.id==='club-custom-thread'&&selection?.customization){selection.customization.thread=target.value;updateClubConfiguration();}
+ if(target.id==='club-custom-font'&&selection?.customization){selection.customization.font=target.value;updateClubConfiguration();}
  if(target.id==='shop-sort'){shopState.sort=target.value;renderShopResults();}
  if(['thread-select','font-select'].includes(target.id))updatePersonalization();
  if(target.id==='product-qty'&&selection){selection.qty=Math.max(1,Math.min(99,Number.parseInt(target.value,10)||1));target.value=selection.qty;updateProductConfiguration();}
