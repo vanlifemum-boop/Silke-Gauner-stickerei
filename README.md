@@ -15,7 +15,7 @@ Website-Entwurf für Handelsvertretung & Stickerei Sylke Gauder in Rot, Anthrazi
 - Logo-Bestickung für alle Textilien: Club- oder eigenes Logo, drei zum Artikel passende Positionen, kleine/große Ausführung
 - Eigene Kategorien für Hosen, Jacken und Pullover; Maßhemden und Maßblusen mit Stoffwunsch, Ärmel, Kragen, Manschetten und Maßaufnahme
 - Direkter WhatsApp-Link zur Mobilnummer 0163 / 6997 060; Festnetznummer entfernt
-- Live-Vorschau für Textilfarbe, Markenname, Platzierung und Logogröße
+- Live-Vorschau mit echten Club-Logos für Textilfarbe, Marke, Platzierung und Logogröße
 - Varianten, Wunschtext, Garnfarbe und schematische Stickvorschau
 - Warenkorb mit lokaler Speicherung und E-Mail-Anfrage
 - Firmen & Vereine, individuelle Bestickung, Über uns und Kontakt
@@ -43,7 +43,7 @@ Alle Asset-Pfade sind relativ, sodass die Website auch unter dem Repository-Unte
 
 Mit Node.js: `npm run check`
 
-Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 31 Funktionstests bestehen; 271 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
+Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 32 Funktionstests bestehen; 271 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
 
 ## Inhalte bearbeiten
 
@@ -102,3 +102,7 @@ Das Karmann-Mobil-Club-Logo stammt aus dem offiziellen Clubauftritt und ist iden
 ## Waumobil Edition
 
 Waumobil ist als eigener Reiter neben Eura Mobil, Forster, Benimar und Karmann verfügbar und in allen Logo-Konfiguratoren auswählbar. Der offizielle Auftritt https://waumobil.eu/gebrauchtes-wohnmobil-anbieten/ verlinkt den Waumobil Fanshop https://waumobil.handelsvertretung-gauder.de/. Das Original-Logo, die 32 gelisteten Produkte, Originalfotos, Farben, Größen und vorhandene Logoausführungen werden übernommen. „Nur Brustlogo“ und „Brust und Rücken groß“ behalten ihre überprüften Variantenpreise. Quellen sind in `docs/waumobil-source.json` und `docs/waumobil-products-source.json` dokumentiert.
+
+## Sichtbare und austauschbare Logos
+
+Die T-Shirt-Karte auf Startseite und im Shop zeigt die echten Club-Logos. Ihre bebilderte Logoauswahl wechselt die Vorschau sofort und übernimmt die Auswahl in den Produkt-Konfigurator. Die Logo-Schaltflächen in beiden Konfiguratoren zeigen Benimar Fans, Forster Fahrer & Fans, Eura Mobil Club, Karmann Club und Waumobil. Bei den frei gestaltbaren Oberteilen erscheint das gewählte Logo zusätzlich vergrößert. Position, Logogröße und Logo bleiben in Warenkorb und Anfrage erhalten. Die bestehenden Logo-Dateien werden unverändert verwendet. Versionsparameter laden die aktualisierten Oberflächenmodule auch bei einem bereits geöffneten Browser-Cache.

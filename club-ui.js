@@ -1,6 +1,6 @@
 import { CLUBS, TAILORED_PRODUCTS, catalogGroupFor, clubById, clubProducts, clubCategories, filterClubProducts, clubPrice, clubSelectionLabels, clubLogoFor, clubSelectionError, clubSourceUrl } from './club-core.js';
 import { money, escapeHtml as e } from './shop-core.js';
-import { embroideryOptions } from './embroidery-ui.js';
+import { embroideryOptions } from './embroidery-ui.js?v=20261011-logos';
 import { canEmbroider, LOGO_BRANDS } from './embroidery-core.js';
 const arrow='<span aria-hidden="true">↗</span>';
 const productUrl=p=>`#/produkt/${p.id}`;

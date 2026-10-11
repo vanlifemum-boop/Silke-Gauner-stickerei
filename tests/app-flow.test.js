@@ -12,21 +12,23 @@ import * as contacts from '../contact.js';
 // Exercises the actual route and event handlers with in-memory DOM endpoints.
 // Layout, native browser behavior and rendering are outside this test's scope.
 function application(hash){
- const nodes=new Map(),saved=new Map(),documentEvents=new Map();
+ const nodes=new Map(),saved=new Map(),documentEvents=new Map(),queries=new Map();
  const node=()=>({innerHTML:'',textContent:'',style:{},hidden:false,value:'',open:false,dataset:{},events:new Map(),attributes:{},classList:{toggle(){},add(){},remove(){}},setAttribute(k,v){this.attributes[k]=v;},getAttribute(k){return this.attributes[k];},addEventListener(k,v){this.events.set(k,v);},focus(){},close(){this.open=false;},showModal(){this.open=true;},querySelector(){return node();}});
  const get=id=>{if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);};
  const staticIds=new Set(['main','cart-dialog','cart-content','toast','mobile-menu','cart-count']);
  const select=id=>staticIds.has(id)||[...nodes.values()].some(n=>n.innerHTML.includes('id=\"'+id+'\"'))?get(id):null;
- const context={...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:()=>[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,setTimeout:()=>0,clearTimeout(){}};
+ const context={...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,setTimeout:()=>0,clearTimeout(){}};
  vm.createContext(context);vm.runInContext(readFileSync(new URL('../app.js',import.meta.url),'utf8').replace(/^import[^\n]+\n/gm,''),context);
- return {get,saved,run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
+ return {get,saved,queries,run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
 }
 
 test('Club product event flow transfers the full requested logo design to cart and email',()=>{
  const app=application('#/produkt/club-forster-755');
+ for(const c of clubs.CLUBS)assert.ok(app.get('main').innerHTML.includes(`<img src="${c.logo}" alt=""`),`${c.id} has an image in the logo picker`);
  app.click({embroideryMode:'custom'});app.click({designBrand:'karmann'});app.click({designPosition:'sleeve'});app.click({designSize:'large'});
  app.change('design-thread','Silber');app.input('design-text','Team Nord');app.input('design-logo-note','Weiß auf Navy');app.change('product-qty','2');
  assert.equal(app.get('embroidery-fields').hidden,false);assert.match(app.get('club-selection-summary').textContent,/Karmann Club/);
+ assert.match(app.get('club-design-preview').innerHTML,/assets\/clubs\/karmann-logo.png/);
  app.click({action:'add-club-cart'});
  const cart=JSON.parse(app.saved.get('gauder-design-cart-v1'));
  assert.equal(cart.length,1);assert.equal(cart[0].qty,2);assert.equal(cart[0].embroidery.size,'large');assert.equal(cart[0].embroidery.logoNote,'Weiß auf Navy');assert.equal(cart[0].embroidery.thread,'Silber');
@@ -48,4 +50,36 @@ test('Tailored product event flow handles short sleeves, custom fabric and an un
 test('The full shop and the dedicated tailoring route render through the router',()=>{
  const shop=application('#/shop');assert.equal((shop.get('shop-grid').innerHTML.match(/<article/g)||[]).length,131);
  const tailor=application('#/masshemden');assert.match(tailor.get('main').innerHTML,/Maßhemd gestalten/);assert.match(tailor.get('main').innerHTML,/Maßbluse gestalten/);
+});
+
+test('Logo choice on the product card updates the artwork and continues through configurator and cart',()=>{
+ const app=application('#/');
+ const initial=app.run('productCard(PRODUCTS[0])');
+ assert.doesNotMatch(initial,/assets\/tshirt\.svg/);
+ for(const c of clubs.CLUBS)assert.ok(initial.includes(c.logo),`${c.id} logo is available on the card`);
+ const preview={},name={},links=[{setAttribute(k,v){this[k]=v;}},{setAttribute(k,v){this[k]=v;}}];
+ const buttons=core.CAMPER_BRANDS.map(b=>({dataset:{cardBrand:b.id},setAttribute(k,v){this[k]=v;}}));
+ const card={querySelector:s=>s==='[data-card-preview]'?preview:name,querySelectorAll:s=>s==='[data-card-link]'?links:buttons};
+ app.queries.set('[data-preview-product="camper-tshirt"]',[card]);
+ for(const c of clubs.CLUBS){
+  app.click({cardBrand:c.id,cardProductId:'camper-tshirt'});
+  assert.ok(preview.innerHTML.includes(`<image href="${c.logo}"`));assert.equal(name.textContent,c.fullName);
+  assert.equal(buttons.filter(b=>b['aria-pressed']).length,1);
+  assert.ok(links.every(a=>a.href.endsWith(`edition=camper&brand=${c.id}`)));
+ }
+ app.click({cardBrand:'benimar',cardProductId:'camper-tshirt'});
+ app.run(`location.hash=${JSON.stringify(links[0].href)};route()`);
+ assert.equal(app.run('selection.brand'),'benimar');
+ assert.match(app.get('main').innerHTML,/class="brand-options logo-image-options"/);
+ for(const c of clubs.CLUBS)assert.ok(app.get('main').innerHTML.includes(`<img src="${c.logo}" alt=""`));
+ app.click({brand:'eura-mobil'});app.click({logoPosition:'lower-left'});app.click({logoSize:'large'});app.click({color:'Navy'});
+ assert.match(app.get('garment-preview').innerHTML,/eura-mobil-logo.webp/);
+ assert.doesNotMatch(app.get('garment-preview').innerHTML,/benimar-logo.svg/);
+ assert.match(app.get('preview-logo-detail').innerHTML,/Eura Mobil Club/);
+ app.click({action:'add-cart'});
+ const cart=JSON.parse(app.saved.get('gauder-design-cart-v1'));
+ assert.equal(cart[0].brand,'eura-mobil');assert.equal(cart[0].logoPosition,'lower-left');assert.equal(cart[0].logoSize,'large');assert.equal(cart[0].color,'Navy');
+ assert.match(app.get('cart-content').innerHTML,/eura-mobil-logo.webp/);
+ app.click({edition:'classic'});assert.equal(app.get('preview-logo-detail').hidden,true);assert.doesNotMatch(app.get('garment-preview').innerHTML,/<image/);
+ app.click({edition:'camper'});app.click({brand:'own'});assert.match(app.get('preview-logo-detail').innerHTML,/Dein eigenes Logo/);assert.doesNotMatch(app.get('garment-preview').innerHTML,/eura-mobil-logo.webp/);
 });

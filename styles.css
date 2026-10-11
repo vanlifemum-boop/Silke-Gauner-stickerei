@@ -104,3 +104,32 @@ body:has(dialog[open]) .whatsapp-float{visibility:hidden}
 .logo-config .brand-option:last-child{grid-column:auto}
 @media(max-width:1180px){.club-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:960px){.club-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.club-card:last-child{grid-column:1/-1}.logo-config .brand-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Original club artwork in the logo picker and product-card preview. */
+.logo-image-options .brand-option{min-height:112px;grid-template-rows:64px auto;gap:8px;padding:10px 8px;align-content:start}
+.logo-image-options .brand-option:last-child{grid-column:auto}
+.brand-option-art{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:3px;width:100%;height:64px;padding:5px;overflow:hidden}
+.brand-option-art img{display:block;width:100%;height:100%;object-fit:contain}
+.brand-option-label{font-size:11px;line-height:1.4;font-weight:700;overflow-wrap:anywhere}
+.own-logo-symbol{display:grid;place-items:center;color:var(--red);font-size:32px;line-height:1;border:1px dashed #cbd0d8;border-radius:5px;width:48px;height:48px}
+.preview-logo-detail{display:flex;align-items:center;justify-content:center;gap:16px;background:#fff;border:1px solid #e2e5ea;border-radius:5px;margin:0 22px 20px;padding:14px 18px}
+.preview-logo-detail[hidden]{display:none}
+.preview-logo-detail>img{display:block;width:110px;height:78px;object-fit:contain;flex-shrink:0}
+.preview-logo-detail>div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.preview-logo-detail>div>span{font-size:8px;letter-spacing:1.2px;color:#6b727c}
+.preview-logo-detail b{font-size:13px;line-height:1.5}
+.card-garment-preview{height:100%;width:100%;background:#f0f2f5}
+.card-garment-preview .garment-art{height:100%;width:100%}
+.card-logo-picker{margin-top:15px;border-top:1px solid var(--line);padding-top:12px}
+.card-logo-picker>p{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:700;margin:0 0 8px}
+.card-logo-picker>p>span{color:var(--red);font-size:17px}
+.card-logo-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.card-logo-option{min-width:0;min-height:48px;padding:4px;border:1px solid #d4d8df;background:#fff;border-radius:4px}
+.card-logo-option:hover{border-color:var(--red)}
+.card-logo-option[aria-pressed="true"]{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red);background:#fff6f7}
+.card-logo-option .brand-option-art{height:40px;padding:2px}
+.card-logo-option .brand-option-label{display:none}
+.card-logo-option .own-logo-symbol{font-size:22px;width:30px;height:30px}
+.card-logo-name{display:block;font-size:10px;line-height:1.5;margin-top:7px;min-height:15px;color:#626974}
+@media(max-width:680px){.logo-image-options .brand-option{min-height:110px;padding:8px 5px}.preview-logo-detail{margin:0 16px 18px;padding:12px;gap:12px}.preview-logo-detail>img{width:100px;height:72px}.preview-logo-detail b{font-size:12px}.preview-logo-detail>div>span{font-size:7px;letter-spacing:.7px}.card-logo-name{min-height:30px}}
+@media(max-width:380px){.card-logo-options{grid-template-columns:repeat(2,minmax(0,1fr))}}

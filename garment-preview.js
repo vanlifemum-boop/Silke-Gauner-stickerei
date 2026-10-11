@@ -3,6 +3,17 @@ import { COLORS, THREADS, escapeHtml as e, isCamper, camperLabels } from './shop
 
 let previewId=0;
 
+export function logoChoiceContent(brand){
+ const club=clubById(brand.id);
+ return `<span class="brand-option-art" aria-hidden="true">${club?.logo?`<img src="${e(club.logo)}" alt="" loading="lazy" decoding="async">`:'<span class="own-logo-symbol">＋</span>'}</span><span class="brand-option-label">${e(club?.fullName||'Eigenes Logo')}</span>`;
+}
+
+export function selectedLogoPreview(item){
+ if(!isCamper(item))return '';
+ const club=clubById(item.brand);
+ return `${club?.logo?`<img src="${e(club.logo)}" alt="${e(club.fullName)} Logo" decoding="async">`:'<span class="own-logo-symbol" aria-hidden="true">＋</span>'}<div><span>DEIN AUSGEWÄHLTES LOGO</span><b>${e(club?.fullName||'Dein eigenes Logo')}</b></div>`;
+}
+
 // Schematic garment artwork with verified club assets where available.
 export function garmentPreview(product,item,{compact=false}={}) {
  const id=`garment-${++previewId}`;
@@ -16,10 +27,10 @@ export function garmentPreview(product,item,{compact=false}={}) {
   :'M186 80 Q200 112 250 119 Q300 112 314 80 L368 105 L444 179 L391 231 L352 198 L352 464 Q250 484 148 464 L148 198 L109 231 L56 179 L132 105 Z';
  const position=item.logoPosition||'chest';
  const large=item.logoSize==='large';
- const point=position==='sleeve'?[hoodie?381:391,hoodie?213:181]:position==='lower-left'?[large?300:315,438]:[large?292:303,190];
- const logoWidth=position==='sleeve'?(large?72:46):(large?105:62);
+ const point=position==='sleeve'?[hoodie?381:391,hoodie?213:181]:position==='lower-left'?[large?292:306,large?409:432]:[large?292:303,190];
+ const logoWidth=position==='sleeve'?(large?72:46):(large?116:76);
  const clubLogo=camper?clubById(item.brand)?.logo:null;
- const logoHeight=clubLogo?logoWidth*.58:large?27:18;
+ const logoHeight=clubLogo?logoWidth*.78:large?27:18;
  const title=`${product.name} in ${item.color}${camper?`, ${labels.brand}, ${labels.position}, ${labels.logoSize}`:''}`;
  const word=item.brand==='own'?'DEIN LOGO':labels.brand.toLocaleUpperCase('de-DE');
  const fontSize=Math.min(large?19:12,logoWidth/(Math.max(word.length,1)*.66));
