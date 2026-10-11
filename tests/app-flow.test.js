@@ -17,9 +17,9 @@ function application(hash){
  const get=id=>{if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);};
  const staticIds=new Set(['main','cart-dialog','cart-content','toast','mobile-menu','cart-count']);
  const select=id=>staticIds.has(id)||[...nodes.values()].some(n=>n.innerHTML.includes('id=\"'+id+'\"'))?get(id):null;
- const context={...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,setTimeout:()=>0,clearTimeout(){}};
+ const context={...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,FormData:class{constructor(form){this.fields=form.fields;}get(k){const v=this.fields[k];return Array.isArray(v)?v[0]||null:v??null;}getAll(k){const v=this.fields[k];return Array.isArray(v)?v:v?[v]:[];}},setTimeout:()=>0,clearTimeout(){}};
  vm.createContext(context);vm.runInContext(readFileSync(new URL('../app.js',import.meta.url),'utf8').replace(/^import[^\n]+\n/gm,''),context);
- return {get,saved,queries,run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
+ return {get,saved,queries,submit:(fields,valid=true)=>{let prevented=false;get('main').events.get('submit')({target:{id:'newsletter-form',fields,reportValidity:()=>valid},preventDefault(){prevented=true;}});return prevented;},run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
 }
 
 test('Club product event flow transfers the full requested logo design to cart and email',()=>{
@@ -82,4 +82,27 @@ test('Logo choice on the product card updates the artwork and continues through 
  assert.match(app.get('cart-content').innerHTML,/eura-mobil-logo.webp/);
  app.click({edition:'classic'});assert.equal(app.get('preview-logo-detail').hidden,true);assert.doesNotMatch(app.get('garment-preview').innerHTML,/<image/);
  app.click({edition:'camper'});app.click({brand:'own'});assert.match(app.get('preview-logo-detail').innerHTML,/Dein eigenes Logo/);assert.doesNotMatch(app.get('garment-preview').innerHTML,/eura-mobil-logo.webp/);
+});
+
+
+test('Newsletter prepares an email request only with consent and never stores subscription data',()=>{
+ const app=application('#/newsletter'),html=app.get('main').innerHTML;
+ assert.match(html,/id="newsletter-email"[^>]*type="email"[^>]*required/);
+ assert.match(html,/id="newsletter-consent"[^>]*required/);assert.doesNotMatch(html,/id="newsletter-consent"[^>]*checked/);
+ assert.match(html,/#\/datenschutz/);assert.match(html,/kein automatischer Eintrag/);
+ const fields={'newsletter-name':'Anna <3','newsletter-email':'anna+club@example.com','newsletter-interest':['Camper & Club-Kollektionen'],'newsletter-consent':'yes'};
+ app.submit(fields,false);assert.equal(app.get('newsletter-result').hidden,true);
+ app.submit({...fields,'newsletter-consent':null});assert.equal(app.get('newsletter-result').hidden,true);
+ assert.equal(app.submit(fields),true);
+ const result=app.get('newsletter-result').innerHTML;
+ assert.match(result,/Anfrage ist vorbereitet/);assert.match(result,/noch nicht automatisch angemeldet/);assert.match(result,/Anna &lt;3/);
+ const href=result.match(/id="newsletter-mail-link"[^>]+href="([^"]+)"/)[1].replaceAll('&amp;','&');
+ const url=new URL(href);assert.equal(url.protocol,'mailto:');assert.equal(url.pathname,'info@handelsvertretung-gauder.de');
+ const text=url.searchParams.get('body');assert.match(text,/anna\+club@example.com/);assert.match(text,/Meine Themen: Camper & Club-Kollektionen/);assert.match(text,/Meine Einwilligung/);assert.match(text,/widerrufen/);
+ assert.equal(app.saved.size,0);assert.equal(app.run('location.hash'),'#/newsletter');
+ app.input('newsletter-email','andere@example.com');assert.equal(app.get('newsletter-result').hidden,true);assert.equal(app.get('newsletter-result').innerHTML,'');
+ app.submit({...fields,'newsletter-name':'','newsletter-interest':[]});
+ const all=app.get('newsletter-result').innerHTML;for(const topic of ['Geschenkideen','Club-Kollektionen','Maßhemden'])assert.ok(all.includes(topic));
+ app.change('newsletter-consent','');assert.equal(app.get('newsletter-result').hidden,true);
+ assert.match(application('#/').get('main').innerHTML,/id="newsletter-form"/);
 });

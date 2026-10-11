@@ -133,3 +133,47 @@ body:has(dialog[open]) .whatsapp-float{visibility:hidden}
 .card-logo-name{display:block;font-size:10px;line-height:1.5;margin-top:7px;min-height:15px;color:#626974}
 @media(max-width:680px){.logo-image-options .brand-option{min-height:110px;padding:8px 5px}.preview-logo-detail{margin:0 16px 18px;padding:12px;gap:12px}.preview-logo-detail>img{width:100px;height:72px}.preview-logo-detail b{font-size:12px}.preview-logo-detail>div>span{font-size:7px;letter-spacing:.7px}.card-logo-name{min-height:30px}}
 @media(max-width:380px){.card-logo-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Newsletter: direct email request with explicit consent. */
+.newsletter-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;background:#232932;color:#fff;border-radius:7px;padding:48px;margin-top:16px;margin-bottom:72px;align-items:center}
+.newsletter-copy{min-width:0}
+.newsletter-symbol{display:grid;place-items:center;width:64px;height:64px;border:1px dashed #ffffff60;border-radius:50%;margin-bottom:30px;color:#ff8c99}
+.newsletter-symbol svg{width:30px;height:30px;stroke-width:1.3}
+.newsletter-copy>.eyebrow{color:#ffc5cd;font-size:10px}
+.newsletter-copy h1,.newsletter-copy h2{font-size:clamp(48px,5.3vw,78px);font-weight:900;line-height:1.04;letter-spacing:-3px;margin:20px 0 22px}
+.newsletter-copy h1 em,.newsletter-copy h2 em{font-style:normal;color:#ff7888}
+.newsletter-copy>p{font-size:16px;line-height:1.8;color:#d7dbe2;max-width:350px}
+.newsletter-benefits{display:flex;flex-direction:column;gap:17px;list-style:none;padding:0;margin:29px 0 0}
+.newsletter-benefits li{display:flex;align-items:center;gap:13px;font-size:13px;color:#f0f2f6}
+.newsletter-benefits svg{width:21px;height:21px;stroke-width:1.4;color:#ff8c99;flex-shrink:0}
+.newsletter-form-panel{background:#fff;color:var(--ink);border-radius:5px;padding:30px;min-width:0}
+.newsletter-form-panel>.eyebrow{font-size:9px}
+.newsletter-form-panel>h2{font-size:29px;letter-spacing:-.8px;margin:12px 0 9px}
+.newsletter-form-panel>p{font-size:13px;line-height:1.7;color:#68717c;margin:0 0 24px}
+.newsletter-fields{display:grid;gap:17px}
+.newsletter-fields label{font-size:13px;font-weight:700}
+.newsletter-fields label span{font-size:11px;font-weight:400;color:#68717c}
+.newsletter-fields input{width:100%;min-width:0;border:1px solid #d3d8df;border-radius:4px;padding:13px;background:#fafbfc;color:var(--ink);font:inherit;font-size:14px}
+.newsletter-interests{padding:0;border:0;margin:23px 0;min-width:0}
+.newsletter-interests legend{font-weight:700;font-size:13px;margin-bottom:11px}
+.newsletter-interests legend span{font-size:11px;font-weight:400;color:#68717c}
+.newsletter-interests label{display:flex;align-items:center;gap:10px;font-size:12px;line-height:1.5;padding:6px 0;cursor:pointer}
+.newsletter-interests input,.newsletter-consent input{width:17px;height:17px;margin:0;flex-shrink:0;accent-color:var(--red)}
+.newsletter-interests>p{font-size:11px;line-height:1.6;color:#68717c;margin:7px 0 0}
+.newsletter-consent{display:flex;gap:10px;align-items:flex-start;border-top:1px solid var(--line);padding-top:19px;margin-bottom:19px}
+.newsletter-consent input{margin-top:3px}
+.newsletter-consent label{font-size:12px;line-height:1.65;color:#555e69;cursor:pointer;overflow-wrap:anywhere}
+.newsletter-consent a{color:#b22135;text-decoration:underline;text-underline-offset:3px}
+.newsletter-submit{width:100%;justify-content:space-between}
+.newsletter-process{font-size:11px;line-height:1.7;color:#68717c;margin:13px 0 0}
+.newsletter-result{margin-top:22px;border-top:2px solid var(--red);padding-top:20px}
+.newsletter-result h3{font-size:19px;margin:0 0 10px}
+.newsletter-result p{font-size:12px;line-height:1.7;color:#555e69}
+.newsletter-result label{display:block;font-size:12px;font-weight:700;margin:16px 0 9px}
+.newsletter-result textarea{width:100%;font:inherit;font-size:12px;line-height:1.6;border:1px solid #d3d8df;border-radius:4px;padding:12px;resize:vertical;background:#fafbfc}
+.newsletter-result .btn-row{gap:8px;margin-top:14px}
+.newsletter-result .btn{padding:13px 16px;font-size:11px}
+.newsletter-recipient{overflow-wrap:anywhere;margin-top:12px}
+.newsletter-page{margin-top:0}
+@media(max-width:960px){.newsletter-section{gap:28px;padding:30px}.newsletter-form-panel{padding:25px}.newsletter-copy h1,.newsletter-copy h2{font-size:60px}.newsletter-copy>p{font-size:14px}}
+@media(max-width:680px){.newsletter-section{grid-template-columns:1fr;padding:25px 18px;gap:28px;margin-bottom:45px}.newsletter-copy{padding:4px 7px}.newsletter-symbol{width:49px;height:49px;margin-bottom:24px}.newsletter-symbol svg{width:24px;height:24px}.newsletter-copy h1,.newsletter-copy h2{font-size:58px;letter-spacing:-2.3px;margin:15px 0 18px}.newsletter-copy>p{max-width:none}.newsletter-benefits{gap:10px;margin-top:21px}.newsletter-benefits li{font-size:12px}.newsletter-form-panel{padding:22px 17px}.newsletter-form-panel>h2{font-size:27px}.newsletter-fields input{font-size:16px}.newsletter-result .btn-row{flex-direction:column}.newsletter-result .btn{width:100%;justify-content:center}}

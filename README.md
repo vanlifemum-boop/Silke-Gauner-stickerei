@@ -43,7 +43,7 @@ Alle Asset-Pfade sind relativ, sodass die Website auch unter dem Repository-Unte
 
 Mit Node.js: `npm run check`
 
-Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 32 Funktionstests bestehen; 271 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
+Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 33 Funktionstests bestehen; 272 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
 
 ## Inhalte bearbeiten
 
@@ -106,3 +106,7 @@ Waumobil ist als eigener Reiter neben Eura Mobil, Forster, Benimar und Karmann v
 ## Sichtbare und austauschbare Logos
 
 Die T-Shirt-Karte auf Startseite und im Shop zeigt die echten Club-Logos. Ihre bebilderte Logoauswahl wechselt die Vorschau sofort und übernimmt die Auswahl in den Produkt-Konfigurator. Die Logo-Schaltflächen in beiden Konfiguratoren zeigen Benimar Fans, Forster Fahrer & Fans, Eura Mobil Club, Karmann Club und Waumobil. Bei den frei gestaltbaren Oberteilen erscheint das gewählte Logo zusätzlich vergrößert. Position, Logogröße und Logo bleiben in Warenkorb und Anfrage erhalten. Die bestehenden Logo-Dateien werden unverändert verwendet. Versionsparameter laden die aktualisierten Oberflächenmodule auch bei einem bereits geöffneten Browser-Cache.
+
+## Newsletter
+
+Ein Newsletter-Bereich auf der Startseite sowie `#/newsletter`, verlinkt im mobilen Menü und im Footer. Das Formular erfasst E-Mail, optionalen Vornamen und Interessen; die Einwilligung muss aktiv angehakt werden. Die Anmeldung wird als E-Mail-Entwurf an die vorhandene Geschäftsadresse vorbereitet. Erst der Besucher öffnet und versendet die E-Mail selbst. Es erfolgt weder ein automatischer Verteiler-Eintrag noch eine lokale Speicherung der Newsletter-Daten. Änderungen am Formular verwerfen einen bereits vorbereiteten Entwurf. Für automatische Anmeldung, Bestätigung, Abmeldung und Newsletter-Versand muss noch ein Newsletter-Dienst angebunden werden. Es werden keine bestätigten Abonnements vorgetäuscht.
