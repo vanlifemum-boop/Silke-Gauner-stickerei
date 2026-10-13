@@ -1,112 +1,67 @@
-# Stickerei Gauder – Website & Shop
+# Sylke Gauder – Stickerei und gemeinsame Sortimente
 
-Website-Entwurf für Handelsvertretung & Stickerei Sylke Gauder in Rot, Anthrazit und Weiß.
+Website: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/
 
-**Website:** https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/
+Website-Entwurf in Rot, Anthrazit und Weiß. Die sichtbare Geschäftsbezeichnung lautet **Sylke Gauder**. Die vorhandene Repository-Adresse bleibt erhalten.
 
-## Enthalten
+## Gemeinsamer Katalog
 
-- Startseite und gemeinsamer Shop mit 131 Einträgen: 122 Club- und Markenartikel, sieben Produktideen sowie Maßhemd und Maßbluse
-- Eigene Club-Reiter mit 39 Eura-Mobil-, 51 Forster- und 32 Waumobil-Artikeln aus den bestehenden Shops
-- Originale Produktfotos, Größen, Farben und Logo-Ausführungen; Club-Suche und Kategorien
-- Benimar und Karmann Club mit Original-Logos und Links zu den bisherigen Shops; Produktübernahme folgt
-- Produktsuche, Kategorien und Preissortierung
-- Produktauswahl mit T-Shirt, sieben Farben und Größen XS–3XL
-- Logo-Bestickung für alle Textilien: Club- oder eigenes Logo, drei zum Artikel passende Positionen, kleine/große Ausführung
-- Eigene Kategorien für Hosen, Jacken und Pullover; Maßhemden und Maßblusen mit Stoffwunsch, Ärmel, Kragen, Manschetten und Maßaufnahme
-- Direkter WhatsApp-Link zur Mobilnummer 0163 / 6997 060; Festnetznummer entfernt
-- Live-Vorschau mit echten Club-Logos für Textilfarbe, Marke, Platzierung und Logogröße
-- Varianten, Wunschtext, Garnfarbe und schematische Stickvorschau
-- Warenkorb mit lokaler Speicherung und E-Mail-Anfrage
-- Firmen & Vereine, individuelle Bestickung, Über uns und Kontakt
-- Responsive Gestaltung für Desktop, Tablet und Smartphone
+Stand der Zusammenführung: 12.10.2026. Die Übersicht zeigt **633 unterschiedliche Artikel und Produktideen**. 763 Quellangebote behalten ihre eigenen Detailrouten und Ausführungen; 130 doppelte Karten werden in der gemeinsamen Suche ausgeblendet. Unterschiedliche enthaltene Club-Logos sowie Text-, Logo- und Bildstickerei bleiben eigenständige Angebote.
 
-## Entwurfsstatus
+| Sortiment | Quellangebote |
+| --- | ---: |
+| Arbeitsbekleidung besticken | 322 |
+| Stölzinga | 107 |
+| Meine Tischdecke | 60 |
+| Bestickungen nach Maß | 122 |
+| Eura Mobil Club | 39 |
+| Forster Fahrer & Fans | 51 |
+| Karmann Club | 21 |
+| Waumobil | 32 |
+| Maßhemd und Maßbluse | 2 |
+| Frei gestaltbare Produktideen | 7 |
 
-Die 122 Club- und Markenartikel und ihre Fotos, Auswahloptionen und Preise stammen aus den bestehenden Eura-Mobil-, Forster- und Waumobil-Shops (Stand 10.10.2026). Die sieben frei gestaltbaren Produktideen mit ihren KI-erstellten Bildern verwenden Beispielpreise. Die neue Website bereitet unverbindliche Anfragen vor; Kaufen-Links öffnen den Originalartikel mit den gewählten Varianten im bestehenden Shop. Keine eigene Zahlungsabwicklung und kein automatischer E-Mail-Versand. Vor dem echten Shopbetrieb müssen das tatsächliche Sortiment, Konditionen und vollständige Rechtstexte ergänzt werden.
+Pferdezubehoer-besticken.de führt zum Shop Bestickungen nach Maß. Die vier kaufbaren Pferdeartikel sind dort und im eigenen Pferdezubehör-Filter erreichbar, ohne doppelten Import. Ein Testprodukt und ausdrücklich nicht kaufbare Artikel werden nicht angeboten. Benimar bleibt als bestehender Clubbereich mit Logo und Vorschau erhalten.
 
-Die Kontaktdaten stammen von der bereitgestellten Visitenkarte. Der Markenname lautet **Sylke Gauder**; der vorgegebene Repository-Name bleibt unverändert.
+Identische neutrale Shopware-Artikel werden anhand übereinstimmender Artikel-ID, Bezeichnung und Grundpreis zusammengeführt. Die jeweiligen Quellangebote bleiben auf der Produktseite verlinkt, damit unterschiedliche Optionen erhalten bleiben. Dokumentation: `docs/catalog-merge.json` und `docs/catalog-sources.json`.
 
-## GitHub Pages
+## Bedienung
 
-Die Website liegt direkt im Hauptverzeichnis und braucht keinen Build-Schritt.
+- `#/sortimente`: Shopbereiche, Hersteller/Marken, Clubs und Ferienwohnungen
+- `#/shop`: kombinierbare Sortiments-, Hersteller-, Kategorie- und Suchfilter, Preis-/Namenssortierung und 24 Artikel je Ergebnisseite
+- Produktseiten: belegte Farben, Größen, Maße, Logoausführungen, Quellpreise und Originalfotos
+- `#/ferienwohnungen`: drei Wohnungen für bis zu 3, 4 oder 7 Personen mit Originalfotos und E-Mail-Anfrage an info@fewogauder.de
+- `#/masshemden`: Maßhemd und Maßbluse, persönliche Maßaufnahme, Stoff- und Ausführungswünsche
+- `#/newsletter`: optionaler Vorname, E-Mail, Themenauswahl und aktiv zu erteilende Einwilligung; Anmeldung wird als selbst zu versendender E-Mail-Entwurf vorbereitet
+- WhatsApp: https://wa.me/491636997060 – keine automatische Nachricht, keine Festnetznummer auf der Website
 
-- Quelle: GitHub Actions
-- Workflow: `.github/workflows/pages.yml`
-- Bei jedem Push auf `main`: JavaScript-Prüfung, Funktionstests und Veröffentlichung
-- Veröffentlicht werden ausschließlich die Website-Dateien und Assets aus `_site/`.
-- Der Workflow verwendet die offiziellen Actions aus der GitHub-Pages-Vorlage.
+Die neue Website bereitet unverbindliche Anfragen vor. Originalartikel können über den jeweiligen Link im bestehenden Shop gekauft werden. Es gibt keine eigene Zahlungsabwicklung, automatischen E-Mail-Versand oder automatischen Newsletter-Verteiler. Die Geschäfts- und Datenschutzhinweise kennzeichnen den Entwurfsstatus.
 
-Alle Asset-Pfade sind relativ, sodass die Website auch unter dem Repository-Unterpfad funktioniert. Die Navigation verwendet Hash-Routen.
+## Preise und Bestickung
 
-## Prüfung
+Bestätigte Variantenpreise werden exakt angezeigt, weitere Kombinationen als Ab-Preis bzw. individuelle Anfrage. Preise sind datierte Quellangaben, keine Live-Synchronisierung. WooCommerce-Attribute behalten ihre nativen Parameternamen; ausdrücklich beliebige Variantenattribute werden als Wildcards ausgewertet.
 
-Mit Node.js: `npm run check`
+Bereits enthaltene Text-, Logo- oder Bildstickerei wird nicht erneut pauschal berechnet. Wunschtext und Motivbeschreibung bleiben in Warenkorb und Anfrage erhalten. Eine zusätzlich nötige Stickdatei ist separat gekennzeichnet. Abweichende oder zusätzliche Logo-Bestickung wird gesondert angeboten.
 
-Preisberechnung, Varianten, Warenkorbspeicherung, Filter, Anfragetexte und HTML-Escaping sind durch Tests abgedeckt. Seitenstruktur und Asset-Verknüpfungen wurden geprüft. 33 Funktionstests bestehen; 272 Seitenvorlagen inklusive Startseite wurden auf Struktur, Beschriftungen und lokale Bildverweise geprüft. Eine visuelle/interaktive Browserprüfung dieser Erweiterung war in der Arbeitsumgebung nicht verfügbar.
+Pferdezubehör besitzt native Zusatzfelder einschließlich bedingter Auswahl. Deren Aufpreise werden angefragt, nicht aus ungeprüften Formeln berechnet. Freie Tischdecken-Wunschmaße wechseln die Preisanzeige auf Anfrage. Schaumstoff, PVC, Folien, Lederhandschuhe, Metallartikel und Gutscheine erhalten keine unpassende Stickoption.
 
-## Inhalte bearbeiten
+Die sieben Produktideen verwenden ausdrücklich gekennzeichnete Beispielpreise. Beim Camper-T-Shirt kostet ein kleines Logo im Entwurf 7,90 €, ein großes 14,90 € zusätzlich. Diese Beispiel-Aufpreise gelten nicht für importierte Originalartikel. Alle bisherigen Club-Logo-Auswahlen und die schematische T-Shirt-Vorschau bleiben erhalten.
 
-- `shop-core.js`: Produktideen, Beispielpreise und gemeinsame Warenkorb-Logik
-- `club-products.js`: 90 importierte Eura-Mobil-/Forster-Artikel und verifizierte Variantenpreise
-- `waumobil-products.js`: 32 Artikel aus dem Waumobil Fanshop mit Original-Ausführungen und Preisen
-- `club-core.js`: Club-Auswahl, Variantenvalidierung, Preisberechnung und Quellenlinks
-- `club-ui.js`: Club-Reiter, Maßhemden-Bereich, Katalog- und Produktseiten
-- `embroidery-core.js` / `embroidery-ui.js`: artikelgerechte Stickpositionen, Logo-Auswahl und Aufpreisanfrage
-- `tailored-products.js`: Maßhemden und Maßblusen aus dem bestehenden Angebot
-- `contact.js`: WhatsApp-Ziel und Kontakt-Icon
-- `docs/club-sources.json`: Herkunft der Logos und Produktbilder
-- `app.js`: Seiteninhalte und Interaktionen
-- `garment-preview.js`: schematische, interaktive Textilvorschau
-- `styles.css`: Farben, Typografie und responsive Layouts
-- `assets/`: lokale Bilder, Schriften und Favicon
+## Quellen und Dateien
 
-## Quellen und Bildwelt
+- `assortment-products.js` und `catalog/`: 611 allgemeine Shopangebote, Zuordnung gleicher Artikel und sachliche Datenkorrekturen
+- `karmann-products.js`: 21 Karmann-Angebote
+- `assortment-core.js`, `assortment-ui.js`: Sortiments-/Herstellerübersicht, Seiteneinteilung, Ferienwohnungen
+- `catalog-options.js`: native Zusatzfelder, Bedingungen und Validierung
+- `club-products.js`, `waumobil-products.js`, `tailored-products.js`: bestehende Sortimente
+- `club-core.js`, `shop-core.js`: Optionen, Preise, Filter, Dubletten und Anfragekorb
+- `club-ui.js`, `embroidery-ui.js`, `garment-preview.js`: Produktseiten und Bestickung
+- `docs/fewo-sources.json`: Herkunft der drei Wohnungsfotos und Beschreibungsgrundlagen
 
-Die Sortimentsbereiche orientieren sich an https://www.handelsvertretung-gauder.de/unsere-shops/ (10.10.2026). Die Konzeptbilder wurden mit dem integrierten image_gen-Werkzeug erstellt und für die Website als WebP gespeichert. Sie sind keine dokumentarischen Aufnahmen des Betriebs oder seiner tatsächlichen Produkte.
+Neue Produktbilder und Herstellerlogos werden überwiegend von den verifizierten Quellshops geladen. Die bestehenden Clubbilder, Schriften, Konzeptbilder und Wohnungsfotos liegen lokal unter `assets/`. Fehlende Quellbilder erhalten eine neutrale Platzhalterfläche. Persönliche Kontakttexte und fremde Werbelinks aus den Quellseiten wurden nicht übernommen.
 
-## Camper Edition
+## Veröffentlichung und Prüfung
 
-Direktlink: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/produkt/camper-tshirt?edition=camper
+Buildlose HTML-/JavaScript-Website mit Hash-Routen und relativen lokalen Asset-Pfaden. GitHub Actions veröffentlicht bei Änderungen auf `main` nach `npm run check` bzw. den entsprechenden Node-Prüfungen. Alle zur Laufzeit benötigten Module werden in `_site/` kopiert.
 
-Beispielpreise: T-Shirt 24,90 €, kleines Logo +7,90 €, großes Logo +14,90 €. Der Wechsel von klein auf groß erhöht den Stückpreis um 7,00 €. Optionaler zusätzlicher Wunschtext kostet im Entwurf +7,90 €. Mengen, Logo-Aufpreis und Gesamtsumme werden gemeinsam berechnet; jede Konfiguration bleibt in Warenkorb und Anfrage erhalten.
-
-Markenoptionen: Forster, Benimar, Karmann Club, Eura Mobil, Waumobil und eigenes Firmen-/Vereinslogo. Knaus wurde auf Wunsch entfernt. Alle fünf Marken nutzen ihre vorhandenen Club-Logos in der schematischen Vorschau. Eigene Logos erscheinen bis zur Abstimmung als beschrifteter Platzhalter.
-
-Bei Oberteilen sind Brust, Ärmel oder unten links wählbar. Hosen bieten Oberschenkel, Gesäßtasche und Hosenbein; Westen, Schürzen, Caps, Taschen und Heimtextilien haben passende eigene Positionen. Konkrete Stickmaße und die Umsetzung stimmen wir persönlich ab. Die Beispiel-Aufpreise gelten ausschließlich für die sieben Produktideen.
-
-## Club-Sortimente
-
-- Eura Mobil: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/eura-mobil
-- Forster: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/forster
-- Waumobil: https://vanlifemum-boop.github.io/Silke-Gauner-stickerei/#/club/waumobil
-- Benimar: Vorschauseite mit Original-Logo, Produkte folgen.
-- Karmann Club: Vorschauseite mit Original-Logo und Link zum bestehenden Gauder-Shop; Produkte folgen.
-
-Quellen: https://euramobilclub-shop.de/ und https://forster-fahrer-shop.de/, abgerufen am 10.10.2026. Eura Mobil Club verlinkt Gauder auf https://www.euramobilclub.de/ als Webshop. Der Benimar-Schriftzug stammt aus https://benimar-fans-shop.de/. Logos und Produktfotos wurden lokal gespeichert; Fotos werden für die Web-Auslieferung als WebP verkleinert. Zwei Artikel haben im Quellshop kein Produktfoto und verwenden deshalb eine neutrale Bild-Platzhalterfläche.
-
-Exakt überprüfte Varianten zeigen ihren Stückpreis. Für weitere Kombinationen steht ein gekennzeichneter Ab-Preis; Verfügbarkeit und endgültiger Preis werden persönlich bestätigt. Der pauschale Beispiel-Aufpreis der frei gestaltbaren Camper Edition wird auf Clubartikel nicht angewendet. Bei den Miami-Tischsets wird die optionale Wunschbestickung mit dem Original-Aufpreis von 10,00 € pro Stück berechnet. Der Wunschtext ist auf 15 Zeichen begrenzt. Bekannte nicht verfügbare Kombinationen können nicht zur Anfrage hinzugefügt werden. Die abgelaufene Vorbestellfrist des EMC-Jahresshirts 2026 wird ausdrücklich angegeben.
-
-Auswahl, Stückzahl, Logo-Ausführung und gesondert anzubietende Wünsche bleiben im Anfragekorb und im E-Mail-Entwurf erhalten. Preiswerte aus dem Browser-Speicher werden nicht übernommen. Die Produktdaten sind eine datierte Momentaufnahme und werden nicht automatisch mit den Originalshops synchronisiert.
-
-
-## Maßanfertigung und zusätzliche Bestickung
-
-Maßhemden und Maßblusen stammen aus https://www.individuelle-masshemden.de/. Es werden belegte Wünsche für Stoff/Farbe, Lang- oder Kurzarm, Kragen, Manschetten und persönliche Maßaufnahme angeboten. Bei Kurzarm entfällt die Manschette. Preise werden angefragt; historische Werbepreise und erfundene Standardgrößen werden nicht übernommen. Fotos und Varianten-Herkunft sind in `docs/tailored-sources.json` dokumentiert.
-
-Bei realen Clubartikeln wird eine frei gewählte zusätzliche oder abweichende Bestickung gesondert angeboten. Der bekannte Grundpreis bleibt erhalten; Produktseite, Warenkorb und E-Mail weisen auf den noch fehlenden Stickaufpreis hin. Gutscheine sind vom Stickkonfigurator ausgenommen. Anfrageartikel erscheinen niemals als kostenlos.
-
-Das Karmann-Mobil-Club-Logo stammt aus dem offiziellen Clubauftritt und ist identisch im bestehenden Gauder-Clubshop vorhanden. Herkunft: `docs/karmann-source.json`. Der WhatsApp-Link öffnet https://wa.me/491636997060 ohne automatisch eine Nachricht zu versenden.
-
-
-## Waumobil Edition
-
-Waumobil ist als eigener Reiter neben Eura Mobil, Forster, Benimar und Karmann verfügbar und in allen Logo-Konfiguratoren auswählbar. Der offizielle Auftritt https://waumobil.eu/gebrauchtes-wohnmobil-anbieten/ verlinkt den Waumobil Fanshop https://waumobil.handelsvertretung-gauder.de/. Das Original-Logo, die 32 gelisteten Produkte, Originalfotos, Farben, Größen und vorhandene Logoausführungen werden übernommen. „Nur Brustlogo“ und „Brust und Rücken groß“ behalten ihre überprüften Variantenpreise. Quellen sind in `docs/waumobil-source.json` und `docs/waumobil-products-source.json` dokumentiert.
-
-## Sichtbare und austauschbare Logos
-
-Die T-Shirt-Karte auf Startseite und im Shop zeigt die echten Club-Logos. Ihre bebilderte Logoauswahl wechselt die Vorschau sofort und übernimmt die Auswahl in den Produkt-Konfigurator. Die Logo-Schaltflächen in beiden Konfiguratoren zeigen Benimar Fans, Forster Fahrer & Fans, Eura Mobil Club, Karmann Club und Waumobil. Bei den frei gestaltbaren Oberteilen erscheint das gewählte Logo zusätzlich vergrößert. Position, Logogröße und Logo bleiben in Warenkorb und Anfrage erhalten. Die bestehenden Logo-Dateien werden unverändert verwendet. Versionsparameter laden die aktualisierten Oberflächenmodule auch bei einem bereits geöffneten Browser-Cache.
-
-## Newsletter
-
-Ein Newsletter-Bereich auf der Startseite sowie `#/newsletter`, verlinkt im mobilen Menü und im Footer. Das Formular erfasst E-Mail, optionalen Vornamen und Interessen; die Einwilligung muss aktiv angehakt werden. Die Anmeldung wird als E-Mail-Entwurf an die vorhandene Geschäftsadresse vorbereitet. Erst der Besucher öffnet und versendet die E-Mail selbst. Es erfolgt weder ein automatischer Verteiler-Eintrag noch eine lokale Speicherung der Newsletter-Daten. Änderungen am Formular verwerfen einen bereits vorbereiteten Entwurf. Für automatische Anmeldung, Bestätigung, Abmeldung und Newsletter-Versand muss noch ein Newsletter-Dienst angebunden werden. Es werden keine bestätigten Abonnements vorgetäuscht.
+41 Funktionstests bestehen. Zusätzlich wurden 1.447 Seitenvorlagen auf Überschriften, ausgeglichene HTML-Struktur, eindeutige IDs, Formularbeschriftungen, lokale Bilddateien und entfernte Kontaktdaten geprüft. Eine visuelle/interaktive Browserprüfung war in der Arbeitsumgebung nicht verfügbar.

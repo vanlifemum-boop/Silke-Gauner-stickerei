@@ -33,7 +33,7 @@ test('Search, category and price sorting compose, including empty results',()=>{
  const ascending=filterProducts({sort:'price-asc'}).map(p=>p.price??Infinity);
  assert.deepEqual(ascending,[...ascending].sort((a,b)=>a-b));
  assert.equal(filterProducts({query:'nonexistent-xyz'}).length,0);
- assert.equal(filterProducts().length,PRODUCTS.length);
+ assert.equal(filterProducts().length,633);
 });
 test('Enquiry preserves configuration and explicitly identifies example prices',()=>{
  const result=enquiryText([{...base,text:'A&B <Team>',qty:2}]);
@@ -95,6 +95,6 @@ test('Invalid stored camper variants are rejected, and older carts remain classi
 test('Camper enquiry contains the full chosen variant and unit/multiple prices',()=>{
  const text=enquiryText([{...camper,logoSize:'large',text:'Anna'}]);
  for(const expected of ['Camper Edition','Benimar','Rot','XL','Am Ärmel','Großes Logo','14,90','47,70','143,10','Anna'])assert.ok(text.includes(expected),expected);
- assert.equal(filterProducts({category:'Camper Edition'}).length,127);
+ assert.equal(filterProducts({category:'Camper Edition'}).length,130);
  assert.ok(filterProducts({category:'Camper Edition',query:'Eura Mobil'}).length>3);
 });

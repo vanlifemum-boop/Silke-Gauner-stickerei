@@ -34,12 +34,18 @@ jobs:
           node --check embroidery-ui.js
           node --check tailored-products.js
           node --check contact.js
+          node --check assortment-products.js
+          node --check assortment-core.js
+          node --check assortment-ui.js
+          node --check karmann-products.js
+          node --check catalog-options.js
           node --test tests/*.test.js
       - name: Website zusammenstellen
         run: |
           mkdir -p _site
-          cp index.html styles.css app.js shop-core.js garment-preview.js club-core.js club-ui.js club-products.js waumobil-products.js embroidery-core.js embroidery-ui.js tailored-products.js contact.js .nojekyll _site/
+          cp index.html styles.css app.js shop-core.js garment-preview.js club-core.js club-ui.js club-products.js waumobil-products.js embroidery-core.js embroidery-ui.js tailored-products.js contact.js assortment-products.js assortment-core.js assortment-ui.js karmann-products.js catalog-options.js .nojekyll _site/
           cp -R assets _site/assets
+          cp -R catalog _site/catalog
       - name: Pages vorbereiten
         uses: actions/configure-pages@v5
       - name: Website hochladen

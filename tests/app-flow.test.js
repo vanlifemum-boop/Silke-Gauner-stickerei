@@ -1,3 +1,6 @@
+import * as assortments from '../assortment-core.js';
+import * as assortmentui from '../assortment-ui.js';
+import * as catalogoptions from '../catalog-options.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
@@ -17,7 +20,7 @@ function application(hash){
  const get=id=>{if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);};
  const staticIds=new Set(['main','cart-dialog','cart-content','toast','mobile-menu','cart-count']);
  const select=id=>staticIds.has(id)||[...nodes.values()].some(n=>n.innerHTML.includes('id=\"'+id+'\"'))?get(id):null;
- const context={...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,FormData:class{constructor(form){this.fields=form.fields;}get(k){const v=this.fields[k];return Array.isArray(v)?v[0]||null:v??null;}getAll(k){const v=this.fields[k];return Array.isArray(v)?v:v?[v]:[];}},setTimeout:()=>0,clearTimeout(){}};
+ const context={...assortments,...assortmentui,...catalogoptions,...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,FormData:class{constructor(form){this.fields=form.fields;}get(k){const v=this.fields[k];return Array.isArray(v)?v[0]||null:v??null;}getAll(k){const v=this.fields[k];return Array.isArray(v)?v:v?[v]:[];}},setTimeout:()=>0,clearTimeout(){}};
  vm.createContext(context);vm.runInContext(readFileSync(new URL('../app.js',import.meta.url),'utf8').replace(/^import[^\n]+\n/gm,''),context);
  return {get,saved,queries,submit:(fields,valid=true)=>{let prevented=false;get('main').events.get('submit')({target:{id:'newsletter-form',fields,reportValidity:()=>valid},preventDefault(){prevented=true;}});return prevented;},run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
 }
@@ -48,8 +51,32 @@ test('Tailored product event flow handles short sleeves, custom fabric and an un
 });
 
 test('The full shop and the dedicated tailoring route render through the router',()=>{
- const shop=application('#/shop');assert.equal((shop.get('shop-grid').innerHTML.match(/<article/g)||[]).length,131);
+ const shop=application('#/shop');assert.equal((shop.get('shop-grid').innerHTML.match(/<article/g)||[]).length,24);
  const tailor=application('#/masshemden');assert.match(tailor.get('main').innerHTML,/Maßhemd gestalten/);assert.match(tailor.get('main').innerHTML,/Maßbluse gestalten/);
+});
+
+test('Combined shop filters and page controls update results and reset pagination',()=>{
+ const app=application('#/shop?source=arbeitsbekleidung');
+ assert.match(app.get('result-count').textContent,/322 Produkte/);
+ const first=app.get('shop-grid').innerHTML;
+ app.click({shopPage:'2'});assert.match(app.get('result-count').textContent,/25–48/);assert.notEqual(app.get('shop-grid').innerHTML,first);
+ app.change('shop-source','tischdecke');assert.match(app.get('result-count').textContent,/60 Produkte · 1–24/);
+ assert.equal(app.get('shop-title').textContent,'Meine Tischdecke');
+ app.change('shop-manufacturer','Dyckhoff');assert.match(app.get('result-count').textContent,/4 Produkte/);
+ app.input('shop-search','absichtlich-kein-treffer');assert.match(app.get('result-count').textContent,/Keine Produkte/);
+ app.click({action:'reset-search'});assert.match(app.get('result-count').textContent,/633 Produkte/);
+ assert.equal(app.get('shop-source').value,'');assert.equal(app.get('shop-manufacturer').value,'');
+});
+
+test('An included embroidery request carries its text through the product controls to the cart',()=>{
+ const p=assortments.ASSORTMENT_PRODUCTS.find(p=>p.customFields?.some(f=>f.id==='included-text'));
+ const app=application(`#/produkt/${p.id}`);
+ app.click({action:'add-club-cart'});assert.equal(app.saved.size,0);
+ app.change('native-field-0','Sylke Gauder',{nativeOption:'included-text'});
+ assert.equal(app.get('club-selection-error').hidden,true);
+ app.click({action:'add-club-cart'});
+ const cart=JSON.parse(app.saved.get('gauder-design-cart-v1'));assert.equal(cart[0].sourceFields['included-text'],'Sylke Gauder');
+ app.click({action:'cart-enquiry'});assert.match(app.get('cart-content').innerHTML,/Sylke Gauder/);
 });
 
 test('Logo choice on the product card updates the artwork and continues through configurator and cart',()=>{

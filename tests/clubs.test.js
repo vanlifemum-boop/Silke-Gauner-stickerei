@@ -8,17 +8,17 @@ const get=id=>CLUB_PRODUCTS.find(p=>p.id===id);
 const polo=get('club-forster-755');
 const poloChoice=(logo='227')=>({...createClubSelection(polo),options:{'7':'448','9':'192','13':logo}});
 
-test('All source catalogues are complete, individually routed and backed by local images',()=>{
+test('All source catalogues are complete, individually routed with verified image sources',()=>{
  assert.equal(clubProducts('eura-mobil').length,39);
  assert.equal(clubProducts('forster').length,51);
  assert.equal(clubProducts('waumobil').length,32);
  assert.equal(clubProducts('benimar').length,0);
- assert.equal(clubProducts('karmann').length,0);
- assert.equal(new Set(PRODUCTS.map(p=>p.id)).size,131);
+ assert.equal(clubProducts('karmann').length,21);
+ assert.equal(new Set(PRODUCTS.map(p=>p.id)).size,763);
  for(const p of CLUB_PRODUCTS){
-  const expected={'eura-mobil':'euramobilclub-shop.de',forster:'forster-fahrer-shop.de',waumobil:'waumobil.handelsvertretung-gauder.de'}[p.club];
+  const expected={'eura-mobil':'euramobilclub-shop.de',forster:'forster-fahrer-shop.de',waumobil:'waumobil.handelsvertretung-gauder.de',karmann:'karmann-mobil-club.handelsvertretung-gauder.de'}[p.club];
   assert.equal(new URL(p.sourceUrl).hostname,expected);
-  if(p.image)assert.ok(existsSync(new URL('../'+p.image,import.meta.url)),p.image);
+  if(p.image){if(p.image.startsWith('https://'))assert.equal(new URL(p.image).hostname,expected);else assert.ok(existsSync(new URL('../'+p.image,import.meta.url)),p.image);}
   else assert.equal(p.imageMissing,true);
   assert.ok(p.price===null||Number.isInteger(p.price)&&p.price>=0);
   assert.equal(clubSelectionError(p,createClubSelection(p)),'',p.id);
@@ -56,20 +56,12 @@ test('Known unsupported combinations cannot enter or survive the request cart',(
  assert.deepEqual(sanitizeCart([item]),[]);
  assert.match(clubProduct(p,item),/data-action="add-club-cart" disabled/);
 });
-test('Miami custom embroidery adds 10 euros per item, validates text and retains all choices',()=>{
+test('Foam table mats cannot be ordered with unsupported embroidery',()=>{
  const p=get('club-eura-mobil-543'),base=createClubSelection(p);
- assert.equal(unitPrice(base),399);
- const custom={...base,qty:3,customization:{enabled:true,text:'Familie Müller',thread:'Rot',font:'Helvetica'}};
- assert.equal(clubSelectionError(p,custom),'');
- assert.equal(unitPrice(custom),1399);
- assert.equal(cartPriceInfo([custom]).amount,4197);
- assert.match(clubSelectionError(p,{...custom,customization:{...custom.customization,text:''}}),/Wunschtext/);
- assert.match(clubSelectionError(p,{...custom,customization:{...custom.customization,text:'x'.repeat(16)}}),/15/);
- assert.equal(sanitizeCart([custom])[0].customization.font,'Helvetica');
- assert.notEqual(itemKey(base),itemKey(custom));
- const body=enquiryText([custom]);
- for(const s of ['Familie Müller','Helvetica','Rot','10,00','13,99','41,97'])assert.ok(body.includes(s),s);
- assert.ok(clubSelectionLabels(p,custom).some(v=>v.name==='Wunschtext'));
+ assert.equal(unitPrice(base),399);assert.equal(p.embroideryAvailable,false);assert.equal(p.customization,null);
+ const custom={...base,embroidery:{...base.embroidery,mode:'custom'}};
+ assert.ok(clubSelectionError(p,custom));assert.deepEqual(sanitizeCart([custom]),[]);
+ assert.ok(!clubProduct(p,base).includes('data-embroidery-mode'));
 });
 test('Request cart stores independent snapshots and merges only identical club configurations',()=>{
  const item=poloChoice();let cart=addItem([],item);
@@ -89,7 +81,7 @@ test('Mixed cart preserves example prices and flags imported from-prices',()=>{
  assert.deepEqual(cartPriceInfo(cart),{amount:3280+2*2995,from:true,unknown:0,hasClub:true,pendingEmbroidery:0});
  assert.match(enquiryText(cart),/Orientierungssumme bekannter Preise: ab 92,70/);
  assert.match(enquiryText(cart),/Beispielpreis pro Stück/);
- assert.match(enquiryText(cart),/Grundpreis pro Stück laut Club-Shop/);
+ assert.match(enquiryText(cart),/Grundpreis pro Stück laut bestehendem Shop/);
 });
 test('Club pages render all real options safely and missing photos have a deliberate placeholder',()=>{
  for(const p of CLUB_PRODUCTS){
@@ -109,5 +101,5 @@ test('Club pages render all real options safely and missing photos have a delibe
 });
 test('Every shipped module is included in the Pages deployment',()=>{
  const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
- for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','waumobil-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js'])assert.ok(workflow.includes(file),file);
+ for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','waumobil-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js','assortment-products.js','assortment-core.js','assortment-ui.js','karmann-products.js','catalog-options.js'])assert.ok(workflow.includes(file),file);
 });

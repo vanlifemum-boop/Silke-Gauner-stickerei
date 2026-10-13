@@ -1,0 +1,1442 @@
+{
+  "retrievedAt": "2026-10-12",
+  "sourceCounts": {
+    "arbeitsbekleidung": 322,
+    "stoelzinga": 107,
+    "tischdecke": 60,
+    "bestickungen": 122
+  },
+  "karmann": 21,
+  "sharedGroups": [
+    {
+      "group": "shared-43",
+      "name": "ID No. 0311 PRO Wear T-Shirt | Langarm",
+      "productIds": [
+        "shop-arbeitsbekleidung-43",
+        "shop-stoelzinga-43"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/43/id-no.-0311-pro-wear-t-shirt-langarm",
+        "https://stoelzinga.de/kleidung/t-shirts/43/id-no.-0311-pro-wear-t-shirt-langarm"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-68",
+      "name": "Poloshirt klassisch | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-68",
+        "shop-stoelzinga-68",
+        "club-eura-mobil-68"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/68/poloshirt-klassisch-damen",
+        "https://stoelzinga.de/kleidung/hemden-blusen/68/poloshirt-klassisch-damen",
+        "https://euramobilclub-shop.de/kleidung/t-shirts/damen/68/poloshirt-klassisch-damen?c=108"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-62",
+      "name": "T-TIME® T-Shirt",
+      "productIds": [
+        "shop-arbeitsbekleidung-62",
+        "shop-stoelzinga-62"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/62/t-time-t-shirt",
+        "https://stoelzinga.de/kleidung/t-shirts/62/t-time-t-shirt"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-336",
+      "name": "SEVEN SEAS Hybrid shirt | modern",
+      "productIds": [
+        "shop-arbeitsbekleidung-336",
+        "shop-stoelzinga-336"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/336/seven-seas-hybrid-shirt-modern",
+        "https://stoelzinga.de/kleidung/hemden-blusen/336/seven-seas-hybrid-shirt-modern"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-292",
+      "name": "PRO Wear Poloshirt | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-292",
+        "shop-stoelzinga-292"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/292/pro-wear-poloshirt-damen",
+        "https://stoelzinga.de/kleidung/polo-shirts/292/pro-wear-poloshirt-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-254",
+      "name": "ID No. 0315 PRO Wear T-Shirt | ½ Arm | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-254",
+        "shop-stoelzinga-254"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/254/id-no.-0315-pro-wear-t-shirt-arm-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/254/id-no.-0315-pro-wear-t-shirt-arm-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-260",
+      "name": "CORE T-Shirt | Slub",
+      "productIds": [
+        "shop-arbeitsbekleidung-260",
+        "shop-stoelzinga-260"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/260/core-t-shirt-slub",
+        "https://stoelzinga.de/kleidung/t-shirts/260/core-t-shirt-slub"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-261",
+      "name": "CORE T-Shirt | Slub | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-261",
+        "shop-stoelzinga-261"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/261/core-t-shirt-slub-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/261/core-t-shirt-slub-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-280",
+      "name": "No. G21024 GEYSER striped T-shirt | seamless",
+      "productIds": [
+        "shop-arbeitsbekleidung-280",
+        "shop-stoelzinga-280"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/280/no.-g21024-geyser-striped-t-shirt-seamless",
+        "https://stoelzinga.de/kleidung/t-shirts/280/no.-g21024-geyser-striped-t-shirt-seamless"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-279",
+      "name": "GEYSER T-shirt | seamless",
+      "productIds": [
+        "shop-arbeitsbekleidung-279",
+        "shop-stoelzinga-279"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/279/geyser-t-shirt-seamless",
+        "https://stoelzinga.de/kleidung/t-shirts/279/geyser-t-shirt-seamless"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-278",
+      "name": "GEYSER T-shirt | seamless | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-278",
+        "shop-stoelzinga-278"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/278/geyser-t-shirt-seamless-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/278/geyser-t-shirt-seamless-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-263",
+      "name": "No. G11024 GEYSER striped T-shirt | seamless | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-263",
+        "shop-stoelzinga-263"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/263/no.-g11024-geyser-striped-t-shirt-seamless-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/263/no.-g11024-geyser-striped-t-shirt-seamless-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-289",
+      "name": "PRO Wear T-Shirt | light",
+      "productIds": [
+        "shop-arbeitsbekleidung-289",
+        "shop-stoelzinga-289"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/289/pro-wear-t-shirt-light",
+        "https://stoelzinga.de/kleidung/t-shirts/289/pro-wear-t-shirt-light"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-290",
+      "name": "PRO Wear T-Shirt | light | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-290",
+        "shop-stoelzinga-290"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/290/pro-wear-t-shirt-light-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/290/pro-wear-t-shirt-light-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-291",
+      "name": "ID No. 0312 PRO Wear T-Shirt | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-291",
+        "shop-stoelzinga-291"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/291/id-no.-0312-pro-wear-t-shirt-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/291/id-no.-0312-pro-wear-t-shirt-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-314",
+      "name": "Stretch Herren T-Shirt",
+      "productIds": [
+        "shop-arbeitsbekleidung-314",
+        "shop-stoelzinga-314"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/314/stretch-herren-t-shirt",
+        "https://stoelzinga.de/kleidung/t-shirts/314/stretch-herren-t-shirt"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-315",
+      "name": "Stretch T-Shirt | Komfort | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-315",
+        "shop-stoelzinga-315"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/315/stretch-t-shirt-komfort-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/315/stretch-t-shirt-komfort-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-321",
+      "name": "0529 T-Shirt Lyocell | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-321",
+        "shop-stoelzinga-321"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/321/0529-t-shirt-lyocell-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/321/0529-t-shirt-lyocell-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-329",
+      "name": "GEYSER long-sleeved T-shirt | seamless | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-329",
+        "shop-stoelzinga-329"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/329/geyser-long-sleeved-t-shirt-seamless-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/329/geyser-long-sleeved-t-shirt-seamless-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-333",
+      "name": "GEYSER long-sleeved T-shirt | seamless",
+      "productIds": [
+        "shop-arbeitsbekleidung-333",
+        "shop-stoelzinga-333"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/333/geyser-long-sleeved-t-shirt-seamless",
+        "https://stoelzinga.de/kleidung/t-shirts/333/geyser-long-sleeved-t-shirt-seamless"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-52",
+      "name": "PRO Wear Langarm-Poloshirt | Druckknopf",
+      "productIds": [
+        "shop-arbeitsbekleidung-52",
+        "shop-stoelzinga-52"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/52/pro-wear-langarm-poloshirt-druckknopf",
+        "https://stoelzinga.de/kleidung/polo-shirts/52/pro-wear-langarm-poloshirt-druckknopf"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-45",
+      "name": "PRO Wear Poloshirt | Tasche",
+      "productIds": [
+        "shop-arbeitsbekleidung-45",
+        "shop-stoelzinga-45"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/45/pro-wear-poloshirt-tasche",
+        "https://stoelzinga.de/kleidung/polo-shirts/45/pro-wear-poloshirt-tasche"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-46",
+      "name": "PRO Wear Poloshirt | Kontrast",
+      "productIds": [
+        "shop-arbeitsbekleidung-46",
+        "shop-stoelzinga-46"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/46/pro-wear-poloshirt-kontrast",
+        "https://stoelzinga.de/kleidung/polo-shirts/46/pro-wear-poloshirt-kontrast"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-47",
+      "name": "PRO Wear Poloshirt | o. Tasche",
+      "productIds": [
+        "shop-arbeitsbekleidung-47",
+        "shop-stoelzinga-47"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/47/pro-wear-poloshirt-o.-tasche",
+        "https://stoelzinga.de/kleidung/polo-shirts/47/pro-wear-poloshirt-o.-tasche"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-69",
+      "name": "ID No. 0525 Poloshirt | Stretch | Herren",
+      "productIds": [
+        "shop-arbeitsbekleidung-69",
+        "shop-stoelzinga-69"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/69/id-no.-0525-poloshirt-stretch-herren",
+        "https://stoelzinga.de/kleidung/polo-shirts/69/id-no.-0525-poloshirt-stretch-herren"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-48",
+      "name": "PRO Wear Poloshirt | Langarm",
+      "productIds": [
+        "shop-arbeitsbekleidung-48",
+        "shop-stoelzinga-48"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/48/pro-wear-poloshirt-langarm",
+        "https://stoelzinga.de/kleidung/polo-shirts/48/pro-wear-poloshirt-langarm"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-49",
+      "name": "PRO Wear Poloshirt | Paspelierung",
+      "productIds": [
+        "shop-arbeitsbekleidung-49",
+        "shop-stoelzinga-49"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/49/pro-wear-poloshirt-paspelierung",
+        "https://stoelzinga.de/kleidung/polo-shirts/49/pro-wear-poloshirt-paspelierung"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-70",
+      "name": "ID No. 0527 Poloshirt | Stretch | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-70",
+        "shop-stoelzinga-70"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/70/id-no.-0527-poloshirt-stretch-damen",
+        "https://stoelzinga.de/kleidung/polo-shirts/70/id-no.-0527-poloshirt-stretch-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-50",
+      "name": "PRO Wear Poloshirt | Paspelierung | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-50",
+        "shop-stoelzinga-50"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/polo-shirts/50/pro-wear-poloshirt-paspelierung-damen",
+        "https://stoelzinga.de/kleidung/polo-shirts/50/pro-wear-poloshirt-paspelierung-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-212",
+      "name": "PRO Wear CARE T-Shirt | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-212",
+        "shop-stoelzinga-212"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/212/pro-wear-care-t-shirt-damen",
+        "https://stoelzinga.de/kleidung/t-shirts/212/pro-wear-care-t-shirt-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-95",
+      "name": "No. 0624 Sweat-Cardigan | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-95",
+        "shop-stoelzinga-95"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/sweatshirts-pullover/95/no.-0624-sweat-cardigan-damen",
+        "https://stoelzinga.de/kleidung/sweatshirts-pullover/95/no.-0624-sweat-cardigan-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-323",
+      "name": "Flanellbluse| Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-323",
+        "shop-stoelzinga-323"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/323/flanellbluse-damen",
+        "https://stoelzinga.de/kleidung/hemden-blusen/323/flanellbluse-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-223",
+      "name": "Easy Care Business Bluse",
+      "productIds": [
+        "shop-arbeitsbekleidung-223",
+        "shop-stoelzinga-223"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/223/easy-care-business-bluse",
+        "https://stoelzinga.de/kleidung/hemden-blusen/223/easy-care-business-bluse"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-183",
+      "name": "Casual Stretch Bluse",
+      "productIds": [
+        "shop-arbeitsbekleidung-183",
+        "shop-stoelzinga-183"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/183/casual-stretch-bluse",
+        "https://stoelzinga.de/kleidung/hemden-blusen/183/casual-stretch-bluse"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-172",
+      "name": "No. 0638 CORE Hoodie | Reißverschluss",
+      "productIds": [
+        "shop-arbeitsbekleidung-172",
+        "shop-stoelzinga-172"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/sweatshirts-pullover/172/no.-0638-core-hoodie-reissverschluss",
+        "https://stoelzinga.de/kleidung/sweatshirts-pullover/172/no.-0638-core-hoodie-reissverschluss"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-287",
+      "name": "Sweatshirt | ökologisch",
+      "productIds": [
+        "shop-arbeitsbekleidung-287",
+        "shop-stoelzinga-287"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/sweatshirts-pullover/287/sweatshirt-oekologisch",
+        "https://stoelzinga.de/kleidung/sweatshirts-pullover/287/sweatshirt-oekologisch"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-305",
+      "name": "Sweatshirt | ökologisch | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-305",
+        "shop-stoelzinga-305"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/sweatshirts-pullover/305/sweatshirt-oekologisch-damen",
+        "https://stoelzinga.de/kleidung/sweatshirts-pullover/305/sweatshirt-oekologisch-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-182",
+      "name": "Casual Stretch Hemd",
+      "productIds": [
+        "shop-arbeitsbekleidung-182",
+        "shop-stoelzinga-182"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/182/casual-stretch-hemd",
+        "https://stoelzinga.de/kleidung/hemden-blusen/182/casual-stretch-hemd"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-66",
+      "name": "Interlock T-Shirt | Langarm",
+      "productIds": [
+        "shop-arbeitsbekleidung-66",
+        "shop-stoelzinga-66"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/66/interlock-t-shirt-langarm",
+        "https://stoelzinga.de/kleidung/t-shirts/66/interlock-t-shirt-langarm"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-77",
+      "name": "T-TIME® T-Shirt | Rollkragen",
+      "productIds": [
+        "shop-arbeitsbekleidung-77",
+        "shop-stoelzinga-77"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/77/t-time-t-shirt-rollkragen",
+        "https://stoelzinga.de/kleidung/t-shirts/77/t-time-t-shirt-rollkragen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-41",
+      "name": "ID No. 0300 PRO Wear T-Shirt",
+      "productIds": [
+        "shop-arbeitsbekleidung-41",
+        "shop-stoelzinga-41"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/41/id-no.-0300-pro-wear-t-shirt",
+        "https://stoelzinga.de/kleidung/t-shirts/41/id-no.-0300-pro-wear-t-shirt"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-56",
+      "name": "GAME® T-Shirt",
+      "productIds": [
+        "shop-arbeitsbekleidung-56",
+        "shop-stoelzinga-56"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/56/game-t-shirt",
+        "https://stoelzinga.de/kleidung/t-shirts/56/game-t-shirt"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-59",
+      "name": "No. 0506 Interlock T-Shirt | V-Ausschnitt",
+      "productIds": [
+        "shop-arbeitsbekleidung-59",
+        "shop-stoelzinga-59"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/t-shirts/59/no.-0506-interlock-t-shirt-v-ausschnitt",
+        "https://stoelzinga.de/kleidung/t-shirts/59/no.-0506-interlock-t-shirt-v-ausschnitt"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-340",
+      "name": "SEVEN SEAS Hybrid shirt | modern | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-340",
+        "shop-stoelzinga-340"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/oberbekleidung/hemden-blusen/340/seven-seas-hybrid-shirt-modern-damen",
+        "https://stoelzinga.de/oberbekleidung/hemden-blusen/340/seven-seas-hybrid-shirt-modern-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-343",
+      "name": "Club Cap \"MB135\" - myrtle beach®",
+      "productIds": [
+        "shop-arbeitsbekleidung-343",
+        "shop-stoelzinga-343"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/kopfbedeckung/caps/343/club-cap-mb135-myrtle-beach",
+        "https://stoelzinga.de/accessoires/kopfbedeckung/caps/343/club-cap-mb135-myrtle-beach"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-21",
+      "name": "No. 0042 Strickmütze",
+      "productIds": [
+        "shop-arbeitsbekleidung-21",
+        "shop-stoelzinga-21"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/kopfbedeckung/muetzen/21/no.-0042-strickmuetze",
+        "https://stoelzinga.de/accessoires/kopfbedeckung/muetzen/21/no.-0042-strickmuetze"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-745",
+      "name": "Damen Ultraleichte Softshelljacke für widrigste-extreme Wetterbedingungen",
+      "productIds": [
+        "shop-arbeitsbekleidung-745",
+        "shop-stoelzinga-745",
+        "club-eura-mobil-745",
+        "club-forster-745",
+        "club-waumobil-745"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/745/damen-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+        "https://stoelzinga.de/kleidung/jacken-westen/745/damen-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+        "https://euramobilclub-shop.de/kleidung/jacken-westen/herren/745/damen-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen?c=105",
+        "https://forster-fahrer-shop.de/kleidung/jacken-westen/herren/745/damen-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/745/damen-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-714",
+      "name": "Dallas+ Herren-Sweatjacke mit 2-Wege-RV und verschließbarer Tasche",
+      "productIds": [
+        "shop-arbeitsbekleidung-714",
+        "shop-stoelzinga-714",
+        "club-karmann-714",
+        "club-eura-mobil-714",
+        "club-forster-714",
+        "club-waumobil-714"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche",
+        "https://stoelzinga.de/kleidung/jacken-westen/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche",
+        "https://karmann-mobil-club.handelsvertretung-gauder.de/jacken-westen/herren/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche",
+        "https://euramobilclub-shop.de/kleidung/jacken-westen/herren/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche?c=105",
+        "https://forster-fahrer-shop.de/kleidung/jacken-westen/herren/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/714/dallas-herren-sweatjacke-mit-2-wege-rv-und-verschliessbarer-tasche"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-358",
+      "name": "JN894 Men's Workwear Sweat-Jacket - SOLID -",
+      "productIds": [
+        "shop-arbeitsbekleidung-358",
+        "shop-stoelzinga-358"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/358/jn894-men-s-workwear-sweat-jacket-solid",
+        "https://stoelzinga.de/kleidung/jacken-westen/358/jn894-men-s-workwear-sweat-jacket-solid"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-752",
+      "name": "Damen Wattierte Strickfleece Jacke im attraktiven Materialmix",
+      "productIds": [
+        "shop-arbeitsbekleidung-752",
+        "shop-stoelzinga-752",
+        "club-eura-mobil-752",
+        "club-forster-752"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/752/damen-wattierte-strickfleece-jacke-im-attraktiven-materialmix",
+        "https://stoelzinga.de/kleidung/jacken-westen/752/damen-wattierte-strickfleece-jacke-im-attraktiven-materialmix",
+        "https://euramobilclub-shop.de/kleidung/jacken-westen/damen/752/damen-wattierte-strickfleece-jacke-im-attraktiven-materialmix?c=105",
+        "https://forster-fahrer-shop.de/kleidung/jacken-westen/damen/752/damen-wattierte-strickfleece-jacke-im-attraktiven-materialmix"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-129",
+      "name": "Soft Shell-Jacke | Performance | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-129",
+        "shop-stoelzinga-129"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/129/soft-shell-jacke-performance-damen",
+        "https://stoelzinga.de/kleidung/jacken-westen/129/soft-shell-jacke-performance-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-337",
+      "name": "ID No. 0837 Soft Shell-Jacke | light | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-337",
+        "shop-stoelzinga-337"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/337/id-no.-0837-soft-shell-jacke-light-damen",
+        "https://stoelzinga.de/kleidung/jacken-westen/337/id-no.-0837-soft-shell-jacke-light-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-750",
+      "name": "Herren TRIP Strick-Fleecejacke",
+      "productIds": [
+        "shop-arbeitsbekleidung-750",
+        "shop-stoelzinga-750",
+        "club-karmann-750",
+        "club-eura-mobil-750",
+        "club-forster-750",
+        "club-waumobil-750"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/jacken-westen/750/herren-trip-strick-fleecejacke",
+        "https://stoelzinga.de/kleidung/jacken-westen/750/herren-trip-strick-fleecejacke",
+        "https://karmann-mobil-club.handelsvertretung-gauder.de/jacken-westen/herren/750/herren-trip-strick-fleecejacke",
+        "https://euramobilclub-shop.de/kleidung/jacken-westen/herren/750/herren-trip-strick-fleecejacke?c=104",
+        "https://forster-fahrer-shop.de/kleidung/jacken-westen/herren/750/herren-trip-strick-fleecejacke",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/750/herren-trip-strick-fleecejacke"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-719",
+      "name": "Ladies 5-Pocket-Stretch-Hose",
+      "productIds": [
+        "shop-arbeitsbekleidung-719",
+        "shop-stoelzinga-719"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/hosen/719/ladies-5-pocket-stretch-hose",
+        "https://stoelzinga.de/kleidung/hosen/719/ladies-5-pocket-stretch-hose"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-718",
+      "name": "Men's 5-Pocket-Stretch-Hose",
+      "productIds": [
+        "shop-arbeitsbekleidung-718",
+        "shop-stoelzinga-718"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/hosen/718/men-s-5-pocket-stretch-hose",
+        "https://stoelzinga.de/kleidung/hosen/718/men-s-5-pocket-stretch-hose"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-749",
+      "name": "Next 4-Wege-Way-Stretch-Unisex-Bermudahose",
+      "productIds": [
+        "shop-arbeitsbekleidung-749",
+        "shop-stoelzinga-749",
+        "club-eura-mobil-749",
+        "club-forster-749",
+        "club-waumobil-749"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/hosen/749/next-4-wege-way-stretch-unisex-bermudahose",
+        "https://stoelzinga.de/kleidung/hosen/749/next-4-wege-way-stretch-unisex-bermudahose",
+        "https://euramobilclub-shop.de/kleidung/hosen-shorts/749/next-4-wege-way-stretch-unisex-bermudahose?c=102",
+        "https://forster-fahrer-shop.de/kleidung/hosen-shorts/herren/749/next-4-wege-way-stretch-unisex-bermudahose",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/hosen/herren/749/next-4-wege-way-stretch-unisex-bermudahose"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-748",
+      "name": "Next 4-Way-Stretch-Unisex-Hose",
+      "productIds": [
+        "shop-arbeitsbekleidung-748",
+        "shop-stoelzinga-748",
+        "club-eura-mobil-748",
+        "club-forster-748",
+        "club-waumobil-748"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/hosen/748/next-4-way-stretch-unisex-hose",
+        "https://stoelzinga.de/kleidung/hosen/748/next-4-way-stretch-unisex-hose",
+        "https://euramobilclub-shop.de/kleidung/hosen-shorts/748/next-4-way-stretch-unisex-hose?c=102",
+        "https://forster-fahrer-shop.de/kleidung/hosen-shorts/herren/748/next-4-way-stretch-unisex-hose",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/hosen/herren/748/next-4-way-stretch-unisex-hose"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-351",
+      "name": "myrtle beach® Economic X-Tube Polyester",
+      "productIds": [
+        "shop-arbeitsbekleidung-351",
+        "shop-stoelzinga-351"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/351/myrtle-beach-economic-x-tube-polyester",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/351/myrtle-beach-economic-x-tube-polyester"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-345",
+      "name": "myrtle beach® Bandana",
+      "productIds": [
+        "shop-arbeitsbekleidung-345",
+        "shop-stoelzinga-345"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/345/myrtle-beach-bandana",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/345/myrtle-beach-bandana"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-347",
+      "name": "Filzhülle ECO in A5 oder A4",
+      "productIds": [
+        "shop-arbeitsbekleidung-347",
+        "shop-stoelzinga-347"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/347/filzhuelle-eco-in-a5-oder-a4",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/347/filzhuelle-eco-in-a5-oder-a4"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-720",
+      "name": "Cabrio Cap (white)",
+      "productIds": [
+        "shop-arbeitsbekleidung-720",
+        "shop-stoelzinga-720"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/720/cabrio-cap-white",
+        "https://stoelzinga.de/accessoires/kopfbedeckung/caps/720/cabrio-cap-white"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-14",
+      "name": "Handtuch 50x100",
+      "productIds": [
+        "shop-arbeitsbekleidung-14",
+        "shop-stoelzinga-14"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/14/handtuch-50x100",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/14/handtuch-50x100"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-15",
+      "name": "Badehandtuch 70x140",
+      "productIds": [
+        "shop-arbeitsbekleidung-15",
+        "shop-stoelzinga-15"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/15/badehandtuch-70x140",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/15/badehandtuch-70x140"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-16",
+      "name": "Handschuhe | Ziegenleder",
+      "productIds": [
+        "shop-arbeitsbekleidung-16",
+        "shop-stoelzinga-16"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/16/handschuhe-ziegenleder",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/16/handschuhe-ziegenleder"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-17",
+      "name": "Handschuhe | Hirschleder",
+      "productIds": [
+        "shop-arbeitsbekleidung-17",
+        "shop-stoelzinga-17"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/17/handschuhe-hirschleder",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/17/handschuhe-hirschleder"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-18",
+      "name": "Handschuhe | Ziegenleder | Damen",
+      "productIds": [
+        "shop-arbeitsbekleidung-18",
+        "shop-stoelzinga-18"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/18/handschuhe-ziegenleder-damen",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/18/handschuhe-ziegenleder-damen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-19",
+      "name": "Mütze | Stretch",
+      "productIds": [
+        "shop-arbeitsbekleidung-19",
+        "shop-stoelzinga-19"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/19/muetze-stretch",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/19/muetze-stretch"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-20",
+      "name": "Halswärmer | Stretch",
+      "productIds": [
+        "shop-arbeitsbekleidung-20",
+        "shop-stoelzinga-20"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/20/halswaermer-stretch",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/20/halswaermer-stretch"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-22",
+      "name": "Strickmütze | Futter",
+      "productIds": [
+        "shop-arbeitsbekleidung-22",
+        "shop-stoelzinga-22"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/22/strickmuetze-futter",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/22/strickmuetze-futter"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-23",
+      "name": "Golf Cap",
+      "productIds": [
+        "shop-arbeitsbekleidung-23",
+        "shop-stoelzinga-23"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/23/golf-cap",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/23/golf-cap"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-24",
+      "name": "Twill Cap",
+      "productIds": [
+        "shop-arbeitsbekleidung-24",
+        "shop-stoelzinga-24"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/24/twill-cap",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/24/twill-cap"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-25",
+      "name": "Cap | flacher Schirm",
+      "productIds": [
+        "shop-arbeitsbekleidung-25",
+        "shop-stoelzinga-25"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/25/cap-flacher-schirm",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/25/cap-flacher-schirm"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-26",
+      "name": "Cap | Stretch",
+      "productIds": [
+        "shop-arbeitsbekleidung-26",
+        "shop-stoelzinga-26"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/26/cap-stretch",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/26/cap-stretch"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-27",
+      "name": "No. 0073 Schürze",
+      "productIds": [
+        "shop-arbeitsbekleidung-27",
+        "shop-stoelzinga-27"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/27/no.-0073-schuerze",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/27/no.-0073-schuerze"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-28",
+      "name": "No. 0074 Servierschürze",
+      "productIds": [
+        "shop-arbeitsbekleidung-28",
+        "shop-stoelzinga-28"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/28/no.-0074-servierschuerze",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/28/no.-0074-servierschuerze"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-29",
+      "name": "Fleecedecke",
+      "productIds": [
+        "shop-arbeitsbekleidung-29",
+        "shop-stoelzinga-29"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/29/fleecedecke",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/29/fleecedecke"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-30",
+      "name": "No. 0077 Fleecedecke | zweifarbig",
+      "productIds": [
+        "shop-arbeitsbekleidung-30",
+        "shop-stoelzinga-30"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/30/no.-0077-fleecedecke-zweifarbig",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/30/no.-0077-fleecedecke-zweifarbig"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-167",
+      "name": "GEYSER running socks | active",
+      "productIds": [
+        "shop-arbeitsbekleidung-167",
+        "shop-stoelzinga-167"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/accessoires/167/geyser-running-socks-active",
+        "https://stoelzinga.de/accessoires/schals-halstuecher/167/geyser-running-socks-active"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-388",
+      "name": "Geschenkgutscheine",
+      "productIds": [
+        "shop-arbeitsbekleidung-388",
+        "shop-stoelzinga-388",
+        "shop-tischdecke-388",
+        "club-forster-388",
+        "club-waumobil-388"
+      ],
+      "sourceUrls": [
+        "https://arbeitsbekleidung-besticken.de/gutscheine/388/geschenkgutscheine",
+        "https://stoelzinga.de/gutscheine/388/geschenkgutscheine",
+        "https://www.meinetischdecke.de/gutscheine/388/geschenkgutscheine",
+        "https://forster-fahrer-shop.de/gutscheine/388/geschenkgutscheine",
+        "https://waumobil.handelsvertretung-gauder.de/gutscheine/388/geschenkgutscheine"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-746",
+      "name": "Herren Ultraleichte Softshelljacke für widrigste-extreme Wetterbedingungen",
+      "productIds": [
+        "shop-stoelzinga-746",
+        "club-eura-mobil-746",
+        "club-forster-746",
+        "club-waumobil-746"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/kleidung/jacken-westen/746/herren-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+        "https://euramobilclub-shop.de/kleidung/jacken-westen/herren/746/herren-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen?c=105",
+        "https://forster-fahrer-shop.de/kleidung/jacken-westen/herren/746/herren-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen",
+        "https://waumobil.handelsvertretung-gauder.de/kleidung/jacken-westen/herren/746/herren-ultraleichte-softshelljacke-fuer-widrigste-extreme-wetterbedingungen"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-675",
+      "name": "Halb Leinen Geschirrtuch Karo",
+      "productIds": [
+        "shop-stoelzinga-675",
+        "shop-tischdecke-675"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/kueche/geschirrtuecher/675/halb-leinen-geschirrtuch-karo",
+        "https://www.meinetischdecke.de/kueche/675/halb-leinen-geschirrtuch-karo"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-677",
+      "name": "Geschirrtuch 3-er Set Kaktus",
+      "productIds": [
+        "shop-stoelzinga-677",
+        "shop-tischdecke-677"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/kueche/geschirrtuecher/677/geschirrtuch-3-er-set-kaktus",
+        "https://www.meinetischdecke.de/kueche/677/geschirrtuch-3-er-set-kaktus"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-678",
+      "name": "Geschirrtuch 3-er Set eat & drink",
+      "productIds": [
+        "shop-stoelzinga-678",
+        "shop-tischdecke-678"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/kueche/geschirrtuecher/678/geschirrtuch-3-er-set-eat-drink",
+        "https://www.meinetischdecke.de/kueche/678/geschirrtuch-3-er-set-eat-drink"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-680",
+      "name": "Geschirrtuch Gläser",
+      "productIds": [
+        "shop-stoelzinga-680",
+        "shop-tischdecke-680"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/kueche/geschirrtuecher/680/geschirrtuch-glaeser",
+        "https://www.meinetischdecke.de/kueche/680/geschirrtuch-glaeser"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-674",
+      "name": "Gartenstuhl- und Liegenschonbezug",
+      "productIds": [
+        "shop-stoelzinga-674",
+        "club-forster-674"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/garten/674/gartenstuhl-und-liegenschonbezug",
+        "https://forster-fahrer-shop.de/garten/674/gartenstuhl-und-liegenschonbezug"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-559",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Lilac Grey Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-559",
+        "shop-tischdecke-559"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/559/gartentischdecke-milano-mit-rautenpraege-lilac-grey-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/559/gartentischdecke-milano-mit-rautenpraege-lilac-grey-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-560",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Waterfall Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-560",
+        "shop-tischdecke-560"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/560/gartentischdecke-milano-mit-rautenpraege-waterfall-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/560/gartentischdecke-milano-mit-rautenpraege-waterfall-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-581",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Brazilian Sand Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-581",
+        "shop-tischdecke-581"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/581/gartentischdecke-milano-mit-rautenpraege-brazilian-sand-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/581/gartentischdecke-milano-mit-rautenpraege-brazilian-sand-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-558",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Brazilian Sand Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-558",
+        "shop-tischdecke-558"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/558/gartentischdecke-milano-mit-rautenpraege-brazilian-sand-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/558/gartentischdecke-milano-mit-rautenpraege-brazilian-sand-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-582",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Lilac Grey Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-582",
+        "shop-tischdecke-582"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/582/gartentischdecke-milano-mit-rautenpraege-lilac-grey-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/582/gartentischdecke-milano-mit-rautenpraege-lilac-grey-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-557",
+      "name": "Tischpolster Optimoll, Weiß Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-557",
+        "shop-tischdecke-557"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/tischdecken/557/tischpolster-optimoll-weiss-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischschutz/557/tischpolster-optimoll-weiss-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-580",
+      "name": "Tischpolster Optimoll, Weiß Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-580",
+        "shop-tischdecke-580"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/tischdecken/580/tischpolster-optimoll-weiss-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischschutz/580/tischpolster-optimoll-weiss-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-579",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Indigo Rechteckig auf Mass",
+      "productIds": [
+        "shop-stoelzinga-579",
+        "shop-tischdecke-579"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/579/gartentischdecke-milano-mit-rautenpraege-indigo-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/579/gartentischdecke-milano-mit-rautenpraege-indigo-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-556",
+      "name": "Gartentischdecke Milano mit Rautenpräge, Indigo Quadratisch auf Mass",
+      "productIds": [
+        "shop-stoelzinga-556",
+        "shop-tischdecke-556"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/556/gartentischdecke-milano-mit-rautenpraege-indigo-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/556/gartentischdecke-milano-mit-rautenpraege-indigo-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-563",
+      "name": "Classic Lady Grey Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-563",
+        "shop-tischdecke-563"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/563/classic-lady-grey-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/563/classic-lady-grey-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-562",
+      "name": "Classic Marrackech Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-562",
+        "shop-tischdecke-562"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/562/classic-marrackech-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/562/classic-marrackech-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-595",
+      "name": "Classic Ikat Blue Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-595",
+        "shop-tischdecke-595"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/595/classic-ikat-blue-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/595/classic-ikat-blue-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-599",
+      "name": "Classic Marrackech Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-599",
+        "shop-tischdecke-599"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/599/classic-marrackech-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/599/classic-marrackech-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-566",
+      "name": "Classic Ikat Blue Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-566",
+        "shop-tischdecke-566"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/heimtextilien/tischdecken/566/classic-ikat-blue-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/566/classic-ikat-blue-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-597",
+      "name": "Classic Achillea Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-597",
+        "shop-tischdecke-597"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/tischdecken/597/classic-achillea-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/597/classic-achillea-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-598",
+      "name": "Classic Tile Antique Rechteckig auf Maß",
+      "productIds": [
+        "shop-stoelzinga-598",
+        "shop-tischdecke-598"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/tischdecken/598/classic-tile-antique-rechteckig-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/598/classic-tile-antique-rechteckig-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-564",
+      "name": "Classic Tile Antique Quadratisch auf Maß",
+      "productIds": [
+        "shop-stoelzinga-564",
+        "shop-tischdecke-564"
+      ],
+      "sourceUrls": [
+        "https://stoelzinga.de/tischdecken/564/classic-tile-antique-quadratisch-auf-mass",
+        "https://www.meinetischdecke.de/tischdecken/tischdecken-eckig/564/classic-tile-antique-quadratisch-auf-mass"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-543",
+      "name": "Tischsets Miami 3D Druck Flowers Green 30/45",
+      "productIds": [
+        "shop-tischdecke-543",
+        "club-eura-mobil-543"
+      ],
+      "sourceUrls": [
+        "https://www.meinetischdecke.de/tischdecken/tischsets/543/tischsets-miami-3d-druck-flowers-green-30/45",
+        "https://euramobilclub-shop.de/accessoires/543/tischsets-miami-3d-druck-flowers-green-30/45?c=112"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-455",
+      "name": "Ladie's Trekking Pants",
+      "productIds": [
+        "club-eura-mobil-455",
+        "club-forster-455"
+      ],
+      "sourceUrls": [
+        "https://euramobilclub-shop.de/detail/index/sArticle/455/sCategory/102",
+        "https://forster-fahrer-shop.de/kleidung/hosen-shorts/damen/455/ladie-s-trekking-pants"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    },
+    {
+      "group": "shared-454",
+      "name": "Men's Trekking Pants",
+      "productIds": [
+        "club-eura-mobil-454",
+        "club-forster-454"
+      ],
+      "sourceUrls": [
+        "https://euramobilclub-shop.de/detail/index/sArticle/454/sCategory/102",
+        "https://forster-fahrer-shop.de/kleidung/hosen-shorts/herren/454/men-s-trekking-pants"
+      ],
+      "reason": "Same Shopware article ID, matching product name and base price; no included club branding."
+    }
+  ],
+  "suppressedDuplicateCards": 130,
+  "method": "Unique overview card per verified group; source-specific detail routes preserve all variants. Embroidered club editions and different embroidery packages remain distinct.",
+  "exclusions": [
+    {
+      "source": "bestickungen",
+      "id": "shop-bestickungen-4427",
+      "reason": "Quelle bezeichnet den Artikel als Testprodukt."
+    },
+    {
+      "source": "bestickungen",
+      "id": "shop-bestickungen-5972",
+      "reason": "Keine kaufbare Variante und kein Preis; Quelle meldet ausverkauft."
+    }
+  ],
+  "pferdezubehoer": "Landing page of bestickungen-nach-mass.de; shared source membership, no duplicate import."
+}

@@ -2,6 +2,7 @@ export const LOGO_BRANDS=[{id:'forster',name:'Forster'},{id:'benimar',name:'Beni
 export const DESIGN_SIZES=[{id:'small',label:'Kleines Logo',detail:'Dezent & persönlich'},{id:'large',label:'Großes Logo',detail:'Größere Stickfläche · höherer Aufwand'}];
 export const DESIGN_THREADS=['Wie im Logo','Rot','Weiß','Anthrazit','Navy','Silber'];
 const positions={
+ horse:[['left','Links seitlich'],['right','Rechts seitlich'],['custom-position','Position nach Absprache']],
  upper:[['chest','Vorne auf der Brust'],['sleeve','Am Ärmel'],['lower-left','Unten links']],
  vest:[['chest','Vorne auf der Brust'],['back','Auf dem Rücken'],['lower-left','Unten links']],
  apron:[['chest','Vorne auf dem Latz'],['pocket','Auf der Tasche'],['lower-left','Unten links']],
@@ -15,6 +16,7 @@ const positions={
 };
 export function textileKind(p){
  const name=p.name.toLowerCase();
+ if(/schabracke|absch witzdecke|abschwitzdecke|pferdedecke|fliegenhaube|satteldecke/.test(name))return 'horse';
  if(/hosenträger/.test(name))return 'braces';
  if(/weste|\bvest\b/.test(name))return 'vest';
  if(/schürze/.test(name))return 'apron';

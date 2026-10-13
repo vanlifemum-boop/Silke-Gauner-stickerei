@@ -1,5 +1,5 @@
-import { clubById } from './club-core.js';
-import { COLORS, THREADS, escapeHtml as e, isCamper, camperLabels } from './shop-core.js';
+import { clubById } from './club-core.js?v=20261012-catalog';
+import { COLORS, THREADS, escapeHtml as e, isCamper, camperLabels } from './shop-core.js?v=20261012-catalog';
 
 let previewId=0;
 

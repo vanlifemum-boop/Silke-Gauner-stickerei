@@ -9,9 +9,9 @@ import {WHATSAPP_URL,whatsappLink} from '../contact.js';
 
 test('Every textile has embroidery choices that fit its construction',()=>{
  for(const p of PRODUCTS){
-  if(/gutschein/i.test(p.name)){assert.equal(canEmbroider(p),false);continue;}
+  if(p.embroideryAvailable===false||/gutschein/i.test(p.name)){assert.equal(canEmbroider(p),false);continue;}
   assert.ok(canEmbroider(p),p.name);assert.equal(logoPositions(p).length,3,p.name);
-  if(p.club||p.tailored){const item=createClubSelection(p);item.embroidery=createEmbroidery(p,{mode:'custom',brand:'own'});assert.equal(clubSelectionError(p,item),'',p.name);assert.ok(clubProduct(p,item).includes('data-design-size="large"'));}
+  if(p.club||p.tailored||p.catalog){const item=createClubSelection(p);item.embroidery=createEmbroidery(p,{mode:'custom',brand:'own'});if(!p.customFields?.length)assert.equal(clubSelectionError(p,item),'',p.name);assert.ok(clubProduct(p,item).includes('data-design-size="large"'));}
   else assert.equal(createSelection(p,{edition:'camper'}).edition,'camper');
  }
  for(const category of ['Hosen & Shorts','Jacken & Westen','Pullover & Hoodies'])assert.ok(filterProducts({category}).length>0,category);

@@ -1,6 +1,7 @@
-import { LOGO_BRANDS, logoPositions, embroideryKey, canEmbroider } from './embroidery-core.js';
-import { CLUB_PRODUCTS, TAILORED_PRODUCTS, isCatalogProduct, catalogGroupFor, createClubSelection, validClubSelection, clubSelectionLabels, clubPrice, clubById } from './club-core.js';
-export const CATEGORIES = ['Alle Produkte','Bekleidung','T-Shirts & Polos','Hosen & Shorts','Jacken & Westen','Pullover & Hoodies','Maßhemden','Badtextilien','Accessoires','Tischwäsche','Camper Edition'];
+import { ASSORTMENT_PRODUCTS, ASSORTMENTS, CATALOG_GROUPS, productSources, manufacturerName } from './assortment-core.js?v=20261012-catalog';
+import { LOGO_BRANDS, logoPositions, embroideryKey, canEmbroider } from './embroidery-core.js?v=20261012-catalog';
+import { CLUB_PRODUCTS, TAILORED_PRODUCTS, isCatalogProduct, catalogGroupFor, createClubSelection, validClubSelection, clubSelectionLabels, clubPrice, clubById } from './club-core.js?v=20261012-catalog';
+export const CATEGORIES = ['Alle Produkte','Bekleidung','T-Shirts & Polos','Hosen & Shorts','Jacken & Westen','Pullover & Hoodies','Maßhemden','Badtextilien','Accessoires','Taschen','Caps & Mützen','Tischwäsche','Tischschutz','Küche','Pferdezubehör','Gutscheine','Camper Edition'];
 export const PRODUCTS = [
  {id:'camper-tshirt',name:'Dein T-Shirt',category:'Bekleidung',tag:'DEIN CAMPER. DEIN SHIRT.',price:2490,image:'tshirt',color:'Anthrazit',colors:['Anthrazit','Schwarz','Weiß','Navy','Rot','Royalblau','Tannengrün'],sizes:['XS','S','M','L','XL','XXL','3XL'],camper:true,garment:'tshirt',description:'Dein Lieblingsshirt für unterwegs. Wähle Farbe und Größe – und gestalte die Camper Edition mit deiner Marke, deiner Wunschposition und einem kleinen oder großen Logo.',details:['T-Shirt mit Rundhalsausschnitt als Produktidee','Camper Edition mit wählbarer Marke, Position und Logogröße','Alle Varianten und Preise sind Beispiele für den Shop-Entwurf'],position:'Linke Brust'},
  {id:'team-polo',name:'Das Team-Polo',category:'Bekleidung',tag:'FÜR DEIN TEAM',price:2990,image:'polo',color:'Anthrazit',colors:['Anthrazit','Weiß','Rot'],sizes:['XS','S','M','L','XL','XXL','3XL'],description:'Ein gemeinsamer Auftritt beginnt mit den kleinen Details. Dieses Polo ist unsere Entwurfsidee für deinen Verein, dein Unternehmen oder dein nächstes Teamevent.',details:['Klassischer Polokragen mit Knopfleiste','Bestickung auf der linken Brust vorgesehen','Einzelstück oder Team-Ausstattung anfragen'],position:'Linke Brust'},
@@ -12,7 +13,9 @@ export const PRODUCTS = [
 ];
 for(const p of PRODUCTS){if(p.id==='team-polo'){p.camper=true;p.garment='polo';}if(p.id==='lieblings-hoodie'){p.camper=true;p.garment='hoodie';}}
 for(const p of PRODUCTS){p.camper=true;p.categories=[p.category];if(p.garment==='tshirt'||p.garment==='polo')p.categories.push('T-Shirts & Polos');if(p.garment==='hoodie')p.categories.push('Pullover & Hoodies');}
-PRODUCTS.push(...CLUB_PRODUCTS,...TAILORED_PRODUCTS);
+PRODUCTS.push(...CLUB_PRODUCTS,...TAILORED_PRODUCTS,...ASSORTMENT_PRODUCTS);
+for(const p of PRODUCTS)p.groupId=CATALOG_GROUPS[p.id]||p.id;
+export const catalogOffers=p=>PRODUCTS.filter(x=>x.groupId===p.groupId);
 export const COLORS = {'Anthrazit':'#36383b','Schwarz':'#17181b','Weiß':'#ffffff','Rot':'#dc3343','Navy':'#263446','Royalblau':'#28569f','Tannengrün':'#244b42','Hellgrau':'#cfd2d8'};
 export const THREADS = {'Rot':'#e83443','Weiß':'#ffffff','Anthrazit':'#292b30','Navy':'#203b6a','Silber':'#9aa3af'};
 export const PERSONALIZATION_PRICE=790;
@@ -45,9 +48,10 @@ export function createSelection(p,previous={}){
 }
 export const money = cents => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(cents/100);
 export const escapeHtml = value => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function filterProducts({category='Alle Produkte',query='',sort='featured'}={}) {
+export function filterProducts({category='Alle Produkte',query='',sort='featured',source='',manufacturer=''}={}) {
  const q=query.toLocaleLowerCase('de-DE').trim();
- let items=PRODUCTS.filter(p=>(category==='Alle Produkte'||(category==='Camper Edition'?(p.camper||p.club&&canEmbroider(p)):(p.categories||[p.category]).includes(category)))&&(!q||`${p.name} ${p.category} ${p.description||p.summary||''} ${(p.categories||[]).join(' ')} ${p.club?clubById(p.club)?.fullName||'':''} ${p.camper?'Camper Edition '+CAMPER_BRANDS.map(x=>x.name).join(' '):''}`.toLocaleLowerCase('de-DE').includes(q)));
+ let items=PRODUCTS.filter(p=>(!source||productSources(p).includes(source))&&(!manufacturer||manufacturerName(p)===manufacturer)&&(category==='Alle Produkte'||(category==='Camper Edition'?(p.camper||p.club&&canEmbroider(p)):(p.categories||[p.category]).includes(category)))&&(!q||`${p.name} ${p.articleNumber||''} ${manufacturerName(p)} ${productSources(p).map(id=>ASSORTMENTS.find(s=>s.id===id)?.name||'').join(' ')} ${p.category} ${p.description||p.summary||''} ${(p.categories||[]).join(' ')} ${p.club?clubById(p.club)?.fullName||'':''} ${p.camper?'Camper Edition '+CAMPER_BRANDS.map(x=>x.name).join(' '):''}`.toLocaleLowerCase('de-DE').includes(q)));
+ const grouped=new Map();for(const p of items){const old=grouped.get(p.groupId);if(!old||p.catalog&&!old.catalog)grouped.set(p.groupId,p);}items=[...grouped.values()];
  if(sort==='price-asc') items.sort((a,b)=>(a.price??Infinity)-(b.price??Infinity));
  if(sort==='price-desc') items.sort((a,b)=>(b.price??-1)-(a.price??-1));
  if(sort==='name') items.sort((a,b)=>a.name.localeCompare(b.name,'de'));
@@ -61,12 +65,12 @@ export function priceParts(item){const p=PRODUCTS.find(p=>p.id===item.productId)
 export function unitPrice(item) {const p=PRODUCTS.find(p=>p.id===item.productId);if(!p)return 0;if(isCatalogProduct(p))return clubPrice(p,item).amount;const parts=priceParts(item);return parts.base+parts.logo+parts.text;}
 export function cartTotal(cart) { return cart.reduce((sum,item)=>sum+(unitPrice(item)??0)*item.qty,0); }
 export function cartQuantity(cart) { return cart.reduce((sum,item)=>sum+item.qty,0); }
-export function itemKey(item) { const p=PRODUCTS.find(p=>p.id===item.productId);if(isCatalogProduct(p))return JSON.stringify([item.productId,p.options.map(g=>[g.id,item.options?.[g.id]]),item.note||'',item.fabricWish||'',embroideryKey(item.embroidery),item.customization?.enabled?[item.customization.text,item.customization.thread,item.customization.font]:null]);return JSON.stringify([item.productId,item.color,item.size,item.text||'',item.thread||'Rot',item.font||'Schreibschrift',isCamper(item)?['camper',item.brand,item.logoPosition,item.logoSize]:['classic']]); }
+export function itemKey(item) { const p=PRODUCTS.find(p=>p.id===item.productId);if(isCatalogProduct(p))return JSON.stringify([item.productId,p.options.map(g=>[g.id,item.options?.[g.id]]),item.note||'',item.fabricWish||'',item.measurementWish||'',Object.entries(item.sourceFields||{}).sort(([a],[b])=>a.localeCompare(b)),embroideryKey(item.embroidery),item.customization?.enabled?[item.customization.text,item.customization.thread,item.customization.font]:null]);return JSON.stringify([item.productId,item.color,item.size,item.text||'',item.thread||'Rot',item.font||'Schreibschrift',isCamper(item)?['camper',item.brand,item.logoPosition,item.logoSize]:['classic']]); }
 export function addItem(cart,item) {
  const qty=Math.max(1,Math.min(99,Number.parseInt(item.qty,10)||1));
  const key=itemKey(item), existing=cart.find(x=>itemKey(x)===key);
  if(existing) return cart.map(x=>itemKey(x)===key?{...x,qty:Math.min(99,x.qty+qty)}:x);
- return [...cart,{...item,...(['club','tailored'].includes(item.edition)?{options:{...item.options},embroidery:item.embroidery?{...item.embroidery}:null,customization:item.customization?{...item.customization}:null}:{}),qty}];
+ return [...cart,{...item,...(['club','tailored'].includes(item.edition)?{options:{...item.options},sourceFields:{...item.sourceFields},embroidery:item.embroidery?{...item.embroidery}:null,customization:item.customization?{...item.customization}:null}:{}),qty}];
 }
 export function sanitizeCart(raw) {
  if(!Array.isArray(raw)) return [];
@@ -86,7 +90,7 @@ export function enquiryText(cart) {
  const total=cartPriceInfo(cart);
  return 'Hallo Sylke,\n\nich interessiere mich für folgende Auswahl aus dem Website-Entwurf und bitte um ein unverbindliches Angebot:\n\n'+cart.map(i=>{
   const p=PRODUCTS.find(p=>p.id===i.productId),c=camperLabels(i),parts=priceParts(i);
-  if(isCatalogProduct(p)){const price=clubPrice(p,i),prefix=price.from?'ab ':'';return `${i.qty} × ${p.name}\n${p.tailored?'Maßanfertigung':'Club'}: ${catalogGroupFor(p).fullName}${price.sku?`\nArtikelnummer: ${price.sku}`:''}\n${clubSelectionLabels(p,i).map(v=>v.name+': '+v.value).join('\n')}${i.note?`\nZusätzliche Wünsche (noch nicht eingepreist): ${i.note}`:''}\n${p.tailored?'Preis für die Maßanfertigung':'Grundpreis pro Stück laut Club-Shop (Stand 10.10.2026)'}: ${price.amount===null?'auf Anfrage':prefix+money(price.amount)}\nOrientierungspreis für ${i.qty} Stück: ${price.amount===null?'auf Anfrage':prefix+money(price.amount*i.qty)}\nOriginalartikel: ${p.sourceUrl}`;}
+  if(isCatalogProduct(p)){const price=clubPrice(p,i),prefix=price.from?'ab ':'';return `${i.qty} × ${p.name}\n${p.tailored?'Maßanfertigung':p.catalog?'Sortiment':'Club'}: ${catalogGroupFor(p).fullName}${price.sku?`\nArtikelnummer: ${price.sku}`:''}\n${clubSelectionLabels(p,i).map(v=>v.name+': '+v.value).join('\n')}${i.note?`\nZusätzliche Wünsche (noch nicht eingepreist): ${i.note}`:''}\n${p.tailored?'Preis für die Maßanfertigung':`Grundpreis pro Stück laut bestehendem Shop (Stand ${p.retrievedAt?p.retrievedAt.slice(0,10).split('-').reverse().join('.'):'10.10.2026'})`}: ${price.amount===null?'auf Anfrage':prefix+money(price.amount)}\nOrientierungspreis für ${i.qty} Stück: ${price.amount===null?'auf Anfrage':prefix+money(price.amount*i.qty)}${price.pendingNative?'\nZusatzoptionen/Bestickung: gesondertes Angebot; Aufpreise noch nicht im Grundpreis enthalten.':''}\nOriginalartikel: ${p.sourceUrl}`;}
   return `${i.qty} × ${p.name}\nFarbe: ${i.color} · Größe: ${i.size}${isCamper(i)?`\nEdition: Camper Edition\nMarkenlogo: ${c.brand}\nPosition: ${c.position}\nLogogröße: ${c.logoSize}\nLogo-Aufpreis pro Stück: ${money(parts.logo)}`:''}${i.text?`\nSticktext: ${i.text} · Garn: ${i.thread} · Schrift: ${i.font}`:''}\nBeispielpreis pro Stück: ${money(unitPrice(i))}\nBeispielpreis für ${i.qty} Stück: ${money(unitPrice(i)*i.qty)}`;
  }).join('\n\n')+`\n\n${total.hasClub?'Orientierungssumme bekannter Preise':'Summe der Beispielpreise'}: ${total.unknown===cart.length&&cart.length?'Preis auf Anfrage':`${total.from?'ab ':''}${money(total.amount)}`}${total.unknown?`\n${total.unknown} Position(en) mit Preis auf Anfrage sind noch nicht enthalten.`:''}${total.pendingEmbroidery?`\nIndividuelle Logo-Bestickung für ${total.pendingEmbroidery} Position(en) wird zusätzlich angeboten und ist noch nicht enthalten.`:''}\nBitte tatsächliche Verfügbarkeit, Preise, Bestickung, Logo-Ausführung und Versand bestätigen. Zusätzliche Wünsche bitte gesondert anbieten.\n\nMein Name:\nMeine Rückrufnummer:\nMein Wunschtermin:\n`;
 }
