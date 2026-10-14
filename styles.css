@@ -190,9 +190,6 @@ body:has(dialog[open]) .whatsapp-float{visibility:hidden}
 .assortment-card h3{font-size:25px;margin:12px 0 10px;letter-spacing:-.7px}
 .assortment-card p{font-size:13px;line-height:1.7;color:#606a76;margin:0 0 22px}
 .assortment-card .text-link{margin-top:auto;font-size:12px}
-.assortment-holiday{background:#252d36;color:#fff;border-color:#252d36}
-.assortment-holiday .assortment-card-picture{background:#303b47}
-.assortment-holiday .assortment-card-copy p{color:#d2d9e0}
 .manufacturer-section{padding:70px 0 20px}.manufacturer-section h2{margin:15px 0 26px}
 .manufacturer-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .manufacturer-list a{display:flex;align-items:center;gap:12px;padding:18px;border:1px solid var(--line);border-radius:5px;font-size:13px;font-weight:700;min-height:76px}
@@ -204,9 +201,7 @@ body:has(dialog[open]) .whatsapp-float{visibility:hidden}
 .shop-pagination{display:flex;align-items:center;justify-content:center;gap:25px;padding:20px 0 30px}.shop-pagination>span{font-size:13px}.shop-pagination .btn{min-width:115px;justify-content:center}.shop-pagination .btn:disabled{opacity:.4;cursor:default}
 .product-manufacturer{font-size:13px;color:#606a76}.product-manufacturer a{text-decoration:underline;text-underline-offset:3px}
 .product-source-links{font-size:12px;line-height:1.8;margin-top:20px}.product-source-links a{text-decoration:underline}
-.holiday-page{padding-top:25px}.holiday-page>.page-lead{max-width:750px;margin-bottom:40px}.holiday-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.holiday-card{border:1px solid var(--line);border-radius:7px;overflow:hidden}.holiday-card>img{width:100%;height:215px;object-fit:cover}.holiday-card>div{padding:24px}.holiday-card .eyebrow{font-size:9px}.holiday-card h2{font-size:25px;margin:14px 0}.holiday-card p{font-size:13px;line-height:1.8;color:#606a76}.holiday-card .btn{display:flex;justify-content:space-between;padding:14px;margin:22px 0 16px;font-size:11px}.holiday-card .text-link{font-size:12px}
 .source-custom-fields{padding:22px 0;border-top:1px solid var(--line)}.source-custom-fields h2{font-size:21px}.source-custom-fields input,.source-custom-fields textarea,.source-custom-fields select{width:100%;padding:12px;border:1px solid #cbd1d8;border-radius:4px;font:inherit;font-size:14px}.source-custom-fields label{display:block;font-size:12px;font-weight:700;margin:16px 0 8px}
-@media(max-width:1050px){.manufacturer-list{grid-template-columns:repeat(3,minmax(0,1fr))}.assortment-card h3{font-size:22px}.assortment-card-copy{padding:19px}.holiday-grid{gap:15px}.holiday-card>div{padding:19px}}
-@media(max-width:760px){.assortment-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-filters{grid-template-columns:1fr 1fr;padding:17px;gap:14px}.catalog-filters .search-field{grid-column:1/-1}.manufacturer-list{grid-template-columns:repeat(2,minmax(0,1fr))}.holiday-grid{grid-template-columns:1fr}.holiday-card>img{height:280px}.footer-wordmark{font-size:28px}.assortment-section{padding-top:42px}}
-@media(max-width:480px){.assortment-grid{grid-template-columns:1fr}.assortment-card-picture{height:200px}.catalog-filters{grid-template-columns:1fr}.catalog-filters input,.catalog-filters select{font-size:16px}.manufacturer-list a{flex-wrap:wrap;padding:14px}.manufacturer-list img{width:55px}.shop-pagination{gap:12px}.shop-pagination .btn{min-width:90px;padding:12px}.shop-pagination>span{font-size:11px}.holiday-card>img{height:230px}.brand b{font-size:17px}}
+@media(max-width:1050px){.manufacturer-list{grid-template-columns:repeat(3,minmax(0,1fr))}.assortment-card h3{font-size:22px}.assortment-card-copy{padding:19px}}
+@media(max-width:760px){.assortment-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-filters{grid-template-columns:1fr 1fr;padding:17px;gap:14px}.catalog-filters .search-field{grid-column:1/-1}.manufacturer-list{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-wordmark{font-size:28px}.assortment-section{padding-top:42px}}
+@media(max-width:480px){.assortment-grid{grid-template-columns:1fr}.assortment-card-picture{height:200px}.catalog-filters{grid-template-columns:1fr}.catalog-filters input,.catalog-filters select{font-size:16px}.manufacturer-list a{flex-wrap:wrap;padding:14px}.manufacturer-list img{width:55px}.shop-pagination{gap:12px}.shop-pagination .btn{min-width:90px;padding:12px}.shop-pagination>span{font-size:11px}.brand b{font-size:17px}}

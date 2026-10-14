@@ -27,10 +27,9 @@ Identische neutrale Shopware-Artikel werden anhand übereinstimmender Artikel-ID
 
 ## Bedienung
 
-- `#/sortimente`: Shopbereiche, Hersteller/Marken, Clubs und Ferienwohnungen
+- `#/sortimente`: Shopbereiche, Hersteller/Marken und Clubs
 - `#/shop`: kombinierbare Sortiments-, Hersteller-, Kategorie- und Suchfilter, Preis-/Namenssortierung und 24 Artikel je Ergebnisseite
 - Produktseiten: belegte Farben, Größen, Maße, Logoausführungen, Quellpreise und Originalfotos
-- `#/ferienwohnungen`: drei Wohnungen für bis zu 3, 4 oder 7 Personen mit Originalfotos und E-Mail-Anfrage an info@fewogauder.de
 - `#/masshemden`: Maßhemd und Maßbluse, persönliche Maßaufnahme, Stoff- und Ausführungswünsche
 - `#/newsletter`: optionaler Vorname, E-Mail, Themenauswahl und aktiv zu erteilende Einwilligung; Anmeldung wird als selbst zu versendender E-Mail-Entwurf vorbereitet
 - WhatsApp: https://wa.me/491636997060 – keine automatische Nachricht, keine Festnetznummer auf der Website
@@ -51,12 +50,11 @@ Die sieben Produktideen verwenden ausdrücklich gekennzeichnete Beispielpreise. 
 
 - `assortment-products.js` und `catalog/`: 611 allgemeine Shopangebote, Zuordnung gleicher Artikel und sachliche Datenkorrekturen
 - `karmann-products.js`: 21 Karmann-Angebote
-- `assortment-core.js`, `assortment-ui.js`: Sortiments-/Herstellerübersicht, Seiteneinteilung, Ferienwohnungen
+- `assortment-core.js`, `assortment-ui.js`: Sortiments-/Herstellerübersicht, Seiteneinteilung
 - `catalog-options.js`: native Zusatzfelder, Bedingungen und Validierung
 - `club-products.js`, `waumobil-products.js`, `tailored-products.js`: bestehende Sortimente
 - `club-core.js`, `shop-core.js`: Optionen, Preise, Filter, Dubletten und Anfragekorb
 - `club-ui.js`, `embroidery-ui.js`, `garment-preview.js`: Produktseiten und Bestickung
-- `docs/fewo-sources.json`: Herkunft der drei Wohnungsfotos und Beschreibungsgrundlagen
 
 Neue Produktbilder und Herstellerlogos werden überwiegend von den verifizierten Quellshops geladen. Die bestehenden Clubbilder, Schriften, Konzeptbilder und Wohnungsfotos liegen lokal unter `assets/`. Fehlende Quellbilder erhalten eine neutrale Platzhalterfläche. Persönliche Kontakttexte und fremde Werbelinks aus den Quellseiten wurden nicht übernommen.
 

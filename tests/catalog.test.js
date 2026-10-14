@@ -7,7 +7,7 @@ import {clubPrice,clubSelectionError,clubSourceUrl,createClubSelection} from '..
 import {canEmbroider,logoPositions} from '../embroidery-core.js';
 import {sourceFieldVisible} from '../catalog-options.js';
 import {clubProduct} from '../club-ui.js';
-import {holidayPage,assortmentOverview} from '../assortment-ui.js';
+import {assortmentOverview} from '../assortment-ui.js';
 
 test('All imported source articles remain reachable, while the overview removes true duplicates',()=>{
  assert.equal(ASSORTMENT_PRODUCTS.length,611);
@@ -68,10 +68,8 @@ test('Horse-specific source fields are conditional and nontextiles cannot be emb
  assert.equal(clubPrice(p,item).pendingNative,true);
 });
 
-test('All shops, holiday offers and correct business name are visible',()=>{
+test('All shops and correct business name are visible',()=>{
  const html=assortmentOverview({page:true});for(const s of ASSORTMENTS)assert.ok(html.includes(`source=${s.id}`));
- const holidays=holidayPage();for(const n of [3,4,7])assert.ok(holidays.includes(`Bis zu ${n} Personen`));
- assert.match(holidays,/mailto:info@fewogauder.de/);assert.ok(!holidays.includes('add-club-cart'));
  const index=readFileSync(new URL('../index.html',import.meta.url),'utf8');assert.match(index,/<b>SYLKE GAUDER<\/b>/);
  assert.ok(!/Silke|Gauner|05663|Knaus/.test(index));
 });
