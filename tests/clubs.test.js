@@ -101,5 +101,5 @@ test('Club pages render all real options safely and missing photos have a delibe
 });
 test('Every shipped module is included in the Pages deployment',()=>{
  const workflow=readFileSync(new URL('../.github/workflows/pages.yml',import.meta.url),'utf8');
- for(const file of ['app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','waumobil-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js','assortment-products.js','assortment-core.js','assortment-ui.js','karmann-products.js','catalog-options.js'])assert.ok(workflow.includes(file),file);
+ for(const file of ['legal-content.js','cart-storage.js','legal.css','impressum.html','datenschutz.html','versand.html','widerruf.html','app.js','shop-core.js','garment-preview.js','club-core.js','club-ui.js','club-products.js','waumobil-products.js','embroidery-core.js','embroidery-ui.js','tailored-products.js','contact.js','assortment-products.js','assortment-core.js','assortment-ui.js','karmann-products.js','catalog-options.js'])assert.ok(workflow.includes(file),file);
 });

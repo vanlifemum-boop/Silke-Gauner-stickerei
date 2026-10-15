@@ -34,7 +34,7 @@ Identische neutrale Shopware-Artikel werden anhand übereinstimmender Artikel-ID
 - `#/newsletter`: optionaler Vorname, E-Mail, Themenauswahl und aktiv zu erteilende Einwilligung; Anmeldung wird als selbst zu versendender E-Mail-Entwurf vorbereitet
 - WhatsApp: https://wa.me/491636997060 – keine automatische Nachricht, keine Festnetznummer auf der Website
 
-Die neue Website bereitet unverbindliche Anfragen vor. Originalartikel können über den jeweiligen Link im bestehenden Shop gekauft werden. Es gibt keine eigene Zahlungsabwicklung, automatischen E-Mail-Versand oder automatischen Newsletter-Verteiler. Die Geschäfts- und Datenschutzhinweise kennzeichnen den Entwurfsstatus.
+Die neue Website bereitet unverbindliche Anfragen vor. Originalartikel können über den jeweiligen Link im bestehenden Shop gekauft werden. Es gibt keine eigene Zahlungsabwicklung, automatischen E-Mail-Versand oder automatischen Newsletter-Verteiler. Die Rechtstexte sind auf diesen tatsächlichen Anfrageablauf abgestimmt.
 
 ## Preise und Bestickung
 
@@ -56,10 +56,18 @@ Die sieben Produktideen verwenden ausdrücklich gekennzeichnete Beispielpreise. 
 - `club-core.js`, `shop-core.js`: Optionen, Preise, Filter, Dubletten und Anfragekorb
 - `club-ui.js`, `embroidery-ui.js`, `garment-preview.js`: Produktseiten und Bestickung
 
-Neue Produktbilder und Herstellerlogos werden überwiegend von den verifizierten Quellshops geladen. Die bestehenden Clubbilder, Schriften, Konzeptbilder und Wohnungsfotos liegen lokal unter `assets/`. Fehlende Quellbilder erhalten eine neutrale Platzhalterfläche. Persönliche Kontakttexte und fremde Werbelinks aus den Quellseiten wurden nicht übernommen.
+Neue Produktbilder und Herstellerlogos werden überwiegend von den verifizierten Quellshops geladen. Die bestehenden Clubbilder, Schriften, Konzeptbilder liegen lokal unter `assets/`. Fehlende Quellbilder erhalten eine neutrale Platzhalterfläche. Persönliche Kontakttexte und fremde Werbelinks aus den Quellseiten wurden nicht übernommen.
 
 ## Veröffentlichung und Prüfung
 
 Buildlose HTML-/JavaScript-Website mit Hash-Routen und relativen lokalen Asset-Pfaden. GitHub Actions veröffentlicht bei Änderungen auf `main` nach `npm run check` bzw. den entsprechenden Node-Prüfungen. Alle zur Laufzeit benötigten Module werden in `_site/` kopiert.
 
-41 Funktionstests bestehen. Zusätzlich wurden 1.447 Seitenvorlagen auf Überschriften, ausgeglichene HTML-Struktur, eindeutige IDs, Formularbeschriftungen, lokale Bilddateien und entfernte Kontaktdaten geprüft. Eine visuelle/interaktive Browserprüfung war in der Arbeitsumgebung nicht verfügbar.
+Die Funktionstests werden mit `npm run check` ausgeführt. Zusätzlich wurden 1.447 Seitenvorlagen auf Überschriften, ausgeglichene HTML-Struktur, eindeutige IDs, Formularbeschriftungen, lokale Bilddateien und entfernte Kontaktdaten geprüft. Eine visuelle/interaktive Browserprüfung war in der Arbeitsumgebung nicht verfügbar.
+
+## Rechtstexte und Browser-Speicherung
+
+Impressum, Datenschutzerklärung, Versand/Zahlung und Widerruf/Reklamation stehen als Hash-Routen und eigenständige HTML-Seiten bereit; die Footer-Links funktionieren auch ohne JavaScript. Quelle der Texte ist `legal-content.js`. Nach Änderungen `npm run legal:generate` ausführen. Die Widerrufsseite ist eine Orientierung zur Anfragephase, keine abschließende Belehrung für einen konkreten Kaufvertrag.
+
+`cart-storage.js` speichert die aktive Produktauswahl standardmäßig in Session Storage. Dauerhaftes Merken in Local Storage ist freiwillig und auf 30 Tage ab Aktivierung begrenzt. Widerruf löscht die dauerhafte Kopie; die Löschfunktion entfernt Sitzung, dauerhafte Auswahl und Einwilligungsmerkmal. Frühere Auswahlen ohne Einwilligungsmerkmal werden einmalig in die Sitzung übernommen.
+
+Unternehmensangaben und Quellen sowie betriebliche Punkte für die Betreiberprüfung: `docs/legal-review.md`. Die Texte ersetzen keine individuelle rechtliche Prüfung; vor Einrichtung von Checkout, Newsletterversand oder einem anderen Hosting sind die tatsächlichen Abläufe und Texte anzupassen.

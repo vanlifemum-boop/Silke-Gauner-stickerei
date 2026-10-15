@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Website prüfen
         run: |
+          node --check legal-content.js
+          node --check cart-storage.js
           node --check app.js
           node --check garment-preview.js
           node --check club-core.js
@@ -43,6 +45,7 @@ jobs:
       - name: Website zusammenstellen
         run: |
           mkdir -p _site
+          cp legal-content.js cart-storage.js legal.css impressum.html datenschutz.html versand.html widerruf.html _site/
           cp index.html styles.css app.js shop-core.js garment-preview.js club-core.js club-ui.js club-products.js waumobil-products.js embroidery-core.js embroidery-ui.js tailored-products.js contact.js assortment-products.js assortment-core.js assortment-ui.js karmann-products.js catalog-options.js .nojekyll _site/
           cp -R assets _site/assets
           cp -R catalog _site/catalog

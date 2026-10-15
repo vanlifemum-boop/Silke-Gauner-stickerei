@@ -1,3 +1,5 @@
+import * as legalui from '../legal-content.js';
+import * as storage from '../cart-storage.js';
 import * as assortments from '../assortment-core.js';
 import * as assortmentui from '../assortment-ui.js';
 import * as catalogoptions from '../catalog-options.js';
@@ -15,14 +17,14 @@ import * as contacts from '../contact.js';
 // Exercises the actual route and event handlers with in-memory DOM endpoints.
 // Layout, native browser behavior and rendering are outside this test's scope.
 function application(hash){
- const nodes=new Map(),saved=new Map(),documentEvents=new Map(),queries=new Map();
+ const nodes=new Map(),saved=new Map(),localSaved=new Map(),documentEvents=new Map(),queries=new Map();
  const node=()=>({innerHTML:'',textContent:'',style:{},hidden:false,value:'',open:false,dataset:{},events:new Map(),attributes:{},classList:{toggle(){},add(){},remove(){}},setAttribute(k,v){this.attributes[k]=v;},getAttribute(k){return this.attributes[k];},addEventListener(k,v){this.events.set(k,v);},focus(){},close(){this.open=false;},showModal(){this.open=true;},querySelector(){return node();}});
  const get=id=>{if(!nodes.has(id))nodes.set(id,node());return nodes.get(id);};
  const staticIds=new Set(['main','cart-dialog','cart-content','toast','mobile-menu','cart-count']);
  const select=id=>staticIds.has(id)||[...nodes.values()].some(n=>n.innerHTML.includes('id=\"'+id+'\"'))?get(id):null;
- const context={...assortments,...assortmentui,...catalogoptions,...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},localStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,FormData:class{constructor(form){this.fields=form.fields;}get(k){const v=this.fields[k];return Array.isArray(v)?v[0]||null:v??null;}getAll(k){const v=this.fields[k];return Array.isArray(v)?v:v?[v]:[];}},setTimeout:()=>0,clearTimeout(){}};
+ const context={...legalui,...storage,...assortments,...assortmentui,...catalogoptions,...core,...clubs,...ui,...embroidery,...art,...contacts,e:core.escapeHtml,document:{getElementById:select,querySelector:get,querySelectorAll:s=>queries.get(s)||[],addEventListener:(k,v)=>documentEvents.set(k,v)},sessionStorage:{getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v),removeItem:k=>saved.delete(k)},localStorage:{getItem:k=>localSaved.get(k)||null,setItem:(k,v)=>localSaved.set(k,v),removeItem:k=>localSaved.delete(k)},location:{hash},window:{scrollTo(){},addEventListener(){}},URLSearchParams,FormData:class{constructor(form){this.fields=form.fields;}get(k){const v=this.fields[k];return Array.isArray(v)?v[0]||null:v??null;}getAll(k){const v=this.fields[k];return Array.isArray(v)?v:v?[v]:[];}},setTimeout:()=>0,clearTimeout(){}};
  vm.createContext(context);vm.runInContext(readFileSync(new URL('../app.js',import.meta.url),'utf8').replace(/^import[^\n]+\n/gm,''),context);
- return {get,saved,queries,submit:(fields,valid=true)=>{let prevented=false;get('main').events.get('submit')({target:{id:'newsletter-form',fields,reportValidity:()=>valid},preventDefault(){prevented=true;}});return prevented;},run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
+ return {get,saved,localSaved,queries,submit:(fields,valid=true)=>{let prevented=false;get('main').events.get('submit')({target:{id:'newsletter-form',fields,reportValidity:()=>valid},preventDefault(){prevented=true;}});return prevented;},run:source=>vm.runInContext(source,context),click:dataset=>documentEvents.get('click')({target:{closest:()=>({dataset,matches:()=>false})}}),input:(id,value)=>get('main').events.get('input')({target:{id,value,dataset:{}}}),change:(id,value,dataset={})=>get('main').events.get('change')({target:{id,value,dataset}})};
 }
 
 test('Club product event flow transfers the full requested logo design to cart and email',()=>{
@@ -53,6 +55,24 @@ test('Tailored product event flow handles short sleeves, custom fabric and an un
 test('The full shop and the dedicated tailoring route render through the router',()=>{
  const shop=application('#/shop');assert.equal((shop.get('shop-grid').innerHTML.match(/<article/g)||[]).length,24);
  const tailor=application('#/masshemden');assert.match(tailor.get('main').innerHTML,/Maßhemd gestalten/);assert.match(tailor.get('main').innerHTML,/Maßbluse gestalten/);
+});
+
+test('The cart remembers a selection only after opt-in and privacy deletion clears both stores',()=>{
+ const app=application('#/produkt/club-forster-755');
+ app.click({action:'add-club-cart'});
+ assert.equal(app.saved.size,1);assert.equal(app.localSaved.size,0);
+ assert.match(app.get('cart-content').innerHTML,/id="cart-remember" type="checkbox" >/);
+ const remember={id:'cart-remember',checked:true};
+ app.get('cart-dialog').events.get('change')({target:remember});
+ assert.equal(remember.checked,true);assert.equal(app.localSaved.size,2);
+ remember.checked=false;app.get('cart-dialog').events.get('change')({target:remember});
+ assert.equal(app.localSaved.size,0);assert.equal(app.saved.size,1);
+ remember.checked=true;app.get('cart-dialog').events.get('change')({target:remember});
+ app.run("location.hash='#/datenschutz';route()");
+ assert.match(app.get('main').innerHTML,/data-action="clear-cart"/);
+ app.click({action:'clear-cart'});
+ assert.equal(app.saved.size,0);assert.equal(app.localSaved.size,0);
+ assert.equal(app.run('cart.length'),0);
 });
 
 test('Combined shop filters and page controls update results and reset pagination',()=>{

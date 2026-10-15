@@ -1,3 +1,5 @@
+import { LEGAL_TITLES, legalContent } from './legal-content.js?v=20261015-legal';
+import { createCartStorage, CONSENT_KEY } from './cart-storage.js?v=20261015-legal';
 import { sourceFieldVisible } from './catalog-options.js?v=20261012-catalog';
 import { ASSORTMENTS, assortmentById, manufacturerNames, paginateProducts } from './assortment-core.js?v=20261012-catalog';
 import { assortmentOverview } from './assortment-ui.js?v=20261014-catalog';
@@ -11,11 +13,12 @@ import { whatsappLink } from './contact.js?v=20261012-catalog';
 
 const main=document.getElementById('main');
 const cartDialog=document.getElementById('cart-dialog');
-const STORE='gauder-design-cart-v1';
+const storageAccess=name=>{try{return globalThis[name];}catch{return undefined;}};
+const cartStorage=createCartStorage({session:storageAccess('sessionStorage'),local:storageAccess('localStorage')});
 const NEWSLETTER_TOPICS=['Neue Produkte & Geschenkideen','Camper & Club-Kollektionen','Individuelle Stickerei & Maßhemden'];
 const NEWSLETTER_CONSENT='Ich möchte von Handelsvertretung & Stickerei Sylke Gauder per E-Mail über neue Produkte, Club-Kollektionen und Angebote informiert werden. Ich kann meine Einwilligung jederzeit per E-Mail an info@handelsvertretung-gauder.de widerrufen.';
 let cart=[];
-try { cart=sanitizeCart(JSON.parse(localStorage.getItem(STORE)||'[]')); } catch { cart=[]; }
+cart=sanitizeCart(cartStorage.load());
 let shopState={category:'Alle Produkte',query:'',sort:'featured',source:'',manufacturer:'',page:1};
 let clubState={club:'',category:'Alle Produkte',query:'',sort:'featured'};
 let selection=null;
@@ -220,14 +223,7 @@ function about(){return `${bread('Über uns')}<section class="wrap inner-hero"><
 
 function contact(){return `${bread('Kontakt')}<section class="wrap contact-page"><span class="eyebrow red">EIN HALLO IST EIN GUTER ANFANG.</span><h1 class="page-title">Lass uns deine Idee<br><span class="red-word">auf den Faden bringen.</span></h1><div class="form-layout" style="margin-top:38px"><div class="form-aside"><p>Du möchtest etwas besticken lassen, suchst passende Textilien oder hast eine Frage? Wir freuen uns auf deine Nachricht.</p><ul class="contact-list"><li>${icon('phone')}<div><b>Ruf uns an</b><a href="tel:+491636997060">Mobil: 0163 / 6997 060</a></div></li><li>${whatsappLink()}</li><li>${icon('mail')}<div><b>Schreib uns</b><a href="mailto:info@handelsvertretung-gauder.de">info@handelsvertretung-gauder.de</a></div></li><li>${icon('pin')}<div><b>Hier findest du uns</b><span>Handelsvertretung & Stickerei Sylke Gauder<br>Heisterstraße 2a<br>34286 Spangenberg · Ortsteil Pfieffe</span></div></li><li>${icon('chat')}<div><b>Persönliche Beratung</b><span>Für einen Besuch oder eine ausführliche Beratung vereinbaren wir gern einen passenden Termin.</span></div></li></ul></div>${enquiryForm()}</div><div class="location-strip"><div><b>In Spangenberg-Pfieffe zu Hause.</b><p>Heisterstraße 2a · 34286 Spangenberg</p></div><a class="btn btn-white" href="https://www.google.com/maps/search/?api=1&query=Heisterstra%C3%9Fe+2a%2C+34286+Spangenberg-Pfieffe" target="_blank" rel="noopener noreferrer">Route planen ${arrow}</a></div></section>`;}
 
-function legal(kind){
- const titles={impressum:'Impressum',datenschutz:'Datenschutz',versand:'Versand & Rückgabe'};
- let body='';
- if(kind==='impressum')body=`<div class="notice">Dies ist ein Website-Entwurf. Die folgenden Kontaktdaten stammen von der bereitgestellten Visitenkarte. Ein vollständiges und aktuelles Impressum wird vor einem öffentlichen Shop-Start ergänzt.</div><h2>Handelsvertretung & Stickerei Sylke Gauder</h2><p>Sylke Gauder<br>Heisterstraße 2a<br>34286 Spangenberg · Ortsteil Pfieffe<br>Deutschland</p><p>Mobil: <a href="tel:+491636997060">+49 (0)163 6997 060</a><br>E-Mail: <a href="mailto:info@handelsvertretung-gauder.de">info@handelsvertretung-gauder.de</a></p><h2>Zum bestehenden Internetauftritt</h2><p><a href="https://www.handelsvertretung-gauder.de/" target="_blank" rel="noopener noreferrer">www.handelsvertretung-gauder.de ↗</a></p><p>Die Produktbereiche dieses Entwurfs orientieren sich am bestehenden Angebot. Originalartikel, Produktbilder und Quellpreise sind entsprechend gekennzeichnet. Die zusätzlich frei gestaltbaren Produktideen verwenden Beispielpreise.</p>`;
- if(kind==='datenschutz')body=`<div class="notice">Hinweise zur Funktion dieses Entwurfs. Dies ist noch keine vollständige Datenschutzerklärung für einen öffentlichen Online-Shop.</div><h2>Was dieser Entwurf speichert</h2><p>Deine Produktauswahl wird im lokalen Speicher dieses Browsers hinterlegt, damit dein Warenkorb beim nächsten Aufruf erhalten bleibt. Dabei werden Produktkennungen, Varianten, Stückzahlen, Sticktexte sowie deine produktbezogenen Motiv- und Maßwünsche gespeichert. Speichere hier keine vertraulichen Angaben.</p><p><button class="btn btn-outline" data-action="clear-cart">Gespeicherten Warenkorb löschen</button></p><h2>Kontaktformular und Motivvorschau</h2><p>Das Formular erzeugt einen E-Mail-Text. Die Website selbst versendet diesen Text nicht. Die Eingaben werden vom Entwurf nicht dauerhaft gespeichert. Ein ausgewähltes Motiv wird nur lokal als Vorschau angezeigt und nicht automatisch an die E-Mail angehängt.</p><h2>Newsletter-Anfrage</h2><p>Das Newsletter-Formular bereitet eine E-Mail an info@handelsvertretung-gauder.de vor. E-Mail-Adresse, optionaler Vorname, Themenauswahl und die aktiv erteilte Einwilligung werden in diesen Entwurf übernommen. Erst wenn du die E-Mail selbst absendest, erhalten wir deine Anfrage. Die Website speichert diese Formulardaten nicht dauerhaft und trägt dich nicht automatisch in einen Newsletter-Verteiler ein. Eine Abmeldung kannst du jederzeit per E-Mail an dieselbe Adresse anfragen.</p><h2>Produktbilder aus unseren bestehenden Shops</h2><p>Viele Original-Produktbilder und Herstellerlogos werden direkt von den angegebenen Quellshops geladen. Dabei stellt dein Browser eine Verbindung zum jeweiligen Bildanbieter her.</p><h2>Weitere Schritte vor dem Shop-Start</h2><p>Vor dem öffentlichen Betrieb müssen die tatsächlichen Hosting-, Bestell-, Zahlungs- und Versandabläufe festgelegt und in einer dazu passenden Datenschutzerklärung beschrieben werden. Diese Hinweise decken nicht sämtliche Datenverarbeitungen der Hosting-Plattform ab.</p><h2>Kontakt</h2><p>Sylke Gauder · <a href="mailto:info@handelsvertretung-gauder.de">info@handelsvertretung-gauder.de</a></p>`;
- if(kind==='versand')body=`<div class="notice">Der Shop befindet sich im Entwurfsmodus. Es gibt hier keine verbindlichen Bestellungen, keine Zahlungsabwicklung und keinen Versandauftrag.</div><h2>Versand und Fertigstellung</h2><p>Versandkosten, Liefergebiete, Zahlungsarten und konkrete Lieferzeiten sind für diesen Entwurf noch nicht hinterlegt. Bei einer Anfrage werden die tatsächlichen Bedingungen persönlich abgestimmt.</p><h2>Individuelle Anfertigung</h2><p>Motiv, Textil, Stickgröße, Stückzahl und Wunschtermin klären wir vor der Umsetzung. Die Produktvorschau veranschaulicht eine Idee und ist keine Produktionsfreigabe.</p><h2>Rückgabe und weitere Shop-Bedingungen</h2><p>Die für das tatsächliche Sortiment geltenden Rückgabe-, Widerrufs- und Vertragsinformationen müssen vor einem öffentlichen Shop-Start ergänzt werden. Dieser Entwurf enthält bewusst keine fertigen Verkaufskonditionen.</p>${button('Frage zum Produkt stellen','#/kontakt')}`;
- return `${bread(titles[kind])}<section class="wrap prose"><span class="eyebrow red">INFORMATIONEN ZUM ENTWURF</span><h1 class="page-title">${titles[kind]}</h1>${body}</section>`;
-}
+function legal(kind){return `${bread(LEGAL_TITLES[kind])}<section class="wrap prose legal-page">${legalContent(kind)}</section>`;}
 
 function route(initial=false){
  selectedFile=null;selection=null;activeProduct=null;
@@ -255,7 +251,7 @@ function route(initial=false){
  else if(view==='ueber-uns'){html=about();title='Über Sylke Gauder';}
  else if(view==='kontakt'){html=contact();title='Kontakt';}
  else if(view==='newsletter'){html=newsletterSection({page:true});title='Newsletter';}
- else if(['impressum','datenschutz','versand'].includes(view)){html=legal(view);title={impressum:'Impressum',datenschutz:'Datenschutz',versand:'Versand & Rückgabe'}[view];}
+ else if(Object.hasOwn(LEGAL_TITLES,view)){html=legal(view);title=LEGAL_TITLES[view];}
  else {html=notFound();title='Seite nicht gefunden';}
  main.innerHTML=html;
  document.title=`${title} – Sylke Gauder Stickerei`;
@@ -269,7 +265,7 @@ function route(initial=false){
 function notFound(){return `<div class="wrap empty-state">${icon('needle')}<h1 class="page-title">Den Faden verloren?</h1><p>Diese Seite gibt es im Entwurf noch nicht. Hier geht es zurück zu unseren Produktideen.</p>${button('Zum Shop','#/shop')}</div>`;}
 function hideMenu(){document.getElementById('mobile-menu').hidden=true;document.querySelector('[data-action="menu"]').setAttribute('aria-expanded','false');}
 function toast(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>t.classList.remove('show'),3200);}
-function persistCart(){try{localStorage.setItem(STORE,JSON.stringify(cart));}catch{toast('Der Warenkorb bleibt für diesen Besuch erhalten.');}updateCartCount();}
+function persistCart(){cartStorage.save(cart);updateCartCount();}
 function updateCartCount(){const count=cartQuantity(cart);document.getElementById('cart-count').textContent=count;document.querySelector('[data-action="cart"]').setAttribute('aria-label',`Warenkorb mit ${count} Artikeln öffnen`);}
 function cartHead(label='Dein Warenkorb'){return `<div class="cart-head"><div><h2 id="cart-title">${label}</h2><small>Deine Auswahl · unverbindlicher Entwurf</small></div><button class="icon-btn" data-action="close-cart" aria-label="Warenkorb schließen">${icon('close')}</button></div>`;}
 function cartLine(item,index){
@@ -278,9 +274,10 @@ function cartLine(item,index){
  const details=isCatalogProduct(p)?`${e(catalogGroupFor(p).fullName)}<br>${e(clubSummary(p,item))}${item.note?`<br>Wünsche, separat anzubieten: ${e(item.note)}`:''}`:`${e(item.color)} · ${e(item.size)}${isCamper(item)?`<br><b>Logo-Bestickung · ${e(camperLabels(item).brand)}</b><br>${e(camperLabels(item).position)} · ${e(camperLabels(item).logoSize)}<br>Logo-Aufpreis: ${money(priceParts(item).logo)} / Stück`:''}${item.text?`<br>„${e(item.text)}“ · ${e(item.thread)}<br>${e(item.font)}`:'<br>Ohne Wunschtext'}`;
  return `<article class="cart-item">${p.garment?`<div class="cart-garment">${garmentPreview(p,item,{compact:true})}</div>`:image(p.image,p.name)}<div><h3><a href="#/produkt/${p.id}">${e(p.name)}</a></h3><p>${details}</p><p class="cart-unit-price">${amount(1)} pro Stück${price.pendingNative?'<br>Aufpreise für Sonderoptionen noch nicht enthalten':''}</p><div class="cart-item-bottom"><div class="quantity-control"><button data-cart-qty="${index}" data-delta="-1" aria-label="Anzahl von ${e(p.name)} verringern" ${item.qty<=1?'disabled':''}>−</button><span>${item.qty}</span><button data-cart-qty="${index}" data-delta="1" aria-label="Anzahl von ${e(p.name)} erhöhen" ${item.qty>=99?'disabled':''}>+</button></div><span class="cart-item-price">${amount(item.qty)}</span></div></div><button class="remove-item" data-remove="${index}" aria-label="${e(p.name)} aus dem Warenkorb entfernen">${icon('close')}</button></article>`;
 }
+function cartRememberControl(){return `<label class="cart-remember" for="cart-remember"><input id="cart-remember" type="checkbox" ${cartStorage.isRemembered()?'checked':''}><span>Auswahl auf diesem Gerät merken<small>Freiwillig für bis zu 30 Tage. Ohne Haken bleibt die Auswahl nur für diese Browsersitzung. <a href="#/datenschutz">Datenschutzhinweise</a></small></span></label>`;}
 function renderCart(){
  const total=cartPriceInfo(cart);
- document.getElementById('cart-content').innerHTML=cartHead()+`<div class="cart-body">${cart.length?`${cart.map(cartLine).join('')}<div class="cart-total"><span>${total.hasClub?'Orientierungssumme':'Beispielsumme'}</span><span>${total.unknown===cart.length&&cart.length?'Preis auf Anfrage':`${total.from?'ab ':''}${money(total.amount)}`}</span></div>${total.pendingEmbroidery?'<p class="embroidery-price-note">Individuelle Logo-Bestickung wird zusätzlich angeboten und ist noch nicht in der Summe enthalten.</p>':''}${total.unknown?`<p class="cart-price-note">${total.unknown} Position(en) mit Preis auf Anfrage sind noch nicht enthalten.</p>`:''}<p class="cart-price-note">${total.hasClub?'Preise aus den bestehenden Shops nach Ausführung, inkl. MwSt. Die freie Camper-Gestaltung und weitere Produktideen verwenden Beispielpreise.':'Die Preise der Produktideen sind Entwurfsbeispiele.'} Verfügbarkeit, endgültigen Preis, zusätzliche Wünsche und Versand stimmen wir persönlich ab.</p><button class="btn btn-primary wide" data-action="cart-enquiry">Anfrage vorbereiten ${arrow}</button><div class="cart-extras"><a href="#/shop" data-action="continue-shopping">Weiter entdecken</a></div>`:`<div class="cart-empty">${icon('bag')}<h3>Platz für dein<br>nächstes Lieblingsstück.</h3><p>Entdecke die Club-Shops und gestalte dein persönliches Stück.</p><a class="btn btn-primary" href="#/clubs" data-action="continue-shopping">Club-Shops entdecken ${arrow}</a></div>`}</div>`;
+ document.getElementById('cart-content').innerHTML=cartHead()+`<div class="cart-body">${cart.length?`${cart.map(cartLine).join('')}<div class="cart-total"><span>${total.hasClub?'Orientierungssumme':'Beispielsumme'}</span><span>${total.unknown===cart.length&&cart.length?'Preis auf Anfrage':`${total.from?'ab ':''}${money(total.amount)}`}</span></div>${total.pendingEmbroidery?'<p class="embroidery-price-note">Individuelle Logo-Bestickung wird zusätzlich angeboten und ist noch nicht in der Summe enthalten.</p>':''}${total.unknown?`<p class="cart-price-note">${total.unknown} Position(en) mit Preis auf Anfrage sind noch nicht enthalten.</p>`:''}<p class="cart-price-note">${total.hasClub?'Preise aus den bestehenden Shops nach Ausführung, inkl. MwSt. Die freie Camper-Gestaltung und weitere Produktideen verwenden Beispielpreise.':'Die Preise der Produktideen sind Entwurfsbeispiele.'} Verfügbarkeit, endgültigen Preis, zusätzliche Wünsche und Versand stimmen wir persönlich ab.</p><button class="btn btn-primary wide" data-action="cart-enquiry">Anfrage vorbereiten ${arrow}</button><div class="cart-extras"><a href="#/shop" data-action="continue-shopping">Weiter entdecken</a></div>`:`<div class="cart-empty">${icon('bag')}<h3>Platz für dein<br>nächstes Lieblingsstück.</h3><p>Entdecke die Club-Shops und gestalte dein persönliches Stück.</p><a class="btn btn-primary" href="#/clubs" data-action="continue-shopping">Club-Shops entdecken ${arrow}</a></div>`}${cart.length||cartStorage.isRemembered()?cartRememberControl():''}</div>`;
 }
 function openCart(){renderCart();if(!cartDialog.open)cartDialog.showModal();}
 function showCartEnquiry(){
@@ -341,7 +338,7 @@ document.addEventListener('click',event=>{
  case 'copy-cart':{const t=document.getElementById('cart-email');copyText(t.value,t);break;}
  case 'copy-newsletter':{const t=document.getElementById('newsletter-message');if(t)copyText(t.value,t);break;}
  case 'copy-enquiry':{const t=document.getElementById('prepared-email');copyText(t.value,t);break;}
- case 'clear-cart':cart=[];persistCart();toast('Der gespeicherte Warenkorb wurde gelöscht.');break;
+ case 'clear-cart':cart=[];cartStorage.clear();updateCartCount();if(cartDialog.open)renderCart();toast('Der gespeicherte Anfragekorb wurde gelöscht.');break;
  }
 });
 main.addEventListener('input',event=>{
@@ -380,6 +377,7 @@ main.addEventListener('change',event=>{
  if(target.id==='product-picker'&&selection){const p=PRODUCTS.find(x=>x.id===target.value);if(p){productDraft=createSelection(p,selection);location.hash=`/produkt/${p.id}?edition=${productDraft.edition}`;}}
  if(target.id==='inquiry-file')previewFile(target);
 });
+cartDialog.addEventListener('change',event=>{if(event.target.id==='cart-remember'){const wanted=event.target.checked;event.target.checked=cartStorage.setRemember(wanted);toast(event.target.checked?'Deine Auswahl wird bis zu 30 Tage auf diesem Gerät gemerkt.':wanted?'Dauerhaftes Speichern ist in diesem Browser nicht möglich.':'Deine Auswahl bleibt nur für diese Browsersitzung.');}});
 cartDialog.addEventListener('input',event=>{if(event.target.id==='cart-email')document.getElementById('cart-mail-link').href=mailLink('Anfrage zu meiner Produktauswahl',event.target.value);});
 cartDialog.addEventListener('click',event=>{if(event.target===cartDialog){const r=cartDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)cartDialog.close();}});
 function previewFile(input){
@@ -395,6 +393,6 @@ main.addEventListener('submit',event=>{
  const result=document.getElementById('form-result');result.innerHTML=`<h4>Deine Anfrage ist vorbereitet.</h4><label class="form-hint" for="prepared-email">Bitte Text prüfen und bei Bedarf ergänzen:</label><textarea id="prepared-email">${e(text)}</textarea><div class="btn-row"><a id="prepared-mail-link" class="btn btn-primary" href="${mailLink(String(d.get('subject')),text)}">E-Mail öffnen ${arrow}</a><button type="button" class="btn btn-outline" data-action="copy-enquiry">Text kopieren</button></div><p>Empfänger: info@handelsvertretung-gauder.de${selectedFile?'<br>Bitte denke daran, deine Motivdatei selbst anzuhängen.':''}</p>`;result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'center'});
 });
 window.addEventListener('hashchange',()=>route());
-window.addEventListener('storage',event=>{if(event.key===STORE){try{cart=sanitizeCart(JSON.parse(event.newValue||'[]'));updateCartCount();if(cartDialog.open)renderCart();}catch{}}});
+window.addEventListener('storage',event=>{if((event.key===CONSENT_KEY||event.key===null)&&cartDialog.open)renderCart();});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')hideMenu();});
 updateCartCount();route(true);

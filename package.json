@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check app.js && node --check shop-core.js && node --check garment-preview.js && node --check club-core.js && node --check waumobil-products.js && node --check club-ui.js && node --check embroidery-core.js && node --check embroidery-ui.js && node --check tailored-products.js && node --check contact.js && node --check assortment-products.js && node --check assortment-core.js && node --check assortment-ui.js && node --check karmann-products.js && node --check catalog-options.js && node --test tests/*.test.js"
+    "check": "node --check legal-content.js && node --check cart-storage.js && node --check app.js && node --check shop-core.js && node --check garment-preview.js && node --check club-core.js && node --check waumobil-products.js && node --check club-ui.js && node --check embroidery-core.js && node --check embroidery-ui.js && node --check tailored-products.js && node --check contact.js && node --check assortment-products.js && node --check assortment-core.js && node --check assortment-ui.js && node --check karmann-products.js && node --check catalog-options.js && node --test tests/*.test.js",
+    "legal:generate": "node scripts/generate-legal-pages.mjs"
   }
 }
